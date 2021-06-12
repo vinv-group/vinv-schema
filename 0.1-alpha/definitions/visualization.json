@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/kwf-ev/eldat-schema/1.0.3/schema_de.json",
+    "title": "Visualization",
+    "description": "",
+    "additionalProperties": false,
+    "oneOf": [
+        {
+            "title": "3D graphics file",
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "title": "absolute or relative path to file",
+                    "format": "iri-reference"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "obj"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Point Cloud File",
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "title": "absolute or relative path to file",
+                    "format": "iri-reference"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "las",
+                        "laz"
+                    ]
+                }
+            ]
+        }
+    ]
+}

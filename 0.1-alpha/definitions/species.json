@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/kwf-ev/eldat-schema/1.0.3/schema_de.json",
+    "title": "Tree species",
+    "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+    "type": "string",
+    "pattern": "^[a-zA-Z0-9_-]{3}$",
+    "examples": [
+        "JM2",
+        "sf6",
+        "9hD",
+        "u2-"
+    ],
+    "additionalItems": false
+}

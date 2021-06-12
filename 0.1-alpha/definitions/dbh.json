@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/kwf-ev/eldat-schema/1.0.3/schema_de.json",
+    "title": "Diameter at breast height",
+    "description": "Array including height and diameter",
+    "type": "array",
+    "additionalProperties": false,
+    "items": [
+        {
+            "type": "number",
+            "title": "Height",
+            "description": "Height in meter of diameter measurment",
+            "const": 1.3
+        },
+        {
+            "type": "number",
+            "title": "Diameter",
+            "description": "Diameter in centimeter as measured height",
+            "minimum": 0,
+            "maximum": 100
+        }
+    ]
+}
