@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/kwf-ev/eldat-schema/1.0.3/schema_de.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/definitions/dbh.json",
     "title": "Diameter at breast height",
     "description": "Array including height and diameter",
     "type": "array",

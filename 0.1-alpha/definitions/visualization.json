@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/kwf-ev/eldat-schema/1.0.3/schema_de.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/visualization.json",
     "title": "Visualization",
     "description": "",
     "additionalProperties": false,
@@ -12,7 +12,7 @@
                 {
                     "type": "string",
                     "title": "absolute or relative path to file",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 {
                     "type": "string",
@@ -29,7 +29,7 @@
                 {
                     "type": "string",
                     "title": "absolute or relative path to file",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 {
                     "type": "string",

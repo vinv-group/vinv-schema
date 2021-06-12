@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/vinv.json",
     "title": "Trees definition",
     "description": "",
     "type": "array",

@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/processes.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/definitions/processes.json",
     "title": "Fallbacks",
     "description": "",
     "type": "array",
