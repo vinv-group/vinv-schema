@@ -1,11 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/definitions/coordinates.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/coordinates.json",
     "title": "Coordinates",
     "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
     "type": ["array", "null"],
     "minItems": 2,
-    "additionalProperties": false,
+    "maxItems": 3,
     "items": [
         {
             "title": "Longitude",

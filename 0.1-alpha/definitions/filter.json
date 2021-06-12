@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/definitions/trees.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/filter.json",
     "title": "Trees definition",
     "description": "",
     "type": "array",
@@ -109,17 +109,17 @@
                 "obj": {
                     "title": "3D graphics file",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 "las": {
                     "title": "Point Cloud File",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 "laz": {
                     "title": "Point Cloud File",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 }
             }
         }

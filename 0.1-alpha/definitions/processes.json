@@ -1,10 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/0.1-alpha/definitions/processes.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/processes.json",
     "title": "Processes",
     "description": "",
     "type": "array",
     "minItems": 2,
+    "maxItems": 2,
     "items": [
         {
             "title": "Change",
@@ -15,8 +16,7 @@
         },
         {
             "description": "Tree state before manipulation.",
-            "$ref": "./trees.json"
+            "$ref": "trees.json"
         }
-    ],
-    "additionalItems": false
+    ]
 }

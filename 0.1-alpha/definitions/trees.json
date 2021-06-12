@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/vinv.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/trees.json",
     "title": "Trees definition",
     "description": "",
     "type": "array",
@@ -8,20 +8,20 @@
     "minItems": 5,
     "items": [
         {
-            "$ref": "./coordinates.json"
+            "$ref": "coordinates.json"
         },
         {
-            "$ref": "./species.json"
+            "$ref": "species.json"
         },
         {
             "title": "Measured data",
             "type": "array",
             "minItems": 1,
-            "additionalItems": {"$ref": "./diameter_height.json"},
+            "additionalItems": {"$ref": "diameter_height.json"},
             "uniqueItems": true,
             "items": [
-                {"$ref": "./dbh.json"},
-                {"$ref": "./height.json"}
+                {"$ref": "dbh.json"},
+                {"$ref": "height.json"}
             ]
         },
         {
@@ -38,17 +38,17 @@
                 "obj": {
                     "title": "3D graphics file",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 "las": {
                     "title": "Point Cloud File",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 },
                 "laz": {
                     "title": "Point Cloud File",
                     "type": "string",
-                    "format": "iri-reference"
+                    "format": "url"
                 }
             }
         }
