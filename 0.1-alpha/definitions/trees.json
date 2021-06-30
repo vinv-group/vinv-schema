@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/trees.json",
     "title": "Trees definition",
     "description": "",
@@ -8,21 +8,13 @@
     "minItems": 5,
     "items": [
         {
-            "$ref": "coordinates.json"
+            "$ref": "location.json"
         },
         {
             "$ref": "species.json"
         },
         {
-            "title": "Measured data",
-            "type": "array",
-            "minItems": 1,
-            "additionalItems": {"$ref": "diameter_height.json"},
-            "uniqueItems": true,
-            "items": [
-                {"$ref": "dbh.json"},
-                {"$ref": "height.json"}
-            ]
+            "$ref": "measurements.json"
         },
         {
             "title": "birth",
@@ -33,7 +25,9 @@
         },
         {
             "type": ["object", "null"],
+            "title": "Visualization",
             "description": "absolute or relative path to file",
+            "additionalProperties": false,
             "properties": {
                 "obj": {
                     "title": "3D graphics file",

@@ -1,0 +1,12 @@
+{
+    "title": "Measured data",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/measurements.json",
+    "type": "array",
+    "minItems": 1,
+    "additionalItems": {"$ref": "diameter_height.json"},
+    "uniqueItems": true,
+    "items": [
+        {"$ref": "dbh.json"},
+        {"$ref": "height.json"}
+    ]
+}
