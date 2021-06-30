@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/vinv.json",
+    "title": "vinv schema",
+    "description": "Lightweight data standard for single-tree based forest management, visualisation & analytics",
+    "type": "object",
+    "additionalProperties": false,
+    "properties":{
+        "$schema": {
+            "type": "string",
+            "examples": [
+                "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/vinv.json"
+            ]
+        },
+        "v": {
+            "type": "string",
+            "pattern": "^[0-9]\\.[0-9](-alpha|-beta|-stable)?$",
+            "examples": [
+                "0.1",
+                "0.1-beta"
+            ]
+        },
+        "trees": {
+            "type": ["array", "null"],
+            "items": [
+                {
+                    "type": "object",
+                    "propertyNames": {
+                        "pattern": "^[A-Za-z0-9_-]*$"
+                    },
+                    "additionalProperties": {"$ref": "#/definitions/trees.json"}
+                },
+                {
+                    "type":["array", "null"],
+                    "additionalProperties": false,
+                    "items": {"$ref": "#/definitions/changes.json"}
+                }
+            ]
+        },
+        "fallbacks":{
+            "type":"array",
+            "additionalProperties": false,
+            "items": {"$ref": "#/definitions/fallbacks.json"}
+        }
+    },
+    "required": [
+        "v"
+    ],
+    "definitions": {
+
+    }
+}
