@@ -14,6 +14,20 @@
             "$ref": "species.json"
         },
         {
+            "title":"Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type":["number", "null"],
+            "minimum": 0.1,
+            "maximum": 100
+        },
+        {
+            "title":"Height",
+            "description": "Height in meter",
+            "type":["number", "null"],
+            "minimum": 0.1,
+            "maximum": 100
+        },
+        {
             "$ref": "measurements.json"
         },
         {

@@ -1,24 +1,10 @@
 {
     "title": "Measured data",
     "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/measurements.json",
-    "type": "array",
+    "type": ["array", "null"],
     "minItems": 1,
-    "additionalItems": {"$ref": "diameter_height.json"},
     "uniqueItems": true,
     "items": [
-        {
-            "title":"Height",
-            "description": "Height in meter",
-            "type":"number",
-            "minimum": 0.1,
-            "maximum": 100
-        },
-        {
-            "title":"Diameter at Breast Height",
-            "description": "Diameter in centimeter",
-            "type":["number", "null"],
-            "minimum": 0.1,
-            "maximum": 100
-        }
+        {"$ref": "diameter_height.json"}
     ]
 }
