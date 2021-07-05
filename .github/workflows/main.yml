@@ -10,5 +10,5 @@ jobs:
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: /vinv.json
-          INPUT_JSONS: /examples/minimum.json, /examples/random.json
+          INPUT_SCHEMA: /0.1-alpha/vinv.json
+          INPUT_JSONS: /0.1-alpha/examples/minimum.json, /0.1-alpha/examples/random.json
