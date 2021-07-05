@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/vinv.json",
+    "title": "vinv schema",
+    "description": "Lightweight data standard for individual tree based forest management, visualisation & analytics",
+    "type": "object",
+    "additionalProperties": false,
+    "properties":{
+        "$schema": {
+            "type": "string",
+            "examples": [
+                "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/vinv.json"
+            ]
+        },
+        "v": {
+            "title": "Version of the used vinv schema, the file should be validated against",
+            "type": "string",
+            "pattern": "^[0-9]\\.[0-9](-alpha|-beta|-stable)?$",
+            "examples": [
+                "0.1",
+                "0.1-beta"
+            ]
+        },
+        "trees": {
+            "type": ["array", "null"],
+            "items": [
+                {
+                    "type": "object",
+                    "propertyNames": {
+                        "pattern": "^[A-Za-z0-9_-]*$"
+                    },
+                    "additionalProperties": {"$ref": "./definitions/tree.json"}
+                },
+                {
+                    "type":["array", "null"],
+                    "items": {"$ref": "./definitions/changes/tree_history.json"}
+                }
+            ]
+        },
+        "roads":{
+            "type": ["array", "null"],
+            "minItems":1,
+            "maxItems": 2,
+            "items": [
+                {
+                    "type": "object",
+                    "propertyNames": {
+                        "pattern": "^[A-Za-z0-9_-]*$"
+                    },
+                    "items": {"$ref": "./definitions/track.json"}
+                },
+                {
+                    "type":["array", "null"],
+                    "items": {"$ref": "./definitions/changes/track_history.json"}
+                }
+            ]
+        },
+        "area":{
+            "type": ["array", "null"],
+            "minItems":1,
+            "maxItems": 2,
+            "items": [
+                {
+                    "type": "object",
+                    "propertyNames": {
+                        "pattern": "^[A-Za-z0-9_-]*$"
+                    },
+                    "additionalProperties": {"$ref": "./definitions/area.json"}
+                },
+                {
+                    "type":["array", "null"],
+                    "additionalItems": false,
+                    "items": {"$ref": "./definitions/changes/area_history.json"}
+                }
+            ]
+        },
+        "fallbacks":{
+            "type":"array",
+            "additionalItems": false,
+            "items": {"$ref": "./definitions/fallbacks.json"}
+        }
+    },
+    "required": [
+        "v"
+    ]
+}

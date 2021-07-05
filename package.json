@@ -1,0 +1,24 @@
+{
+  "name": "vinv-schema",
+  "version": "1.0.1",
+  "description": "vinv virtual inventory schema",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinv-group/vinv-schema.git"
+  },
+  "keywords": [
+    "vinv",
+    "virtual",
+    "inventory",
+    "schema"
+  ],
+  "author": "Gerrit Balindt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinv-group/vinv-schema/issues"
+  },
+  "homepage": "https://github.com/vinv-group/vinv-schema#readme"
+}

@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/trees.json",
+    "title": "Tree definition",
+    "description": "",
+    "type": "array",
+    "additionalItems": false,
+    "minItems": 5,
+    "items": [
+        {
+            "$ref": "location.json"
+        },
+        {
+            "$ref": "species.json"
+        },
+        {
+            "title":"Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type":["number", "null"],
+            "minimum": 0.1,
+            "maximum": 100
+        },
+        {
+            "title":"Height",
+            "description": "Height in meter",
+            "type":["number", "null"],
+            "minimum": 0.1,
+            "maximum": 100
+        },
+        {
+            "$ref": "measurements.json"
+        },
+        {
+            "title": "birth",
+            "description": "Birthday of the tree",
+            "examples": ["2018-11-13"],
+            "type": ["string", "null"],
+            "format": "date"
+        },
+        {
+            "type": ["object", "null"],
+            "title": "Visualization",
+            "description": "absolute or relative path to file",
+            "additionalProperties": false,
+            "properties": {
+                "obj": {
+                    "title": "3D graphics file",
+                    "type": "string",
+                    "format": "url"
+                },
+                "las": {
+                    "title": "Point Cloud File",
+                    "type": "string",
+                    "format": "url"
+                },
+                "laz": {
+                    "title": "Point Cloud File",
+                    "type": "string",
+                    "format": "url"
+                }
+            }
+        }
+    ]
+}

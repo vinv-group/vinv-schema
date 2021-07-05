@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/height.json",
+    "title": "Max height with diameter 0",
+    "description": "Array including height and diameter",
+    "type": "array",
+    "minItems":2,
+    "maxItems": 2,
+    "items": [
+        {
+            "type": "number",
+            "title": "Height",
+            "description": "Height in meter of diameter measurment",
+            "minimum": 0.1,
+            "maximum": 100
+        },
+        {
+            "type": "number",
+            "title": "Diameter",
+            "description": "Diameter in centimeter as measured height",
+            "const": 0,
+            "default": 0
+        }
+    ]
+}
