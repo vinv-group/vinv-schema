@@ -10,12 +10,12 @@
         {
             "title": "Filter",
             "description": "Define Trees to be replaced by Fallback tree data.",
-            "$ref": "filter.json"
+            "$ref": "./filter.json"
         },
         {
             "title": "Fallback tree data",
             "description": "Fallback data if \"Trees\" data is missing",
-            "$ref": "trees.json"
+            "$ref": "./tree.json"
         }
     ]
 }

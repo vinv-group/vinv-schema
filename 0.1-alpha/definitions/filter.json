@@ -18,7 +18,6 @@
             "type": "array",
             "minItems": 2,
             "maxItems": 2,
-            "additionalItems": false,
             "uniqueItems": true,
             "items": [
                 {
@@ -39,7 +38,6 @@
             "type": "array",
             "minItems": 2,
             "maxItems": 2,
-            "additionalItems": false,
             "uniqueItems": true,
             "items": [
                 {
@@ -60,7 +58,6 @@
             "type": "array",
             "minItems": 2,
             "maxItems": 2,
-            "additionalItems": false,
             "uniqueItems": true,
             "items": [
                 {
@@ -82,9 +79,9 @@
         {
             "title": "Location radius",
             "$ref": "./coordinates.json",
+            "type": "array",
             "minItems": 2,
             "maxItems": 2,
-            "additionalItems": false,
             "uniqueItems": true,
             "items": [
                 {

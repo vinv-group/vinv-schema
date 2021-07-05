@@ -14,7 +14,6 @@
             "description": "Height of tree in PERCENT where diameter is measured",
             "minimum": 0.1,
             "maximum": 1,
-            "multipleOf": 0.01,
             "examples": [
                 0.5,
                 0.1
@@ -25,8 +24,7 @@
             "title": "Diameter",
             "description": "Diameter in CENTIMETER at measured height",
             "minimum": 0.1,
-            "maximum": 100,
-            "multipleOf": 0.01
+            "maximum": 100
         }
     ]
 }

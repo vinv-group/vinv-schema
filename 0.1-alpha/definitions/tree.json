@@ -1,17 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/trees.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/tree.json",
     "title": "Tree definition",
     "description": "",
     "type": "array",
-    "additionalItems": false,
     "minItems": 5,
+    "maxItems": 7,
     "items": [
         {
-            "$ref": "location.json"
+            "$ref": "./location.json"
         },
         {
-            "$ref": "species.json"
+            "$ref": "./species.json"
         },
         {
             "title":"Diameter at Breast Height",
@@ -28,7 +28,7 @@
             "maximum": 100
         },
         {
-            "$ref": "measurements.json"
+            "$ref": "./measurements.json"
         },
         {
             "title": "birth",

@@ -8,14 +8,13 @@
     "maxItems": 2,
     "items": [
         {
-            "$ref": "coordinates.json"
+            "$ref": "./coordinates.json"
         },
         {
             "title": "Accuracy",
             "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
             "type": ["number", "null"],
-            "minimum": 0,
-            "multipleOf": 0.01
+            "minimum": 0
         }
     ]
 }

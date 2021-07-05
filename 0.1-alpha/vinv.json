@@ -23,6 +23,8 @@
         },
         "trees": {
             "type": ["array", "null"],
+            "minItems":1,
+            "maxItems": 2,
             "items": [
                 {
                     "type": "object",

@@ -4,14 +4,14 @@
     "title": "Track definition",
     "description": "",
     "type": "array",
-    "additionalItems": false,
     "minItems": 1,
+    "maxItems": 2,
     "items": [
         {
             "type": "array",
             "title": "LineString coordinates",
-            "additionalItems": {"$ref": "../location.json"},
-            "items": [{"$ref": "location.json"}],
+            "additionalItems": {"$ref": "./location.json"},
+            "items": [{"$ref": "./location.json"}],
             "minItems": 2
         },
         {
