@@ -4,7 +4,6 @@
     "title": "Area definition",
     "description": "",
     "type": "array",
-    "additionalItems": false,
     "minItems": 1,
     "items": [
         {
@@ -14,13 +13,10 @@
             "items": {
                 "type": "array",
                 "title": "Polygon coordinates",
-                "additionalItems": {"$ref": "location.json"},
-                "items": [{"$ref": "location.json"}],
+                "additionalItems": {"$ref": "./location.json"},
+                "items": [{"$ref": "./location.json"}],
                 "minItems": 3
             }
-        },
-        {
-            "type":"string"
         }
     ]
 }

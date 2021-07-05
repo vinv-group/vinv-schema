@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "vinv virtual inventory schema",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node 0.1-alpha/test/validate_examples.js",
+    "build": "node 0.1-alpha/build/schema-bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/vinv-group/vinv-schema/issues"
   },
-  "homepage": "https://github.com/vinv-group/vinv-schema#readme"
+  "homepage": "https://github.com/vinv-group/vinv-schema#readme",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "ajv": "^8.6.1",
+    "ajv-formats": "^2.1.0",
+    "mocha": "^9.0.2"
+  }
 }
