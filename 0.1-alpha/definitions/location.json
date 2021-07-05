@@ -12,9 +12,10 @@
         },
         {
             "title": "Accuracy",
-            "description": "The decimal accuracy of coordinates in meter.",
+            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
             "type": ["number", "null"],
-            "minimum": 0
+            "minimum": 0,
+            "multipleOf": 0.01
         }
     ]
 }

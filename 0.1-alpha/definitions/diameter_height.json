@@ -2,24 +2,31 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/diameter_height.json",
     "title": "Diameter at height",
-    "description": "Array including height and diameter as height",
+    "description": "Array including height and diameter at height",
     "type": "array",
     "minItems":2,
     "maxItems": 2,
+    "additionalItems": false,
     "items": [
         {
             "type": "number",
             "title": "Height",
-            "description": "Height in meter of diameter measurment",
+            "description": "Height of tree in PERCENT where diameter is measured",
             "minimum": 0.1,
-            "maximum": 100
+            "maximum": 1,
+            "multipleOf": 0.01,
+            "examples": [
+                0.5,
+                0.1
+            ]
         },
         {
             "type": "number",
             "title": "Diameter",
-            "description": "Diameter in centimeter as measured height",
+            "description": "Diameter in CENTIMETER at measured height",
             "minimum": 0.1,
-            "maximum": 100
+            "maximum": 100,
+            "multipleOf": 0.01
         }
     ]
 }

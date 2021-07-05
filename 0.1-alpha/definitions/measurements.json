@@ -3,7 +3,6 @@
     "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/measurements.json",
     "type": ["array", "null"],
     "uniqueItems": true,
-    "items": [
-        {"$ref": "diameter_height.json"}
-    ]
+    "minItems":1,
+    "items": {"$ref": "diameter_height.json"}
 }

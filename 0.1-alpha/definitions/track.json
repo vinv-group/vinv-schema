@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/track.json",
+    "title": "Track definition",
+    "description": "",
+    "type": "array",
+    "additionalItems": false,
+    "minItems": 1,
+    "items": [
+        {
+            "type": "array",
+            "title": "LineString coordinates",
+            "additionalItems": {"$ref": "../location.json"},
+            "items": [{"$ref": "location.json"}],
+            "minItems": 2
+        },
+        {
+            "title": "Width",
+            "description": "Width of the track in METER",
+            "type":"string"
+        }
+    ]
+}

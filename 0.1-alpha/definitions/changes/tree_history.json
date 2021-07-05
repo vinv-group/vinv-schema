@@ -9,7 +9,9 @@
     "items": [
         {
             "title": "Tree Id",
+            "description": "URL-friendly id",
             "type": "string",
+            "pattern": "^[A-Za-z0-9_-]*$",
             "maxLength": 36
         },
         {
@@ -22,7 +24,7 @@
         {
             "title": "Tree data change",
             "description": "Tree state before manipulation.",
-            "$ref": "trees.json"
+            "$ref": "../tree.json"
         }
     ]
 }

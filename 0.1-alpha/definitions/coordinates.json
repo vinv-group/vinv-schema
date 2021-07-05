@@ -6,26 +6,29 @@
     "type": "array",
     "minItems": 2,
     "maxItems": 3,
+    "additionalItems":{
+        "type": "number",
+        "title": "[Altitude]",
+        "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+        "minimum": 0,
+        "multipleOf": 0.01
+    },
     "items": [
         {
             "title": "Longitude",
-            "description": "The decimal east–west position of a point.",
+            "description": "The decimal east–west position of a point. (7 decimal places max)",
             "type": "number",
             "minimum": -180,
-            "maximum": 180
+            "maximum": 180,
+            "multipleOf": 0.0000001
         },
         {
             "title": "Latitude",
-            "description": "The decimal north–south position of a point.",
+            "description": "The decimal north–south position of a point. (7 decimal places max)",
             "type": "number",
             "minimum": -90,
-            "maximum": 90
-        },
-        {
-            "type": "number",
-            "title": "[Altitude]",
-            "description": "The altitude of the position in meters above mean sea level.",
-            "minimum": 0
+            "maximum": 90,
+            "multipleOf": 0.0000001
         }
     ]
 }
