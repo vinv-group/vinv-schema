@@ -1,5 +1,5 @@
 <p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vinv.io/logo_transparent.0f8a1b38.png" alt="Vue logo"></a></p>
-<h1 align="center">vinv-standard</h1>
+<h1 align="center">vinv-schema</h1>
 
 Lightweight open data exchange standard for individual tree based forest management, visualisation &amp; analytics.
 
