@@ -4,7 +4,8 @@
   "description": "vinv virtual inventory schema",
   "scripts": {
     "test": "node ./build/build.js && node --experimental-json-modules ./test/test.js",
-    "build": "node ./build/build.js"
+    "build": "node ./build/build.js",
+    "documentation": "node ./build/build.js && node --experimental-json-modules ./test/test.js && mkdir -p docs && jsonschema2md -d dist -o docs -e min.json"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "test": "test"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^4.0.0",
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "ajv": "^8.6.1",
     "ajv-formats": "^2.1.0",
