@@ -1,6 +1,6 @@
 {
     "title": "Additional stem measurements",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/measurements.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/definitions/measurements.json",
     "type": ["array", "null"],
     "uniqueItems": true,
     "minItems":1,

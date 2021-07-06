@@ -1,9 +1,9 @@
-const fs = require('fs');
-const { promisify } = require('util')
-const Ajv = require("ajv")
-const addFormats = require("ajv-formats")
-const $RefParser = require("@apidevtools/json-schema-ref-parser");
+import fs from 'fs'
+import { promisify } from 'util'
+import Ajv from 'ajv'
+import addFormats from 'ajv-formats'
 
+import $RefParser from '@apidevtools/json-schema-ref-parser'
 
 const writeFileAsync = promisify(fs.writeFile)
 
@@ -26,8 +26,9 @@ function removeNestedIds(schema){
   return schema;
 }
 
-async function validate(version){
+export async function validate(version, saveBundle){
   let bundled_schema;
+  let save = saveBundle || false;
 
   /**
   * dereference $ref pointers in subschemata
@@ -63,25 +64,26 @@ async function validate(version){
   /**
   * save dereference schema in dist directory
   */
-  try{
+  if(save){
+    try{
 
-    if (!fs.existsSync(distDir)) 
-      fs.mkdirSync(distDir);
-    
-    bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/${distDir}/${version}.json`
-    await writeFileAsync(`./${distDir}/${version}.json`, JSON.stringify(bundled_schema, null, 2))
+      if (!fs.existsSync(distDir)) 
+        fs.mkdirSync(distDir);
+      
+      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/main/${distDir}/${version}.json`
+      await writeFileAsync(`./${distDir}/${version}.json`, JSON.stringify(bundled_schema, null, 2))
 
-    bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/${distDir}/${version}.min.json`
-    await writeFileAsync(`./${distDir}/${version}.min.json`, JSON.stringify(bundled_schema))
+      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/main/${distDir}/${version}.min.json`
+      await writeFileAsync(`./${distDir}/${version}.min.json`, JSON.stringify(bundled_schema))
 
-    console.info('3/3 Schema successfully created in "dist" directory.')
+      console.info('3/3 Schema successfully created in "dist" directory.')
 
-  }catch(error){
+    }catch(error){
 
-    throw(error)
+      throw(error)
+
+    }
 
   }
 
 }
-
-validate("0.1-alpha");

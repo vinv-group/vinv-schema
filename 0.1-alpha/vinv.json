@@ -9,7 +9,7 @@
         "$schema": {
             "type": "string",
             "examples": [
-                "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/vinv.json"
+                "https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/vinv.json"
             ]
         },
         "v": {

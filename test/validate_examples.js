@@ -1,9 +1,12 @@
-const fs = require('fs');
-const { promisify } = require('util')
-const Ajv = require("ajv")
-const addFormats = require("ajv-formats")
+import fs from 'fs'
+import { promisify } from 'util'
+import Ajv from 'ajv'
+import addFormats from 'ajv-formats'
 
-const schemaBundle = require("../../dist/0.1-alpha.min");
+import schemaBundle from '../dist/0.1-alpha.min.json'
+
+//var schemaBundle = require('../dist/0.1-alpha.min.json');
+
 
 const ajv = new Ajv({strict: false})
 addFormats(ajv)
@@ -43,4 +46,4 @@ async function validateExamples(version){
     
 }
 
-validateExamples("0.1-alpha");
+export { validateExamples };

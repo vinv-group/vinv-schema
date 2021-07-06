@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/alpha/0.1-alpha/definitions/diameter_height.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/definitions/diameter_height.json",
     "title": "Diameter at height",
     "description": "Array including height and diameter at height",
     "type": "array",

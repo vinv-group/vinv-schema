@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "description": "vinv virtual inventory schema",
   "scripts": {
-    "test": "node 0.1-alpha/test/validate_examples.js",
-    "build": "node 0.1-alpha/build/schema-bundle.js"
+    "test": "node ./build/build.js && node --experimental-json-modules ./test/test.js",
+    "build": "node ./build/build.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,6 @@
     "ajv": "^8.6.1",
     "ajv-formats": "^2.1.0",
     "mocha": "^9.0.2"
-  }
+  },
+  "type": "module"
 }
