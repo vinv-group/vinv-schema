@@ -27,6 +27,8 @@
             "maxItems": 2,
             "items": [
                 {
+                    "title": "Tree",
+                    "description": "Individual Tree Details",
                     "type": "object",
                     "propertyNames": {
                         "pattern": "^[A-Za-z0-9_-]*$"
@@ -45,6 +47,8 @@
             "maxItems": 2,
             "items": [
                 {
+                    "title": "Road",
+                    "description": "Road Details",
                     "type": "object",
                     "propertyNames": {
                         "pattern": "^[A-Za-z0-9_-]*$"
@@ -63,6 +67,8 @@
             "maxItems": 2,
             "items": [
                 {
+                    "title": "Stand",
+                    "description": "Stand Details",
                     "type": "object",
                     "propertyNames": {
                         "pattern": "^[A-Za-z0-9_-]*$"
@@ -77,6 +83,8 @@
             ]
         },
         "fallbacks":{
+            "title": "Trees inherit from fallback detail",
+                    "description": "Trees inherit from fallback detail",
             "type":"array",
             "additionalItems": false,
             "items": {"$ref": "./definitions/fallbacks.json"}
