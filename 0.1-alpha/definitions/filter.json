@@ -3,30 +3,46 @@
     "$id": "https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/definitions/filter.json",
     "title": "Trees definition",
     "type": "array",
-    "minItems": 2,
     "items": [
         {
-            "title": "Tree Species",
-            "description": "Array of tree species to be filtered.",
-            "type": "array",
-            "items": {"$ref": "./species.json"}
-        },
-        {
-            "title": "Diameter range",
-            "description": "Define range of maximum set tree diameter.",
-            "type": "array",
+            "title": "Location radius",
+            "type": ["array", "null"],
             "minItems": 2,
             "maxItems": 2,
             "uniqueItems": true,
             "items": [
                 {
+                    "$ref": "./coordinates.json"
+                },
+                {
+                    "title": "Radius",
+                    "description": "Radius in Meter.",
+                    "examples": ["56.42"],
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "title": "Tree Species",
+            "description": "Array of tree species to be filtered.",
+            "type": ["array", "null"],
+            "items": {"$ref": "./species.json"}
+        },
+        {
+            "title": "DBH range",
+            "description": "Define range of maximum set tree diameter.",
+            "type": ["array", "null"],
+            "minItems": 2,
+            "maxItems": 2,
+            "items": [
+                {
                     "title": "Minimum diameter",
-                    "type": "number",
+                    "type": ["number", "null"],
                     "minimum": 0
                 },
                 {
                     "title": "Maximum diameter",
-                    "type": "number",
+                    "type": ["number", "null"],
                     "maximum": 100
                 }
             ]
@@ -34,19 +50,18 @@
         {
             "title": "Height range",
             "description": "Define Range of tree height to filter",
-            "type": "array",
+            "type": ["array", "null"],
             "minItems": 2,
             "maxItems": 2,
-            "uniqueItems": true,
             "items": [
                 {
                     "title": "Minimum height",
-                    "type": "number",
+                    "type": ["number", "null"],
                     "minimum": 0.1
                 },
                 {
                     "title": "Maximum height",
-                    "type": "number",
+                    "type": ["number", "null"],
                     "maximum": 100
                 }
             ]
@@ -54,10 +69,9 @@
         {
             "title": "Birthday range",
             "description": "Define Range of tree age to filter",
-            "type": "array",
+            "type": ["array", "null"],
             "minItems": 2,
             "maxItems": 2,
-            "uniqueItems": true,
             "items": [
                 {
                     "title": "Minimum height",
@@ -74,51 +88,6 @@
                     "format": "date"
                 }
             ]
-        },
-        {
-            "title": "Location radius",
-            "$ref": "./coordinates.json",
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "uniqueItems": true,
-            "items": [
-                {
-                    "title": "Radius",
-                    "description": "Radius in Meter.",
-                    "examples": ["56.42"],
-                    "type": "number"
-                },
-                {
-                    "title": "Maximum height",
-                    "description": "Maximum date of the  trees birthday.",
-                    "examples": ["2018-11-13"],
-                    "type": "string",
-                    "format": "date"
-                }
-            ]
-        },
-        {
-            "title": "3D representation of tree",
-            "type": "object",
-            "description": "absolute or relative path to file",
-            "properties": {
-                "obj": {
-                    "title": "3D graphics file",
-                    "type": "string",
-                    "format": "url"
-                },
-                "las": {
-                    "title": "Point Cloud File",
-                    "type": "string",
-                    "format": "url"
-                },
-                "laz": {
-                    "title": "Point Cloud File",
-                    "type": "string",
-                    "format": "url"
-                }
-            }
         }
     ],
     "additionalItems": false
