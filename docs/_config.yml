@@ -7,6 +7,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vinv.io" # the base hostname & protocol for your site, e.g. http://example.com
 name: "vinv Virtual Inventory"
+description: " vinv documentation"
 language: "en"
 tags: "forestry, inventory, vinv, standard, exchange"
 
@@ -22,4 +23,4 @@ defaults:
   - scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "default"
+      layout: "page"

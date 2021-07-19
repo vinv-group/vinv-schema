@@ -1,5 +1,4 @@
 ---
-layout: default
 language: "en"
 title: ".vinv Schema Documentation"
 type: "website"
@@ -8,4 +7,4 @@ description: "vinv standardizes forest inventory data enabling further automated
 url: "/"
 ---
 
-[0.1-alpha](./0.1-alpha/0 "open original schema")
+{% include_relative README.md %}

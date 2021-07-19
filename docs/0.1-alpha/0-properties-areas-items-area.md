@@ -1,15 +1,15 @@
 # Area Schema
 
 ```txt
-https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.json#/properties/areas/items/0
+https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.min.json#/properties/areas/items/0
 ```
 
 Area Details
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
-| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [0.1-alpha.schema.json\*](../../out/0.1-alpha.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                 |
+| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [0.1-alpha.schema.min.json\*](../../dist/0.1-alpha.schema.min.json "open original schema") |
 
 ## 0 Type
 
@@ -17,9 +17,9 @@ Area Details
 
 # Area Properties
 
-| Property              | Type    | Required | Nullable       | Defined by                                                                                                                                                                                              |
-| :-------------------- | ------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Additional Properties | `array` | Optional | cannot be null | [vinv schema](0-definitions-area-definition.md "https&#x3A;//raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.json#/properties/areas/items/0/additionalProperties") |
+| Property              | Type    | Required | Nullable       | Defined by                                                                                                                                                                                           |
+| :-------------------- | ------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Additional Properties | `array` | Optional | cannot be null | [vinv](0-definitions-area-definition.md "https&#x3A;//raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.min.json#/properties/areas/items/0/additionalProperties") |
 
 ## Additional Properties
 
@@ -33,7 +33,7 @@ Additional properties are allowed, as long as they follow this schema:
 
     1.  [Polygon coordinates](0-definitions-area-definition-items-polygon-coordinates.md "check type definition")
 -   cannot be null
--   defined in: [vinv schema](0-definitions-area-definition.md "https&#x3A;//raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.json#/properties/areas/items/0/additionalProperties")
+-   defined in: [vinv](0-definitions-area-definition.md "https&#x3A;//raw.githubusercontent.com/vinv-group/vinv-schema/documentation/dist/0.1-alpha.schema.min.json#/properties/areas/items/0/additionalProperties")
 
 ### additionalProperties Type
 

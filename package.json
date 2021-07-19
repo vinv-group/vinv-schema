@@ -5,7 +5,7 @@
   "scripts": {
     "test": "node ./build/build.js && node --experimental-json-modules ./test/test.js",
     "build": "node ./build/build.js",
-    "documentation": "node ./build/build.js && node --experimental-json-modules ./test/test.js && mkdir -p docs && jsonschema2md -o dist -d dist -o docs/0.1-alpha/"
+    "documentation": "node ./build/build.js && node --experimental-json-modules ./test/test.js && mkdir -p docs && jsonschema2md -x dist -d dist -o docs/0.1-alpha/ -e min.json"
   },
   "repository": {
     "type": "git",
