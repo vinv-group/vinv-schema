@@ -3,11 +3,17 @@
 
 Lightweight open data exchange standard for individual tree based forest management, visualisation &amp; analytics.
 
-This MIT-licensed data schema describes the syntax and semantics to describe forest inventory data and corresponding processes.
+This MIT-licensed data exchange format describes the syntax and semantics to describe forest inventory data and corresponding processes.
 
 VINV allows sharing this information between software that supports `.vinv` files.
 
 [![node ci](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml/badge.svg?branch=main)](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml)
+
+
+| Version Code        | Status  | Documentation |
+| ------------- | ------------- |:-----:|
+| 0.1-alpha      | alpha | [view](./docs/0.1-alpha/0.md) |
+
 
 ## Features
 - Individual tree related data
@@ -22,6 +28,8 @@ VINV allows sharing this information between software that supports `.vinv` file
     - geographic information
     - attributes
     - change history
+- Extensions
+
 
 ## General conditions
 1. **Free Forever**

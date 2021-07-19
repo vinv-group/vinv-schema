@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Additional trunk measurements",
+    "type": ["array", "null"],
+    "uniqueItems": true,
+    "minItems":1,
+    "items": {"$ref": "../vinv.json#/definitions/diameter_height"}
+}
