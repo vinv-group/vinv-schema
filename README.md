@@ -9,9 +9,11 @@ VINV allows sharing this information between software that supports `.vinv` file
 
 [![node ci](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml/badge.svg?branch=main)](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml)
 
+
 | Version Code        | Status  | Documentation |
 | ------------- | ------------- |:-----:|
 | 0.1-alpha      | alpha | [view](./docs/0.1-alpha/0.md) |
+
 
 ## Features
 - Individual tree related data
@@ -27,6 +29,7 @@ VINV allows sharing this information between software that supports `.vinv` file
     - attributes
     - change history
 - Extensions
+
 
 ## General conditions
 1. **Free Forever**
