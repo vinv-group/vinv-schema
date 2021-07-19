@@ -3,9 +3,7 @@ import { promisify } from 'util'
 import Ajv from 'ajv'
 import addFormats from 'ajv-formats'
 
-import schemaBundle from '../dist/0.1-alpha.min.json'
-
-//var schemaBundle = require('../dist/0.1-alpha.min.json');
+import schemaBundle from '../dist/0.1-alpha.schema.json'
 
 
 const ajv = new Ajv({strict: false})

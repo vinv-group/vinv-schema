@@ -70,11 +70,11 @@ export async function validate(version, saveBundle){
       if (!fs.existsSync(distDir)) 
         fs.mkdirSync(distDir);
       
-      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/main/${distDir}/${version}.json`
-      await writeFileAsync(`./${distDir}/${version}.json`, JSON.stringify(bundled_schema, null, 2))
+      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/${distDir}/${version}.schema.json`
+      await writeFileAsync(`./${distDir}/${version}.schema.json`, JSON.stringify(bundled_schema, null, 2))
 
-      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/main/${distDir}/${version}.min.json`
-      await writeFileAsync(`./${distDir}/${version}.min.json`, JSON.stringify(bundled_schema))
+      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/${distDir}/${version}.schema.min.json`
+      await writeFileAsync(`./${distDir}/${version}.schema.min.json`, JSON.stringify(bundled_schema))
 
       console.info('3/3 Schema successfully created in "dist" directory.')
 
