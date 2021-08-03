@@ -69,7 +69,25 @@
                 "0.1-beta"
             ]
         },
+        "id": {
+            "title": "Document ID",
+            "description": "Once created, this ID should never change.",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$",
+            "examples": [
+                "0.1",
+                "0.1-beta"
+            ]
+        },
+        "created": {
+            "title": "Created",
+            "description": "Date and time this document was created.",
+            "examples": ["2018-11-13T20:20:39+00:00"],
+            "type": "string",
+            "format": "date-time"
+        },
         "trees": {
+            "title": "",
             "type": [
                 "array",
                 "null"
@@ -82,14 +100,14 @@
                     "description": "Individual Tree Details",
                     "type": "object",
                     "propertyNames": {
-                        "pattern": "^[A-Za-z0-9_-]*$"
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$"
                     },
                     "additionalProperties": {
                         "$ref": "#/definitions/tree"
                     }
                 },
                 {
-                    "title": "Trees Changes",
+                    "title": "Tree Changes",
                     "type": [
                         "array",
                         "null"
@@ -113,7 +131,7 @@
                     "description": "Track Details",
                     "type": "object",
                     "propertyNames": {
-                        "pattern": "^[A-Za-z0-9_-]*$"
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$"
                     },
                     "additionalProperties": {
                         "$ref": "#/definitions/track"
@@ -140,7 +158,7 @@
                     "description": "Area Details",
                     "type": "object",
                     "propertyNames": {
-                        "pattern": "^[A-Za-z0-9_-]*$"
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$"
                     },
                     "additionalProperties": {"$ref": "#/definitions/area"}
                 },
@@ -161,12 +179,14 @@
             "description": "List of functional extensions",
             "type": "object",
             "propertyNames": {
-                "pattern": "^[A-Za-z0-9_-]*$"
+                "pattern": "^[A-Za-z0-9_-]{1,36}$"
             },
             "properties": {}
         }
     },
     "required": [
-        "v"
+        "v",
+        "id",
+        "created"
     ]
 }

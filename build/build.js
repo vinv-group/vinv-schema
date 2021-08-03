@@ -1,7 +1,7 @@
 import fs from 'fs'
 import  { validate }  from '../build/schema-bundle.js'
 
-const distDir = 'dist';
+const distDir = '0.1-alpha/dist';
 
 try{
     
