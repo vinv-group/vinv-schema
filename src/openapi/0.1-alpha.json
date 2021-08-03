@@ -1,0 +1,164 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "vinv",
+        "description": "Lightweight open data exchange standard for individual tree based forest management, visualisation & analytics.",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.vinv.io/support",
+            "email": "support@vinv.io"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://github.com/vinv-group/vinv-schema/blob/main/LICENSE"
+        },
+        "version": "0.1-alpha"
+    },
+    "externalDocs": {
+        "description": "Find out more about vinv",
+        "url": "https://vinv.io"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:18512/",
+            "description": "Localhost"
+        },
+        {
+            "url": "https://api.vinv.io/v1",
+            "description": "vinv"
+        }
+    ],
+    "paths": {
+        "/trees": {
+            "get": {
+                "tags": [
+                    "Trees"
+                ],
+                "description": "Returns all trees",
+                "responses": {
+                    "200": {
+                        "description": "A list of pets.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "vinv_jwt_auth": []
+                    }
+                ]
+            }
+        },
+        "/tree": {
+            "post": {
+                "tags": [
+                    "Tree"
+                ],
+                "description": "Creates new Tree",
+                "operationId": "addTree",
+                "responses": {
+                    "200": {
+                        "description": "Add Individual Tree.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "error payload",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorModel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tree/{treeId}": {
+            "get": {
+                "description": "Returns tree based on ID",
+                "summary": "Find tree by ID",
+                "operationId": "getTreeById",
+                "tags": [
+                    "Tree"
+                ],
+                "parameters": [
+                    {
+                        "name": "treeId",
+                        "in": "path",
+                        "description": "ID of tree to use",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Individual Tree.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/tree"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "vinv_jwt_auth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "description": "Authorize users by JWT token"
+            }
+        },
+        "schemas": {
+            "tree": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": 66
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            },
+            "ErrorModel": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "integer",
+                        "minimum": 100,
+                        "maximum": 600
+                    }
+                }
+            }
+        }
+    }
+}

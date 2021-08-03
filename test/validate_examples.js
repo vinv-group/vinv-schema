@@ -3,7 +3,7 @@ import { promisify } from 'util'
 import Ajv from 'ajv'
 import addFormats from 'ajv-formats'
 
-import schemaBundle from '../dist/0.1-alpha.schema.json'
+import schemaBundle from '../0.1-alpha/dist/vinv.schema.min.json'
 
 
 const ajv = new Ajv({strict: false})
@@ -13,12 +13,9 @@ const validate = ajv.compile(schemaBundle);
 const readFileAsync = promisify(fs.readFile)
 const readDirAsync = promisify(fs.readdir)
 
-const exampleDirectory = 'examples'
-
-
 async function validateExamples(version){
 
-    const directory = `./${version}/${exampleDirectory}/`
+    const directory = `./${version}/examples/`
 
     try{
         const files = await readDirAsync(directory);

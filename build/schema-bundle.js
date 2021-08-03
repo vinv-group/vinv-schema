@@ -10,14 +10,10 @@ const writeFileAsync = promisify(fs.writeFile)
 const ajv = new Ajv({strict: false})
 addFormats(ajv)
 
-const distDir = 'dist';
-
 function removeNestedIds(schema){
 
   if(schema['$id'])
     delete schema['$id'];
-  /*if(schema['$schema'])
-    delete schema['$schema'];*/
 
   if(typeof schema === 'object'){
     for(let i in schema) 
@@ -66,15 +62,15 @@ export async function validate(version, saveBundle){
   */
   if(save){
     try{
-
-      if (!fs.existsSync(distDir)) 
-        fs.mkdirSync(distDir);
+      var distDirectory = `./${version}/dist`;
+      if (!fs.existsSync(distDirectory)) 
+        fs.mkdirSync(distDirectory);
       
-      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/${distDir}/${version}.schema.json`
-      await writeFileAsync(`./${distDir}/${version}.schema.json`, JSON.stringify(bundled_schema, null, 2))
+      bundled_schema['$id'] = `https://schema.vinv.io/${version}/dist/vinv.json`
+      await writeFileAsync(`${distDirectory}/vinv.schema.json`, JSON.stringify(bundled_schema, null, 2))
 
-      bundled_schema['$id'] = `https://raw.githubusercontent.com/vinv-group/vinv-schema/documentation/${distDir}/${version}.schema.min.json`
-      await writeFileAsync(`./${distDir}/${version}.schema.min.json`, JSON.stringify(bundled_schema))
+      bundled_schema['$id'] = `https://schema.vinv.io/${version}/dist/vinv.min.json`
+      await writeFileAsync(`${distDirectory}/vinv.schema.min.json`, JSON.stringify(bundled_schema))
 
       console.info('3/3 Schema successfully created in "dist" directory.')
 

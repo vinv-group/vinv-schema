@@ -5,7 +5,7 @@ This documentation describes syntax and semantic of vinv exchange format.
 
 | Version Code        | Status  | Documentation |
 | ------------- | ------------- |:-----:|
-| 0.1-alpha      | alpha | [view](0.1-alpha/0) |
+| 0.1-alpha      | alpha | [view](0.1-alpha/0.md) |
 
 ## Any Questions
 
