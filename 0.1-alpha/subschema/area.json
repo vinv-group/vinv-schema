@@ -5,7 +5,7 @@
     "type": "array",
     "minItems": 1,
     "additionalItem": false,
-    "items": [
+    "items": 
         {
             "type": "array",
             "title": "Polygon coordinates",
@@ -14,9 +14,8 @@
                 "type": "array",
                 "title": "Polygon coordinates",
                 "items": {"$ref": "../vinv.json#/definitions/location"},
-                
                 "minItems": 3
             }
         }
-    ]
+    
 }

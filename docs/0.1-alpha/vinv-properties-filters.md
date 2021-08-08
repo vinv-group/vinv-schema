@@ -1,4 +1,4 @@
-# Untitled undefined type in vinv Schema
+# Untitled array in vinv Schema
 
 ```txt
 https://schema.vinv.io/0.1-alpha/dist/vinv.json#/properties/filters

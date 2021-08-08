@@ -1,26 +1,131 @@
 # Area Changes Schema
 
 ```txt
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/properties/areas/items/1/items
+https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history
 ```
 
 Changes to the track data
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
+| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
 
-## items Type
+## area_history Type
 
-an array where each item follows the corresponding schema in the following list:
+`object` ([Area Changes](vinv-definitions-area-changes.md))
 
-1.  [Track Id](vinv-definitions-area-changes-items-track-id.md "check type definition")
-2.  [Change](vinv-definitions-area-changes-items-change.md "check type definition")
-3.  [Area definition](vinv-definitions-area-definition.md "check type definition")
-
-## items Constraints
+## area_history Constraints
 
 **maximum number of items**: the maximum number of items for this array is: `3`
 
 **minimum number of items**: the minimum number of items for this array is: `3`
+
+# Area Changes Properties
+
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                       |
+| :------------------------ | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                 | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/id")      |
+| [changedAt](#changedat)   | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/changedAt") |
+| [definition](#definition) | `array`  | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/definition")               |
+| [uId](#uid)               | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/uId")       |
+
+## id
+
+URL-friendly id
+
+
+`id`
+
+-   is optional
+-   Type: `string` ([Track Id](vinv-definitions-area-changes-properties-track-id.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/id")
+
+### id Type
+
+`string` ([Track Id](vinv-definitions-area-changes-properties-track-id.md))
+
+### id Constraints
+
+**maximum length**: the maximum number of characters for this string is: `36`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Za-z0-9_-]*$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D*%24 "try regular expression with regexr.com")
+
+## changedAt
+
+Date and time when change happened.
+
+
+`changedAt`
+
+-   is optional
+-   Type: `string` ([Change](vinv-definitions-area-changes-properties-change.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/changedAt")
+
+### changedAt Type
+
+`string` ([Change](vinv-definitions-area-changes-properties-change.md))
+
+### changedAt Constraints
+
+**date time**: the string must be a date time string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+### changedAt Examples
+
+```json
+"2018-11-13T20:20:39+00:00"
+```
+
+## definition
+
+
+
+
+`definition`
+
+-   is optional
+-   Type: `object[][][]` ([Location](vinv-definitions-location.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/definition")
+
+### definition Type
+
+`object[][][]` ([Location](vinv-definitions-location.md))
+
+### definition Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+## uId
+
+
+
+
+`uId`
+
+-   is optional
+-   Type: `string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/uId")
+
+### uId Type
+
+`string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
+
+### uId Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Za-z0-9_-]{1,36}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D%7B1%2C36%7D%24 "try regular expression with regexr.com")

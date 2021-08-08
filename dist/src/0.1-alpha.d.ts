@@ -1,8 +1,7 @@
-declare function schema(data: any): boolean;
-declare function tree(data: any): boolean;
-declare function track(data: any): boolean;
-declare function area(data: any): boolean;
-declare function getSchema(): {
+export declare function schema(data: any): boolean;
+export declare function tree(data: any): boolean;
+export declare function area(data: any): boolean;
+export declare function getSchema(): {
     $schema: string;
     $id: string;
     title: string;
@@ -11,174 +10,96 @@ declare function getSchema(): {
     additionalProperties: boolean;
     definitions: {
         tree: {
-            $schema: string;
             title: string;
             description: string;
             type: string;
-            minItems: number;
-            maxItems: number;
-            items: ({
-                $ref: string;
-                title?: undefined;
-                description?: undefined;
-                type?: undefined;
-                minimum?: undefined;
-                maximum?: undefined;
-                multipleOf?: undefined;
-                examples?: undefined;
-                format?: undefined;
-                items?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                minimum: number;
-                maximum: number;
-                multipleOf: number;
-                $ref?: undefined;
-                examples?: undefined;
-                format?: undefined;
-                items?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                $ref: string;
-                minimum?: undefined;
-                maximum?: undefined;
-                multipleOf?: undefined;
-                examples?: undefined;
-                format?: undefined;
-                items?: undefined;
-            } | {
-                title: string;
-                description: string;
-                examples: string[];
-                type: string[];
-                format: string;
-                $ref?: undefined;
-                minimum?: undefined;
-                maximum?: undefined;
-                multipleOf?: undefined;
-                items?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                items: {
+            required: string[];
+            properties: {
+                id: {
+                    type: string;
+                    pattern: string;
+                };
+                location: {
                     $ref: string;
                 };
-                $ref?: undefined;
-                minimum?: undefined;
-                maximum?: undefined;
-                multipleOf?: undefined;
-                examples?: undefined;
-                format?: undefined;
-            })[];
+                species: {
+                    $ref: string;
+                };
+                dbh: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    minimum: number;
+                    maximum: number;
+                    multipleOf: number;
+                };
+                height: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    minimum: number;
+                    maximum: number;
+                    multipleOf: number;
+                };
+                trunk: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    $ref: string;
+                };
+                crown: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    $ref: string;
+                };
+                birth: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    format: string;
+                };
+                image: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    items: {
+                        $ref: string;
+                    };
+                };
+            };
         };
         trees_history: {
-            $schema: string;
             title: string;
             description: string;
             type: string;
-            minItems: number;
-            maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                pattern: string;
-                maxLength: number;
-                examples?: undefined;
-                format?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                examples: string[];
-                type: string;
-                format: string;
-                pattern?: undefined;
-                maxLength?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                $ref: string;
-                type?: undefined;
-                pattern?: undefined;
-                maxLength?: undefined;
-                examples?: undefined;
-                format?: undefined;
-            })[];
-        };
-        track: {
-            $schema: string;
-            title: string;
-            description: string;
-            type: string;
-            minItems: number;
-            maxItems: number;
-            additionalItem: boolean;
-            items: ({
-                title: string;
-                minItems: number;
-                type: string;
-                items: {
-                    $ref: string;
-                }[];
-                additionalItems: {
+            required: string[];
+            properties: {
+                id: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    pattern: string;
+                    maxLength: number;
+                };
+                changedAt: {
+                    title: string;
+                    description: string;
+                    examples: string[];
+                    type: string;
+                    format: string;
+                };
+                definition: {
+                    title: string;
+                    description: string;
                     $ref: string;
                 };
-                description?: undefined;
-                minimum?: undefined;
-                maximum?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string;
-                minimum: number;
-                maximum: number;
-                minItems?: undefined;
-                items?: undefined;
-                additionalItems?: undefined;
-            })[];
-        };
-        track_history: {
-            $schema: string;
-            title: string;
-            description: string;
-            type: string;
-            minItems: number;
-            maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                pattern: string;
-                maxLength: number;
-                examples?: undefined;
-                format?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                examples: string[];
-                type: string;
-                format: string;
-                pattern?: undefined;
-                maxLength?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                $ref: string;
-                type?: undefined;
-                pattern?: undefined;
-                maxLength?: undefined;
-                examples?: undefined;
-                format?: undefined;
-            })[];
+                uId: {
+                    title: string;
+                    type: string;
+                    pattern: string;
+                };
+            };
         };
         area: {
             $schema: string;
@@ -199,7 +120,7 @@ declare function getSchema(): {
                     };
                     minItems: number;
                 };
-            }[];
+            };
         };
         area_history: {
             $schema: string;
@@ -208,56 +129,49 @@ declare function getSchema(): {
             type: string;
             minItems: number;
             maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                pattern: string;
-                maxLength: number;
-                examples?: undefined;
-                format?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                examples: string[];
-                type: string;
-                format: string;
-                pattern?: undefined;
-                maxLength?: undefined;
-                $ref?: undefined;
-            } | {
-                title: string;
-                description: string;
-                $ref: string;
-                type?: undefined;
-                pattern?: undefined;
-                maxLength?: undefined;
-                examples?: undefined;
-                format?: undefined;
-            })[];
+            properties: {
+                id: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    pattern: string;
+                    maxLength: number;
+                };
+                changedAt: {
+                    title: string;
+                    description: string;
+                    examples: string[];
+                    type: string;
+                    format: string;
+                };
+                definition: {
+                    title: string;
+                    description: string;
+                    $ref: string;
+                };
+                uId: {
+                    title: string;
+                    type: string;
+                    pattern: string;
+                };
+            };
         };
         location: {
-            $schema: string;
             title: string;
             description: string;
             type: string;
-            minItems: number;
-            maxItems: number;
-            additionalItems: boolean;
-            items: ({
-                $ref: string;
-                title?: undefined;
-                description?: undefined;
-                type?: undefined;
-                minimum?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                minimum: number;
-                $ref?: undefined;
-            })[];
+            required: string[];
+            properties: {
+                coordinates: {
+                    $ref: string;
+                };
+                accuracy: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    minimum: number;
+                };
+            };
         };
         coordinates: {
             $schema: string;
@@ -267,57 +181,22 @@ declare function getSchema(): {
             minItems: number;
             maxItems: number;
             additionalItems: boolean;
-            items: ({
+            items: {
                 title: string;
                 description: string;
                 type: string;
-                minimum: number;
-                maximum: number;
-            } | {
-                type: string;
-                title: string;
-                description: string;
-                minimum: number;
-                maximum?: undefined;
-            })[];
-        };
-        dbh: {
-            $schema: string;
-            title: string;
-            description: string;
-            type: string;
-            minItems: number;
-            maxItems: number;
-            items: ({
-                type: string;
-                title: string;
-                description: string;
-                const: number;
-                default: number;
-                minimum?: undefined;
-                maximum?: undefined;
-            } | {
-                type: string;
-                title: string;
-                description: string;
-                minimum: number;
-                maximum: number;
-                const?: undefined;
-                default?: undefined;
-            })[];
+            };
         };
         species: {
-            $schema: string;
             title: string;
             description: string;
             type: string;
             pattern: string;
-            examples: string[];
         };
         dimensions_trunk: {
             $schema: string;
             title: string;
-            type: string[];
+            type: string;
             uniqueItems: boolean;
             minItems: number;
             items: {
@@ -327,7 +206,7 @@ declare function getSchema(): {
         dimensions_crown: {
             $schema: string;
             title: string;
-            type: string[];
+            type: string;
             uniqueItems: boolean;
             minItems: number;
             items: {
@@ -342,118 +221,29 @@ declare function getSchema(): {
             minItems: number;
             maxItems: number;
             additionalItems: boolean;
-            items: ({
-                type: string;
-                title: string;
-                description: string;
-                minimum: number;
-                maximum: number;
-                examples: number[];
-            } | {
-                type: string;
-                title: string;
-                description: string;
-                minimum: number;
-                maximum: number;
-                examples?: undefined;
-            })[];
-        };
-        filter: {
-            $schema: string;
-            title: string;
-            type: string;
-            items: ({
-                title: string;
-                type: string[];
-                minItems: number;
-                maxItems: number;
-                uniqueItems: boolean;
-                items: ({
-                    $ref: string;
-                    title?: undefined;
-                    description?: undefined;
-                    examples?: undefined;
-                    type?: undefined;
-                } | {
+            properties: {
+                height: {
+                    type: string;
                     title: string;
                     description: string;
-                    examples: string[];
-                    type: string;
-                    $ref?: undefined;
-                })[];
-                description?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                items: {
-                    $ref: string;
+                    minimum: number;
+                    maximum: number;
+                    examples: number[];
                 };
-                minItems?: undefined;
-                maxItems?: undefined;
-                uniqueItems?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                minItems: number;
-                maxItems: number;
-                items: ({
-                    title: string;
-                    type: string[];
-                    minimum: number;
-                    maximum?: undefined;
-                } | {
-                    title: string;
-                    type: string[];
-                    maximum: number;
-                    minimum?: undefined;
-                })[];
-                uniqueItems?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                minItems: number;
-                maxItems: number;
-                items: ({
-                    title: string;
-                    type: string[];
-                    minimum: number;
-                    multipleOf: number;
-                    maximum?: undefined;
-                } | {
-                    title: string;
-                    type: string[];
-                    maximum: number;
-                    multipleOf: number;
-                    minimum?: undefined;
-                })[];
-                uniqueItems?: undefined;
-            } | {
-                title: string;
-                description: string;
-                type: string[];
-                minItems: number;
-                maxItems: number;
-                items: {
+                diameter: {
+                    type: string;
                     title: string;
                     description: string;
-                    examples: string[];
-                    type: string;
-                    format: string;
-                }[];
-                uniqueItems?: undefined;
-            })[];
-            additionalItems: boolean;
+                    minimum: number;
+                    maximum: number;
+                };
+            };
         };
         image: {
-            $schema: string;
             title: string;
             description: string;
             type: string;
             pattern: string;
-            examples: string[];
         };
     };
     properties: {
@@ -468,91 +258,42 @@ declare function getSchema(): {
             pattern: string;
             examples: string[];
         };
-        trees: {
-            type: string[];
-            minItems: number;
-            maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                propertyNames: {
-                    pattern: string;
-                };
-                additionalProperties: {
-                    $ref: string;
-                };
-                items?: undefined;
-            } | {
-                title: string;
-                type: string[];
-                items: {
-                    $ref: string;
-                };
-                description?: undefined;
-                propertyNames?: undefined;
-                additionalProperties?: undefined;
-            })[];
+        id: {
+            title: string;
+            description: string;
+            type: string;
+            pattern: string;
+            examples: string[];
         };
-        tracks: {
-            type: string[];
-            minItems: number;
-            maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                propertyNames: {
-                    pattern: string;
-                };
-                additionalProperties: {
-                    $ref: string;
-                };
-                items?: undefined;
-            } | {
-                type: string[];
-                items: {
-                    $ref: string;
-                };
-                title?: undefined;
-                description?: undefined;
-                propertyNames?: undefined;
-                additionalProperties?: undefined;
-            })[];
+        created: {
+            title: string;
+            description: string;
+            examples: string[];
+            type: string;
+            format: string;
         };
-        areas: {
-            type: string[];
-            minItems: number;
-            maxItems: number;
-            items: ({
-                title: string;
-                description: string;
-                type: string;
-                propertyNames: {
-                    pattern: string;
+        inventory: {
+            title: string;
+            description: string;
+            type: string;
+            properties: {
+                treeList: {
+                    title: string;
+                    description: string;
+                    type: string;
+                    items: {
+                        $ref: string;
+                    };
                 };
-                additionalProperties: {
-                    $ref: string;
+                treeHistory: {
+                    title: string;
+                    type: string;
+                    items: {
+                        $ref: string;
+                    };
                 };
-                items?: undefined;
-            } | {
-                type: string[];
-                items: {
-                    $ref: string;
-                };
-                title?: undefined;
-                description?: undefined;
-                propertyNames?: undefined;
-                additionalProperties?: undefined;
-            })[];
-        };
-        filters: {
-            type: string[];
-            minItems: number;
-            maxItems: number;
-            items: {
-                $ref: string;
             };
+            required: string[];
         };
         extensions: {
             title: string;
@@ -566,8 +307,7 @@ declare function getSchema(): {
     };
     required: string[];
 };
-declare function getVersion(): string;
-declare const initialSchema: {
+export declare function getVersion(): string;
+export declare const initialSchema: {
     v: string;
 };
-export { initialSchema, schema, tree, track, area, getSchema, getVersion };
