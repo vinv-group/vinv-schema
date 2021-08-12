@@ -13,10 +13,7 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/ite
 
 ## items Type
 
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Coordinates](vinv-definitions-coordinates.md "check type definition")
-2.  [Accuracy](vinv-definitions-location-items-accuracy.md "check type definition")
+`object[]` ([Location](vinv-definitions-location.md))
 
 ## items Constraints
 

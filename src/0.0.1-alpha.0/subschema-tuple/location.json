@@ -1,5 +1,4 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Location",
     "description": "",
     "type": "array",
@@ -10,11 +9,11 @@
         {
             "$ref": "./coordinates.json"
         },
-        {
+        "accuracy": {
             "title": "Accuracy",
             "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
-            "type": ["number", "null"],
+            "type": "number",
             "minimum": 0
         }
-    ]
+    }
 }

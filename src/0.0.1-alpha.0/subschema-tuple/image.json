@@ -1,12 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Images",
     "description": "A universal resource identifier (URI), according to RFC3986.",
     "type": "string",
-    "pattern": "uri",
-    "examples": [
-        "https://via.placeholder.com/150.png",
-        "https://via.placeholder.com/400x300.png",
-        "https://via.placeholder.com/450x800.png"
-    ]
+    "pattern": "uri"
 }

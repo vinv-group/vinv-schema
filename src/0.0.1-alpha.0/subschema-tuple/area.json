@@ -5,7 +5,7 @@
     "type": "array",
     "minItems": 1,
     "additionalItem": false,
-    "items": [
+    "items": 
         {
             "type": "array",
             "title": "Polygon coordinates",
@@ -18,5 +18,5 @@
                 "minItems": 3
             }
         }
-    ]
+    
 }

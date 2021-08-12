@@ -1,7 +1,11 @@
 # Images Schema
 
 ```txt
+<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-images.md
 https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/7/items
+=======
+https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/image/items
+>>>>>>> main:docs/0.1-alpha/vinv-definitions-images.md
 ```
 
 A universal resource identifier (URI), according to RFC3986.
@@ -24,17 +28,3 @@ uri
 ```
 
 [try pattern](https://regexr.com/?expression=uri "try regular expression with regexr.com")
-
-## items Examples
-
-```json
-"https://via.placeholder.com/150.png"
-```
-
-```json
-"https://via.placeholder.com/400x300.png"
-```
-
-```json
-"https://via.placeholder.com/450x800.png"
-```
