@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export * as V001Alpha from './0.0.1-alpha.0';
+=======
 import * as V01Alpha from './0.1-alpha';
 export type { area_history } from './models/area_history';
 export type { areas } from './models/areas';
@@ -18,3 +21,4 @@ export type { tree } from './models/tree';
 export type { trees_history } from './models/trees_history';
 export type { v } from './models/v';
 export {V01Alpha};
+>>>>>>> main

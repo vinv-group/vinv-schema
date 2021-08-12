@@ -5,40 +5,17 @@ Lightweight open data exchange standard for individual tree based forest managem
 
 This MIT-licensed data exchange format describes the syntax and semantics to describe forest inventory data and corresponding processes.
 
-VINV allows sharing this information between software that supports `.vinv` files.
+vinv allows sharing this information between software that supports `.vinv` files.
 
 [![node ci](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml/badge.svg?branch=main)](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml)
 
-
 | Version Code        | Status  | Documentation |
 | ------------- | ------------- |:-----:|
-| 0.1-alpha      | alpha | [view](./docs/0.1-alpha/0.md) |
+| 0.0.1-alpha.0      | alpha | [view](./docs/0.0.1-alpha.0/0.md) |
 
+## Use
 
-## Features
-- Individual tree related data
-    - geographic information
-    - attributes
-    - change history
-- Road / skid trail information
-    - geographic information
-    - attributes
-    - change history
-- Forest stand
-    - geographic information
-    - attributes
-    - change history
-- Extensions
-
-
-## General conditions
-1. **Free Forever**
-2. **Open Source**
-     - Source code is hosted on github from the very first second
-     - Discussions and decisions are documented in Slack
-3. Possibility of **contribution** for everyone at any time
-    - Join our **Slack** Workspace for content contributions and discussions
-    - Create pull requests in GitHub for technical contributions
+Find more information on [vinv.io](https://vinv.io)
 
 ## Stay In Touch & Questions
 
