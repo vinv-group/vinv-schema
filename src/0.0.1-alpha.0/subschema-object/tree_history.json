@@ -1,0 +1,36 @@
+{
+    "title": "Tree Changes",
+    "description": "Changes to the tree data",
+    "type": "object",
+    "required": [
+        "id",
+        "changeAt",
+        "definition"
+    ],
+    "properties": {
+        "id": {
+            "title": "Tree Id",
+            "description": "URL-friendly id",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$",
+            "maxLength": 36
+        },
+        "changedAt": {
+            "title": "Time of Change",
+            "description": "Date and time when change happened.",
+            "examples": ["2018-11-13T20:20:39+00:00"],
+            "type": "string",
+            "format": "date-time"
+        },
+        "definition": {
+            "title": "Tree data change",
+            "description": "Tree state before manipulation.",
+            "$ref": "./tree.json"
+        },
+        "uId": {
+            "title": "UserId",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$"
+        }
+    }
+}

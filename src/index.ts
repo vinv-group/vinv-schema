@@ -1,3 +1,1 @@
-import * as V01Alpha from './0.1-alpha';
-
-export {V01Alpha};
+export * as V001Alpha from './0.0.1-alpha.0';

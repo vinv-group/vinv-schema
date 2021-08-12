@@ -10,7 +10,9 @@ import json from '@rollup/plugin-json';
 import pkg from './package.json'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from "rollup-plugin-terser";
+import babel from '@rollup/plugin-babel'
 
+const extensions = ['.js', '.ts']
 
 export default [
     {
@@ -32,6 +34,10 @@ export default [
             }),
             nodeResolve({
                 browser: true
+            }),
+            babel({
+                exclude: 'node_modules/**',
+                extensions
             }),
             json(),
             commonjs()

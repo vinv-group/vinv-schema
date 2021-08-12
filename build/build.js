@@ -1,18 +1,18 @@
 import fs from 'fs'
 import  { validate }  from '../build/schema-bundle.js'
 
-const distDir = '0.1-alpha/dist';
+console.log('Building:' + process.env.ENV_VINV_VERSION);
 
 try{
     
-    if (fs.existsSync(distDir)) 
-        fs.rmdirSync(distDir, { recursive: true })
+    if (fs.existsSync(process.env.ENV_VINV_VERSION)) 
+        fs.rmdirSync(process.env.ENV_VINV_VERSION, { recursive: true })
 
-    if (!fs.existsSync(distDir)) 
-        fs.mkdirSync(distDir)
+    if (!fs.existsSync(process.env.ENV_VINV_VERSION)) 
+        fs.mkdirSync(process.env.ENV_VINV_VERSION)
 
 
-    await validate('0.1-alpha', true)
+    await validate(process.env.ENV_VINV_VERSION, true)
 }catch(error){
     console.error(error);
 }
