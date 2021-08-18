@@ -1,4 +1,3 @@
-<p align="center"><a href="https://vinv.io" target="_blank" rel="noopener noreferrer"><img width="100" src="https://vinv.io/logo_transparent.0f8a1b38.png" alt="vinv logo"></a></p>
 <h1 align="center">vinv-schema</h1>
 
 Lightweight open data exchange standard for individual tree based forest management, visualisation &amp; analytics.
@@ -11,7 +10,7 @@ vinv allows sharing this information between software that supports `.vinv` file
 
 | Version Code        | Status  | Documentation |
 | ------------- | ------------- |:-----:|
-| 0.0.1-alpha.0      | alpha | [view](./docs/0.0.1-alpha.0/0.md) |
+| 0.0.1-alpha.0      | alpha | [view](./docs/0.0.1-alpha.0/vinv.md) |
 
 ## Use
 
