@@ -55,7 +55,7 @@
         {
             "title": "Images",
             "description": "List of absolute or relative path to file",
-            "type": "array",
+            "type": ["array", "null"],
             "items": {
                 "$ref": "./image.json"
             }

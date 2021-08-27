@@ -62,7 +62,10 @@
         {
           "title": "Images",
           "description": "List of absolute or relative path to file",
-          "type": "array",
+          "type": [
+            "array",
+            "null"
+          ],
           "items": {
             "$ref": "#/definitions/image"
           }
@@ -72,21 +75,18 @@
     "trees_history": {
       "title": "Tree Changes",
       "description": "Changes to the tree data",
-      "type": "object",
-      "required": [
-        "id",
-        "changeAt",
-        "definition"
-      ],
-      "properties": {
-        "id": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": [
+        {
           "title": "Tree Id",
           "description": "URL-friendly id",
           "type": "string",
           "pattern": "^[A-Za-z0-9_-]{1,36}$",
           "maxLength": 36
         },
-        "changedAt": {
+        {
           "title": "Time of Change",
           "description": "Date and time when change happened.",
           "examples": [
@@ -95,12 +95,12 @@
           "type": "string",
           "format": "date-time"
         },
-        "definition": {
+        {
           "title": "Tree data change",
           "description": "Tree state before manipulation.",
           "$ref": "#/definitions/tree"
         }
-      }
+      ]
     },
     "track": {
       "$schema": "http://json-schema.org/draft-07/schema#",
@@ -304,7 +304,7 @@
       "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Diameter at height",
       "description": "Array including height and diameter at height",
-      "type": "object",
+      "type": "array",
       "minItems": 2,
       "maxItems": 2,
       "additionalItems": false,
