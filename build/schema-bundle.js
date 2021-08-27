@@ -36,9 +36,10 @@ export async function validate(version, saveBundle){
   */
   try{
     
-    let schema = await import(`../src/${version}/vinv.json`);
+    let schema = await import(`../src/${version}/vinv-tuple.json`);
 
-    // Object/Type Version
+    
+    // Tuple Version
     for (var key in schema.default.definitions) {
       if (schema.default.definitions[key].hasOwnProperty('$ref')) {
         schema.default.definitions[key]['$ref'] = `./subschema-tuple/` + /[^/]*$/.exec(schema.default.definitions[key]['$ref'])[0];
@@ -46,7 +47,8 @@ export async function validate(version, saveBundle){
     }
     await writeFileAsync(`./src/${version}/vinv-tuple.json`, JSON.stringify(schema.default, null, 2))
 
-    // Tuple Version
+    schema = await import(`../src/${version}/vinv-object.json`);
+    // Object/Type Version
     for (var key in schema.default.definitions) {
       if (schema.default.definitions[key].hasOwnProperty('$ref')) {
         schema.default.definitions[key]['$ref'] = `./subschema-object/` + /[^/]*$/.exec(schema.default.definitions[key]['$ref'])[0];

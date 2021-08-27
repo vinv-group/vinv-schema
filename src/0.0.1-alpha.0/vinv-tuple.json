@@ -55,7 +55,7 @@
     "$schema": {
       "type": "string",
       "examples": [
-        "https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/vinv.json"
+        "https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
       ]
     },
     "v": {
@@ -90,9 +90,12 @@
         "tree_status": {
           "title": "Tree List",
           "description": "Individual Tree Details",
-          "type": "array",
-          "items": {
+          "type": "object",
+          "additionalProperties": {
             "$ref": "#/definitions/tree"
+          },
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9_-]{1,36}$"
           }
         },
         "tree_history": {
