@@ -6,7 +6,7 @@
   "module": "dist/schema.umd.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
-    "build": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./build/build.js",
+    "build": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./build/build.js && npm run test",
     "test": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./test/test.js",
     "documentation": "npm run test && jsonschema2md -x - -d 0.0.1-alpha.0 -o docs/0.0.1-alpha.0/ -e min.json",
     "build-0.1-alpha": "npm run build && npm run buildRollup && npm run documentation",
