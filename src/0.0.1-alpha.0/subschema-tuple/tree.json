@@ -49,7 +49,7 @@
         {
             "title": "Birthday",
             "description": "Birthday of the tree",
-            "type": "string",
+            "type": ["string", "null"],
             "format": "date"
         },
         {
