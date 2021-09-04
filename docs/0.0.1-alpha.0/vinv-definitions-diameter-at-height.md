@@ -1,29 +1,19 @@
 # Diameter at height Schema
 
 ```txt
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-diameter-at-height.md
 https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5/items
-=======
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/crown/items
->>>>>>> main:docs/0.1-alpha/vinv-definitions-diameter-at-height.md
 ```
 
 Array including height and diameter at height
 
 
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-diameter-at-height.md
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
-=======
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
->>>>>>> main:docs/0.1-alpha/vinv-definitions-diameter-at-height.md
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
 
 ## items Type
 
-`object` ([Diameter at height](vinv-definitions-diameter-at-height.md))
+`array` ([Diameter at height](vinv-definitions-diameter-at-height.md))
 
 ## items Constraints
 
@@ -33,10 +23,10 @@ Array including height and diameter at height
 
 # Diameter at height Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                 |
-| :-------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [height](#height)     | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/diameter_height/properties/height")     |
-| [diameter](#diameter) | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/diameter_height/properties/diameter") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                    |
+| :-------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [height](#height)     | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/height")     |
+| [diameter](#diameter) | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/diameter") |
 
 ## height
 
@@ -48,7 +38,7 @@ Height of tree in PERCENT where diameter is measured
 -   is optional
 -   Type: `number` ([Height](vinv-definitions-diameter-at-height-properties-height.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/diameter_height/properties/height")
+-   defined in: [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/height")
 
 ### height Type
 
@@ -80,7 +70,7 @@ Diameter in CENTIMETER at measured height
 -   is optional
 -   Type: `number` ([Diameter](vinv-definitions-diameter-at-height-properties-diameter.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/diameter_height/properties/diameter")
+-   defined in: [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/diameter")
 
 ### diameter Type
 

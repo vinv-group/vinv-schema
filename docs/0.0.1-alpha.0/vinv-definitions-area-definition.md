@@ -1,11 +1,7 @@
 # Area definition Schema
 
 ```txt
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-area-definition.md
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/items/2
-=======
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/definition
->>>>>>> main:docs/0.1-alpha/vinv-definitions-area-definition.md
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition
 ```
 
 
@@ -17,8 +13,12 @@ https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/proper
 
 ## definition Type
 
-`object[][][]` ([Location](vinv-definitions-location.md))
+an array where each item follows the corresponding schema in the following list:
+
+1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
 
 ## definition Constraints
+
+**maximum number of items**: the maximum number of items for this array is: `1`
 
 **minimum number of items**: the minimum number of items for this array is: `1`

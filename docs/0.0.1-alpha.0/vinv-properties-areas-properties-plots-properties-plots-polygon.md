@@ -1,25 +1,25 @@
-# Area List Schema
+# Plots Polygon Schema
 
 ```txt
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots/properties/plotPolygon
 ```
 
-Area Details
+List of plots (Polygon)
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
 
-## area_status Type
+## plotPolygon Type
 
-`object` ([Area List](vinv-properties-areas-properties-area-list.md))
+`object` ([Plots Polygon](vinv-properties-areas-properties-plots-properties-plots-polygon.md))
 
-# Area List Properties
+# Plots Polygon Properties
 
-| Property              | Type    | Required | Nullable       | Defined by                                                                                                                                                          |
-| :-------------------- | ------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Additional Properties | `array` | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/additionalProperties") |
+| Property              | Type    | Required | Nullable       | Defined by                                                                                                                                                                           |
+| :-------------------- | ------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Additional Properties | `array` | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots/properties/plotPolygon/additionalProperties") |
 
 ## Additional Properties
 
@@ -33,7 +33,7 @@ Additional properties are allowed, as long as they follow this schema:
 
     1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
 -   cannot be null
--   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/additionalProperties")
+-   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots/properties/plotPolygon/additionalProperties")
 
 ### additionalProperties Type
 

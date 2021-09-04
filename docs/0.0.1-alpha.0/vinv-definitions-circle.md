@@ -1,10 +1,10 @@
-# Polygon coordinates Schema
+# Circle Schema
 
 ```txt
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot/oneOf/0
 ```
 
-
+Definition of geo circle by location and radius in meter
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
@@ -13,8 +13,13 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0
 
 ## 0 Type
 
-`array` ([Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md))
+an array where each item follows the corresponding schema in the following list:
+
+1.  [Location](vinv-definitions-location.md "check type definition")
+2.  [Maximal distance from center location in meter](vinv-definitions-circle-items-maximal-distance-from-center-location-in-meter.md "check type definition")
 
 ## 0 Constraints
 
-**minimum number of items**: the minimum number of items for this array is: `3`
+**maximum number of items**: the maximum number of items for this array is: `2`
+
+**minimum number of items**: the minimum number of items for this array is: `2`

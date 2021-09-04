@@ -1,0 +1,9 @@
+{
+    "title": "Plot",
+    "description": "",
+    "additionalProperties": false,
+    "oneOf": [
+        {"$ref": "./circle.json"},
+        {"$ref": "./area.json"}
+    ]
+}

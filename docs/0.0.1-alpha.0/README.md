@@ -11,6 +11,9 @@
 
 -   [Area Changes](./vinv-type-definitions-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area_history`
 -   [Area Changes](./vinv-type-properties-areas-properties-area-changes-list-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history/items`
+-   [Area Changes](./vinv-definitions-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history`
+-   [Area Changes](./vinv-properties-areas-properties-area-changes-list-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history/items`
+-   [Area List](./vinv-properties-areas-properties-area-list.md "Area Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status`
 -   [Areas](./vinv-type-properties-areas.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas`
 -   [Areas](./vinv-properties-areas.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas`
 -   [Coordinates](./vinv-type-definitions-tree-properties-location-properties-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/tree/properties/location/properties/coordinates`
@@ -56,31 +59,48 @@
 -   [Location](./vinv-type-properties-inventory-properties-tree-changes-list-tree-changes-properties-tree-properties-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_history/items/properties/definition/properties/location`
 -   [Location](./vinv-type-properties-areas-properties-area-list-area-definition-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_status/items/items/items/items`
 -   [Location](./vinv-type-properties-areas-properties-area-changes-list-area-changes-properties-area-definition-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history/items/properties/definition/items/items/items`
+-   [Plots](./vinv-properties-areas-properties-plots.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots`
 -   [Tree](./vinv-type-definitions-tree.md "Tree definition") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/tree`
 -   [Tree](./vinv-type-definitions-tree-changes-properties-tree.md "Tree definition") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/trees_history/properties/definition`
 -   [Tree](./vinv-type-properties-inventory-properties-tree-list-tree.md "Tree definition") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_status/items`
 -   [Tree](./vinv-type-properties-inventory-properties-tree-changes-list-tree-changes-properties-tree.md "Tree definition") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_history/items/properties/definition`
 -   [Tree Changes](./vinv-type-definitions-tree-changes.md "Changes to the tree data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/trees_history`
 -   [Tree Changes](./vinv-type-properties-inventory-properties-tree-changes-list-tree-changes.md "Changes to the tree data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_history/items`
+-   [Tree List](./vinv-properties-inventory-properties-tree-list.md "Individual Tree Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status`
 
 ### Arrays
 
 -   [Additional crown measurements](./vinv-type-definitions-additional-crown-measurements.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/dimensions_crown`
+-   [Additional crown measurements](./vinv-definitions-tree-definition-items-additional-crown-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5`
+-   [Additional crown measurements](./vinv-definitions-tree-definition-items-additional-crown-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5`
+-   [Additional crown measurements](./vinv-definitions-additional-crown-measurements.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/dimensions_crown`
+-   [Additional crown measurements](./vinv-definitions-tree-definition-items-additional-crown-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5`
+-   [Additional crown measurements](./vinv-definitions-tree-definition-items-additional-crown-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5`
 -   [Additional trunk measurements](./vinv-type-definitions-additional-trunk-measurements.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/dimensions_trunk`
--   [Area Changes](./vinv-definitions-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history`
--   [Area Changes](./vinv-properties-areas-properties-area-changes-list-area-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history/items`
+-   [Additional trunk measurements](./vinv-definitions-tree-definition-items-additional-trunk-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/4`
+-   [Additional trunk measurements](./vinv-definitions-tree-definition-items-additional-trunk-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/4`
+-   [Additional trunk measurements](./vinv-definitions-additional-trunk-measurements.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/dimensions_trunk`
+-   [Additional trunk measurements](./vinv-definitions-tree-definition-items-additional-trunk-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/4`
+-   [Additional trunk measurements](./vinv-definitions-tree-definition-items-additional-trunk-measurements.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/4`
 -   [Area Changes List](./vinv-type-properties-areas-properties-area-changes-list.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history`
 -   [Area Changes List](./vinv-properties-areas-properties-area-changes-list.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history`
 -   [Area List](./vinv-type-properties-areas-properties-area-list.md "Area Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_status`
--   [Area List](./vinv-properties-areas-properties-area-list.md "Area Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status`
 -   [Area definition](./vinv-type-definitions-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area`
 -   [Area definition](./vinv-type-definitions-area-changes-properties-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area_history/properties/definition`
 -   [Area definition](./vinv-type-properties-areas-properties-area-list-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_status/items`
 -   [Area definition](./vinv-type-properties-areas-properties-area-changes-list-area-changes-properties-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history/items/properties/definition`
+-   [Area definition](./vinv-definitions-plot-oneof-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot/oneOf/1`
 -   [Area definition](./vinv-definitions-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area`
--   [Area definition](./vinv-definitions-area-changes-items-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/items/2`
--   [Area definition](./vinv-properties-areas-properties-area-list-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/items`
--   [Area definition](./vinv-definitions-area-changes-items-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/items/2`
+-   [Area definition](./vinv-definitions-area-changes-properties-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition`
+-   [Area definition](./vinv-properties-areas-properties-area-list-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/additionalProperties`
+-   [Area definition](./vinv-definitions-plot-oneof-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot/oneOf/1`
+-   [Area definition](./vinv-definitions-area-changes-properties-area-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition`
+-   [Circle](./vinv-definitions-plot-oneof-circle.md "Definition of geo circle by location and radius in meter") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot/oneOf/0`
+-   [Circle](./vinv-definitions-circle.md "Definition of geo circle by location and radius in meter") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle`
+-   [Circle](./vinv-definitions-plot-oneof-circle.md "Definition of geo circle by location and radius in meter") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot/oneOf/0`
+-   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
+-   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
+-   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
@@ -92,6 +112,8 @@
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/coordinates`
 -   [Coordinates](./vinv-definitions-filter-definition-items-location-radius-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/filter/items/0/items/0`
+-   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
+-   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
 -   [Coordinates](./vinv-definitions-location-items-coordinates.md "Anchor point of the Object on a map") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location/items/0`
@@ -129,13 +151,18 @@
 -   [Location](./vinv-definitions-track-definition-items-linestring-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/track/items/0/additionalItems`
 -   [Location](./vinv-definitions-track-definition-items-linestring-coordinates-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/track/items/0/items/0`
 -   [Location](./vinv-definitions-track-definition-items-linestring-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/track/items/0/additionalItems`
--   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items/items`
--   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items/items`
+-   [Location](./vinv-definitions-circle-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle/items/0`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
+-   [Location](./vinv-definitions-circle-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle/items/0`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
 -   [Location](./vinv-definitions-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/location`
 -   [Location](./vinv-definitions-tree-definition-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/0`
 -   [Location](./vinv-definitions-tree-definition-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/0`
--   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items/items`
--   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items/items`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
+-   [Location](./vinv-definitions-circle-items-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle/items/0`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
+-   [Location](./vinv-definitions-area-definition-items-polygon-coordinates-location.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/additionalItems`
 -   [Polygon coordinates](./vinv-type-definitions-area-definition-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area/items`
 -   [Polygon coordinates](./vinv-type-definitions-area-definition-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area/items/items`
 -   [Polygon coordinates](./vinv-type-definitions-area-changes-properties-area-definition-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/area_history/properties/definition/items`
@@ -145,13 +172,11 @@
 -   [Polygon coordinates](./vinv-type-properties-areas-properties-area-changes-list-area-changes-properties-area-definition-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history/items/properties/definition/items`
 -   [Polygon coordinates](./vinv-type-properties-areas-properties-area-changes-list-area-changes-properties-area-definition-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/areas/properties/area_history/items/properties/definition/items/items`
 -   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
--   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items`
 -   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
--   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items`
 -   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
--   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items`
 -   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
--   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items`
+-   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
+-   [Polygon coordinates](./vinv-definitions-area-definition-items-polygon-coordinates.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0`
 -   [Track Changes](./vinv-type-definitions-track-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/track_history`
 -   [Track Changes](./vinv-definitions-track-changes.md "Changes to the track data") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/track_history`
 -   [Track definition](./vinv-type-definitions-track-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/track`
@@ -163,10 +188,9 @@
 -   [Tree Changes List](./vinv-type-properties-inventory-properties-tree-changes-list.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_history`
 -   [Tree Changes List](./vinv-properties-inventory-properties-tree-changes-list.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_history`
 -   [Tree List](./vinv-type-properties-inventory-properties-tree-list.md "Individual Tree Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/inventory/properties/tree_status`
--   [Tree List](./vinv-properties-inventory-properties-tree-list.md "Individual Tree Details") – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status`
 -   [Tree definition](./vinv-definitions-tree-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree`
 -   [Tree definition](./vinv-definitions-tree-changes-items-tree-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/trees_history/items/2`
--   [Tree definition](./vinv-properties-inventory-properties-tree-list-tree-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status/items`
+-   [Tree definition](./vinv-properties-inventory-properties-tree-list-tree-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status/additionalProperties`
 -   [Tree definition](./vinv-definitions-tree-changes-items-tree-definition.md) – `https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/trees_history/items/2`
 -   [Trunk definition](./vinv-type-definitions-tree-properties-trunk-definition.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/tree/properties/trunk`
 -   [Trunk definition](./vinv-type-definitions-tree-changes-properties-tree-properties-trunk-definition.md "Diameter per height") – `https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/definitions/trees_history/properties/definition/properties/trunk`

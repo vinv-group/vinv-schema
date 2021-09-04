@@ -17,10 +17,4 @@ A universal resource identifier (URI), according to RFC3986.
 
 ## items Constraints
 
-**pattern**: the string must match the following regular expression: 
-
-```regexp
-uri
-```
-
-[try pattern](https://regexr.com/?expression=uri "try regular expression with regexr.com")
+**URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc3986 "check the specification")

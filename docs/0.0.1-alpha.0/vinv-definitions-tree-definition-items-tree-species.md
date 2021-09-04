@@ -24,21 +24,3 @@ Tree Species values taken from <https://github.com/b-lack/tree-species>
 ```
 
 [try pattern](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_-%5D%7B3%7D%24 "try regular expression with regexr.com")
-
-## 1 Examples
-
-```json
-"JM2"
-```
-
-```json
-"sf6"
-```
-
-```json
-"9hD"
-```
-
-```json
-"u2-"
-```

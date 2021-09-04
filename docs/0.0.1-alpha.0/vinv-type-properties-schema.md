@@ -18,5 +18,5 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv-type.min.json#/properties/$schema
 ## $schema Examples
 
 ```json
-"https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/vinv.json"
+"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
 ```

@@ -1,75 +1,25 @@
 # Location Schema
 
 ```txt
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-location.md
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0/items/items
-=======
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/location
->>>>>>> main:docs/0.1-alpha/vinv-definitions-location.md
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle/items/0
 ```
 
 
 
 
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-location.md
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
-=======
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
->>>>>>> main:docs/0.1-alpha/vinv-definitions-location.md
 
-## location Type
+## 0 Type
 
-`object` ([Location](vinv-definitions-location.md))
+an array where each item follows the corresponding schema in the following list:
 
-# Location Properties
+1.  [Coordinates](vinv-definitions-coordinates.md "check type definition")
+2.  [Accuracy](vinv-definitions-location-items-accuracy.md "check type definition")
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                |
-| :-------------------------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [coordinates](#coordinates) | `array`  | Required | cannot be null | [vinv](vinv-definitions-coordinates.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/location/properties/coordinates")               |
-| [accuracy](#accuracy)       | `number` | Optional | cannot be null | [vinv](vinv-definitions-location-properties-accuracy.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/location/properties/accuracy") |
+## 0 Constraints
 
-## coordinates
+**maximum number of items**: the maximum number of items for this array is: `2`
 
-Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.
-
-
-`coordinates`
-
--   is required
--   Type: `number[]` ([Longitude](vinv-definitions-coordinates-longitude.md))
--   cannot be null
--   defined in: [vinv](vinv-definitions-coordinates.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/location/properties/coordinates")
-
-### coordinates Type
-
-`number[]` ([Longitude](vinv-definitions-coordinates-longitude.md))
-
-### coordinates Constraints
-
-**maximum number of items**: the maximum number of items for this array is: `3`
-
-**minimum number of items**: the minimum number of items for this array is: `2`
-
-## accuracy
-
-The decimal accuracy of coordinates in meter (2 decimal places max).
-
-
-`accuracy`
-
--   is optional
--   Type: `number` ([Accuracy](vinv-definitions-location-properties-accuracy.md))
--   cannot be null
--   defined in: [vinv](vinv-definitions-location-properties-accuracy.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/location/properties/accuracy")
-
-### accuracy Type
-
-`number` ([Accuracy](vinv-definitions-location-properties-accuracy.md))
-
-### accuracy Constraints
-
-**minimum**: the value of this number must greater than or equal to: `0`
+**minimum number of items**: the minimum number of items for this array is: `1`

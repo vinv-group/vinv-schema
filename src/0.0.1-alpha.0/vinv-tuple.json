@@ -17,8 +17,14 @@
     "track_history": {
       "$ref": "./subschema-tuple/track_history.json"
     },
+    "plot": {
+      "$ref": "./subschema-tuple/plot.json"
+    },
     "area": {
       "$ref": "./subschema-tuple/area.json"
+    },
+    "circle": {
+      "$ref": "./subschema-tuple/circle.json"
     },
     "area_history": {
       "$ref": "./subschema-tuple/area_history.json"
@@ -95,7 +101,7 @@
             "$ref": "#/definitions/tree"
           },
           "propertyNames": {
-            "pattern": "^[A-Za-z0-9_-]{1,36}$"
+            "pattern": "^[A-Za-z0-9_-]{25,36}$"
           }
         },
         "tree_history": {
@@ -114,9 +120,22 @@
         "area_status": {
           "title": "Area List",
           "description": "Area Details",
-          "type": "array",
-          "items": {
+          "type": "object",
+          "additionalProperties": {
             "$ref": "#/definitions/area"
+          },
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9_-]{25,36}$"
+          }
+        },
+        "plots": {
+          "title": "Plots",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/plot"
+          },
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9_-]{25,36}$"
           }
         },
         "area_history": {
@@ -133,7 +152,7 @@
       "description": "List of functional extensions",
       "type": "object",
       "propertyNames": {
-        "pattern": "^[A-Za-z0-9_-]{1,36}$"
+        "pattern": "^[A-Za-z0-9_-]{25,36}$"
       },
       "properties": {}
     }
@@ -141,6 +160,8 @@
   "required": [
     "v",
     "id",
-    "created"
+    "created",
+    "inventory",
+    "areas"
   ]
 }

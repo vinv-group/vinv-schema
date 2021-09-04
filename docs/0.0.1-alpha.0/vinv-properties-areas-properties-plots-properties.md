@@ -1,7 +1,7 @@
-# Polygon coordinates Schema
+# Untitled undefined type in vinv Schema
 
 ```txt
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots/properties
 ```
 
 
@@ -11,10 +11,6 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area/items/0
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
 
-## 0 Type
+## properties Type
 
-`array` ([Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md))
-
-## 0 Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `3`
+unknown

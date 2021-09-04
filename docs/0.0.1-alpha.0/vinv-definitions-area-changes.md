@@ -1,31 +1,21 @@
 # Area Changes Schema
 
 ```txt
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-area-changes.md
 https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history/items
-=======
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history
->>>>>>> main:docs/0.1-alpha/vinv-definitions-area-changes.md
 ```
 
 Changes to the track data
 
 
-<<<<<<< HEAD:docs/0.0.1-alpha.0/vinv-definitions-area-changes.md
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
-=======
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
->>>>>>> main:docs/0.1-alpha/vinv-definitions-area-changes.md
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
 
-## area_history Type
+## items Type
 
 `object` ([Area Changes](vinv-definitions-area-changes.md))
 
-## area_history Constraints
+## items Constraints
 
 **maximum number of items**: the maximum number of items for this array is: `3`
 
@@ -33,12 +23,11 @@ Changes to the track data
 
 # Area Changes Properties
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                       |
-| :------------------------ | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                 | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/id")      |
-| [changedAt](#changedat)   | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/changedAt") |
-| [definition](#definition) | `array`  | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/definition")               |
-| [uId](#uid)               | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/uId")       |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                          |
+| :------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [id](#id)                 | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/id")      |
+| [changedAt](#changedat)   | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/changedAt") |
+| [definition](#definition) | `array`  | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")               |
 
 ## id
 
@@ -50,7 +39,7 @@ URL-friendly id
 -   is optional
 -   Type: `string` ([Track Id](vinv-definitions-area-changes-properties-track-id.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/id")
+-   defined in: [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/id")
 
 ### id Type
 
@@ -78,7 +67,7 @@ Date and time when change happened.
 -   is optional
 -   Type: `string` ([Change](vinv-definitions-area-changes-properties-change.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/changedAt")
+-   defined in: [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/changedAt")
 
 ### changedAt Type
 
@@ -102,40 +91,20 @@ Date and time when change happened.
 `definition`
 
 -   is optional
--   Type: `object[][][]` ([Location](vinv-definitions-location.md))
+-   Type: an array where each item follows the corresponding schema in the following list:
+
+    1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
 -   cannot be null
--   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/definition")
+-   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")
 
 ### definition Type
 
-`object[][][]` ([Location](vinv-definitions-location.md))
+an array where each item follows the corresponding schema in the following list:
+
+1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
 
 ### definition Constraints
 
+**maximum number of items**: the maximum number of items for this array is: `1`
+
 **minimum number of items**: the minimum number of items for this array is: `1`
-
-## uId
-
-
-
-
-`uId`
-
--   is optional
--   Type: `string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
--   cannot be null
--   defined in: [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/area_history/properties/uId")
-
-### uId Type
-
-`string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
-
-### uId Constraints
-
-**pattern**: the string must match the following regular expression: 
-
-```regexp
-^[A-Za-z0-9_-]{1,36}$
-```
-
-[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D%7B1%2C36%7D%24 "try regular expression with regexr.com")

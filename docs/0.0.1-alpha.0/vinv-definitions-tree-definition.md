@@ -21,7 +21,7 @@ an array where each item follows the corresponding schema in the following list:
 4.  [Height](vinv-definitions-tree-definition-items-height.md "check type definition")
 5.  [Additional trunk measurements](vinv-definitions-additional-trunk-measurements.md "check type definition")
 6.  [Additional crown measurements](vinv-definitions-additional-crown-measurements.md "check type definition")
-7.  [birth](vinv-definitions-tree-definition-items-birth.md "check type definition")
+7.  [Birthday](vinv-definitions-tree-definition-items-birthday.md "check type definition")
 8.  [Images](vinv-definitions-tree-definition-items-images.md "check type definition")
 
 ## 2 Constraints

@@ -23,8 +23,8 @@ Lightweight data standard for individual tree based forest management, visualisa
 | [v](#v)                   | `string` | Required | cannot be null | [vinv](vinv-properties-version.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/v")             |
 | [id](#id)                 | `string` | Required | cannot be null | [vinv](vinv-properties-document-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/id")        |
 | [created](#created)       | `string` | Required | cannot be null | [vinv](vinv-properties-created.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/created")       |
-| [inventory](#inventory)   | `object` | Optional | cannot be null | [vinv](vinv-properties-inventory.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory")   |
-| [areas](#areas)           | `object` | Optional | cannot be null | [vinv](vinv-properties-areas.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas")           |
+| [inventory](#inventory)   | `object` | Required | cannot be null | [vinv](vinv-properties-inventory.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory")   |
+| [areas](#areas)           | `object` | Required | cannot be null | [vinv](vinv-properties-areas.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas")           |
 | [extensions](#extensions) | `object` | Optional | cannot be null | [vinv](vinv-properties-extensions.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/extensions") |
 
 ## $schema
@@ -46,7 +46,7 @@ Lightweight data standard for individual tree based forest management, visualisa
 ### $schema Examples
 
 ```json
-"https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/vinv.json"
+"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
 ```
 
 ## v
@@ -144,7 +144,7 @@ Date and time this document was created.
 
 `inventory`
 
--   is optional
+-   is required
 -   Type: `object` ([Inventory](vinv-properties-inventory.md))
 -   cannot be null
 -   defined in: [vinv](vinv-properties-inventory.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory")
@@ -160,7 +160,7 @@ Date and time this document was created.
 
 `areas`
 
--   is optional
+-   is required
 -   Type: `object` ([Areas](vinv-properties-areas.md))
 -   cannot be null
 -   defined in: [vinv](vinv-properties-areas.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas")
@@ -231,12 +231,34 @@ Reference this group by using
 | Property | Type | Required | Nullable | Defined by |
 | :------- | ---- | -------- | -------- | :--------- |
 
+## Definitions group plot
+
+Reference this group by using
+
+```json
+{"$ref":"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/plot"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | ---- | -------- | -------- | :--------- |
+
 ## Definitions group area
 
 Reference this group by using
 
 ```json
 {"$ref":"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | ---- | -------- | -------- | :--------- |
+
+## Definitions group circle
+
+Reference this group by using
+
+```json
+{"$ref":"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/circle"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -250,8 +272,91 @@ Reference this group by using
 {"$ref":"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history"}
 ```
 
-| Property | Type | Required | Nullable | Defined by |
-| :------- | ---- | -------- | -------- | :--------- |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                          |
+| :------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [id](#id-1)               | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/id")      |
+| [changedAt](#changedat)   | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/changedAt") |
+| [definition](#definition) | `array`  | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")               |
+
+### id
+
+URL-friendly id
+
+
+`id`
+
+-   is optional
+-   Type: `string` ([Track Id](vinv-definitions-area-changes-properties-track-id.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/id")
+
+#### id Type
+
+`string` ([Track Id](vinv-definitions-area-changes-properties-track-id.md))
+
+#### id Constraints
+
+**maximum length**: the maximum number of characters for this string is: `36`
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Za-z0-9_-]*$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D*%24 "try regular expression with regexr.com")
+
+### changedAt
+
+Date and time when change happened.
+
+
+`changedAt`
+
+-   is optional
+-   Type: `string` ([Change](vinv-definitions-area-changes-properties-change.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/changedAt")
+
+#### changedAt Type
+
+`string` ([Change](vinv-definitions-area-changes-properties-change.md))
+
+#### changedAt Constraints
+
+**date time**: the string must be a date time string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+#### changedAt Examples
+
+```json
+"2018-11-13T20:20:39+00:00"
+```
+
+### definition
+
+
+
+
+`definition`
+
+-   is optional
+-   Type: an array where each item follows the corresponding schema in the following list:
+
+    1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")
+
+#### definition Type
+
+an array where each item follows the corresponding schema in the following list:
+
+1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
+
+#### definition Constraints
+
+**maximum number of items**: the maximum number of items for this array is: `1`
+
+**minimum number of items**: the minimum number of items for this array is: `1`
 
 ## Definitions group location
 
@@ -327,8 +432,64 @@ Reference this group by using
 {"$ref":"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height"}
 ```
 
-| Property | Type | Required | Nullable | Defined by |
-| :------- | ---- | -------- | -------- | :--------- |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                    |
+| :-------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [height](#height)     | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/height")     |
+| [diameter](#diameter) | `number` | Optional | cannot be null | [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/diameter") |
+
+### height
+
+Height of tree in PERCENT where diameter is measured
+
+
+`height`
+
+-   is optional
+-   Type: `number` ([Height](vinv-definitions-diameter-at-height-properties-height.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-diameter-at-height-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/height")
+
+#### height Type
+
+`number` ([Height](vinv-definitions-diameter-at-height-properties-height.md))
+
+#### height Constraints
+
+**maximum**: the value of this number must smaller than or equal to: `1`
+
+**minimum**: the value of this number must greater than or equal to: `0.1`
+
+#### height Examples
+
+```json
+0.5
+```
+
+```json
+0.1
+```
+
+### diameter
+
+Diameter in CENTIMETER at measured height
+
+
+`diameter`
+
+-   is optional
+-   Type: `number` ([Diameter](vinv-definitions-diameter-at-height-properties-diameter.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-diameter-at-height-properties-diameter.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/diameter_height/properties/diameter")
+
+#### diameter Type
+
+`number` ([Diameter](vinv-definitions-diameter-at-height-properties-diameter.md))
+
+#### diameter Constraints
+
+**maximum**: the value of this number must smaller than or equal to: `100`
+
+**minimum**: the value of this number must greater than or equal to: `0.1`
 
 ## Definitions group filter
 

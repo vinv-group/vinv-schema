@@ -46,7 +46,7 @@ Lightweight data standard for individual tree based forest management, visualisa
 ### $schema Examples
 
 ```json
-"https://raw.githubusercontent.com/vinv-group/vinv-schema/main/0.1-alpha/vinv.json"
+"https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
 ```
 
 ## v
