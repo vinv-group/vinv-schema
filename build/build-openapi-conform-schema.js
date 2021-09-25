@@ -12,7 +12,8 @@ const UnsupportedKeywords = [
     "id",
     "$id",
     "patternProperties",
-    "propertyNames"
+    "propertyNames",
+    "examples"
 ];
 
 function clearUnsupportedKeywords(schema){

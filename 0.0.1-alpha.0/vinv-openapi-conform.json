@@ -99,11 +99,7 @@
                 "title": "Height",
                 "description": "Height of tree in PERCENT where diameter is measured",
                 "minimum": 0.1,
-                "maximum": 1,
-                "examples": [
-                  0.5,
-                  0.1
-                ]
+                "maximum": 1
               },
               "diameter": {
                 "type": "number",
@@ -133,11 +129,7 @@
                 "title": "Height",
                 "description": "Height of tree in PERCENT where diameter is measured",
                 "minimum": 0.1,
-                "maximum": 1,
-                "examples": [
-                  0.5,
-                  0.1
-                ]
+                "maximum": 1
               },
               "diameter": {
                 "type": "number",
@@ -181,9 +173,6 @@
         "changedAt": {
           "title": "Time of Change",
           "description": "Date and time when change happened.",
-          "examples": [
-            "2018-11-13T20:20:39+00:00"
-          ],
           "type": "string",
           "format": "date-time"
         },
@@ -282,11 +271,7 @@
                     "title": "Height",
                     "description": "Height of tree in PERCENT where diameter is measured",
                     "minimum": 0.1,
-                    "maximum": 1,
-                    "examples": [
-                      0.5,
-                      0.1
-                    ]
+                    "maximum": 1
                   },
                   "diameter": {
                     "type": "number",
@@ -316,11 +301,7 @@
                     "title": "Height",
                     "description": "Height of tree in PERCENT where diameter is measured",
                     "minimum": 0.1,
-                    "maximum": 1,
-                    "examples": [
-                      0.5,
-                      0.1
-                    ]
+                    "maximum": 1
                   },
                   "diameter": {
                     "type": "number",
@@ -444,9 +425,6 @@
         {
           "title": "Change",
           "description": "Date and time when change happened.",
-          "examples": [
-            "2018-11-13T20:20:39+00:00"
-          ],
           "type": "string",
           "format": "date-time"
         },
@@ -593,9 +571,6 @@
         "changedAt": {
           "title": "Change",
           "description": "Date and time when change happened.",
-          "examples": [
-            "2018-11-13T20:20:39+00:00"
-          ],
           "type": "string",
           "format": "date-time"
         },
@@ -787,11 +762,7 @@
             "title": "Height",
             "description": "Height of tree in PERCENT where diameter is measured",
             "minimum": 0.1,
-            "maximum": 1,
-            "examples": [
-              0.5,
-              0.1
-            ]
+            "maximum": 1
           },
           "diameter": {
             "type": "number",
@@ -820,11 +791,7 @@
             "title": "Height",
             "description": "Height of tree in PERCENT where diameter is measured",
             "minimum": 0.1,
-            "maximum": 1,
-            "examples": [
-              0.5,
-              0.1
-            ]
+            "maximum": 1
           },
           "diameter": {
             "type": "number",
@@ -848,11 +815,7 @@
           "title": "Height",
           "description": "Height of tree in PERCENT where diameter is measured",
           "minimum": 0.1,
-          "maximum": 1,
-          "examples": [
-            0.5,
-            0.1
-          ]
+          "maximum": 1
         },
         "diameter": {
           "type": "number",
@@ -909,9 +872,6 @@
             {
               "title": "Radius",
               "description": "Radius in Meter.",
-              "examples": [
-                "56.42"
-              ],
               "type": "number"
             }
           ]
@@ -1001,18 +961,12 @@
             {
               "title": "Minimum height",
               "description": "Minimum date of the trees birthday.",
-              "examples": [
-                "2018-11-13"
-              ],
               "type": "string",
               "format": "date"
             },
             {
               "title": "Maximum height",
               "description": "Maximum date of the  trees birthday.",
-              "examples": [
-                "2018-11-13"
-              ],
               "type": "string",
               "format": "date"
             }
@@ -1032,18 +986,11 @@
       "title": "Version",
       "description": "Version of the used vinv schema, the file should be validated against",
       "type": "string",
-      "pattern": "^[0-9]\\.[0-9]\\.[0-9](-alpha\\.[0-9]|-beta\\.[0-9])?$",
-      "examples": [
-        "0.0.1",
-        "0.0.1-beta.0"
-      ]
+      "pattern": "^[0-9]\\.[0-9]\\.[0-9](-alpha\\.[0-9]|-beta\\.[0-9])?$"
     },
     "created": {
       "title": "Created",
       "description": "Date and time this document was created.",
-      "examples": [
-        "2018-11-13T20:20:39+00:00"
-      ],
       "type": "string",
       "format": "date-time"
     },
@@ -1150,11 +1097,7 @@
                       "title": "Height",
                       "description": "Height of tree in PERCENT where diameter is measured",
                       "minimum": 0.1,
-                      "maximum": 1,
-                      "examples": [
-                        0.5,
-                        0.1
-                      ]
+                      "maximum": 1
                     },
                     "diameter": {
                       "type": "number",
@@ -1184,11 +1127,7 @@
                       "title": "Height",
                       "description": "Height of tree in PERCENT where diameter is measured",
                       "minimum": 0.1,
-                      "maximum": 1,
-                      "examples": [
-                        0.5,
-                        0.1
-                      ]
+                      "maximum": 1
                     },
                     "diameter": {
                       "type": "number",
@@ -1236,9 +1175,6 @@
               "changedAt": {
                 "title": "Time of Change",
                 "description": "Date and time when change happened.",
-                "examples": [
-                  "2018-11-13T20:20:39+00:00"
-                ],
                 "type": "string",
                 "format": "date-time"
               },
@@ -1337,11 +1273,7 @@
                           "title": "Height",
                           "description": "Height of tree in PERCENT where diameter is measured",
                           "minimum": 0.1,
-                          "maximum": 1,
-                          "examples": [
-                            0.5,
-                            0.1
-                          ]
+                          "maximum": 1
                         },
                         "diameter": {
                           "type": "number",
@@ -1371,11 +1303,7 @@
                           "title": "Height",
                           "description": "Height of tree in PERCENT where diameter is measured",
                           "minimum": 0.1,
-                          "maximum": 1,
-                          "examples": [
-                            0.5,
-                            0.1
-                          ]
+                          "maximum": 1
                         },
                         "diameter": {
                           "type": "number",
@@ -1500,9 +1428,6 @@
               "changedAt": {
                 "title": "Change",
                 "description": "Date and time when change happened.",
-                "examples": [
-                  "2018-11-13T20:20:39+00:00"
-                ],
                 "type": "string",
                 "format": "date-time"
               },
