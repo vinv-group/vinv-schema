@@ -38,7 +38,6 @@ export async function validate(version, saveBundle){
     
     let schema = await import(`../src/${version}/vinv-tuple.json`);
 
-    
     // Tuple Version
     for (var key in schema.default.definitions) {
       if (schema.default.definitions[key].hasOwnProperty('$ref')) {
