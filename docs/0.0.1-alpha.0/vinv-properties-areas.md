@@ -17,11 +17,10 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas
 
 # Areas Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :---------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [area_status](#area_status)   | `object` | Optional | cannot be null | [vinv](vinv-properties-areas-properties-area-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status")          |
-| [plots](#plots)               | `object` | Optional | cannot be null | [vinv](vinv-properties-areas-properties-plots.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots")                    |
-| [area_history](#area_history) | `array`  | Optional | cannot be null | [vinv](vinv-properties-areas-properties-area-changes-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history") |
+| Property                      | Type    | Required | Nullable       | Defined by                                                                                                                                                        |
+| :---------------------------- | ------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [area_status](#area_status)   | `array` | Optional | cannot be null | [vinv](vinv-properties-areas-properties-area-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status")          |
+| [area_history](#area_history) | `array` | Optional | cannot be null | [vinv](vinv-properties-areas-properties-area-changes-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_history") |
 
 ## area_status
 
@@ -31,29 +30,13 @@ Area Details
 `area_status`
 
 -   is optional
--   Type: `object` ([Area List](vinv-properties-areas-properties-area-list.md))
+-   Type: `object[][][][]` ([Location](vinv-definitions-location.md))
 -   cannot be null
 -   defined in: [vinv](vinv-properties-areas-properties-area-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status")
 
 ### area_status Type
 
-`object` ([Area List](vinv-properties-areas-properties-area-list.md))
-
-## plots
-
-
-
-
-`plots`
-
--   is optional
--   Type: `object` ([Plots](vinv-properties-areas-properties-plots.md))
--   cannot be null
--   defined in: [vinv](vinv-properties-areas-properties-plots.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/plots")
-
-### plots Type
-
-`object` ([Plots](vinv-properties-areas-properties-plots.md))
+`object[][][][]` ([Location](vinv-definitions-location.md))
 
 ## area_history
 

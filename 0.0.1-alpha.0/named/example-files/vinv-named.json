@@ -1,0 +1,149 @@
+{
+  "v": "0.0.1-beta.0",
+  "id": "tWJBpKAEMMOKzEOwdr49CV1ETJvGDrD8Zzvv",
+  "created": "2021-10-26T19:09:55.168Z",
+  "$schema": "../vinv-named.json",
+  "inventory": {
+    "tree_status": [
+      {
+        "id": "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX",
+        "location": {
+          "coordinates": {
+            "longitude": -130.5627874,
+            "latitude": 50.5627874,
+            "altitude": 130
+          },
+          "accuracy": 12
+        },
+        "species": "JM2",
+        "dbh": 56,
+        "height": 156,
+        "trunk": [
+          {
+            "height": 0.1,
+            "diameter": 38
+          }
+        ],
+        "crown": [
+          {
+            "height": 0.1,
+            "diameter": 38
+          }
+        ],
+        "birth": "2010-09-13",
+        "image": [
+          "https://via.placeholder.com/90x728.jpg"
+        ]
+      }
+    ],
+    "tree_history": [
+      {
+        "id": "8ETHsYK6eJcEn79HegkqCESvaAvQGr_qchRW",
+        "changedAt": "2018-11-13T20:20:39+00:00",
+        "definition": {
+          "id": "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX",
+          "location": {
+            "coordinates": {
+              "longitude": -130.5627874,
+              "latitude": 50.5627874,
+              "altitude": 130
+            },
+            "accuracy": 12
+          },
+          "species": "JM2",
+          "dbh": 56,
+          "height": 156,
+          "trunk": [
+            {
+              "height": 0.1,
+              "diameter": 38
+            }
+          ],
+          "crown": [
+            {
+              "height": 0.1,
+              "diameter": 38
+            }
+          ],
+          "birth": "2010-09-13",
+          "image": [
+            "https://via.placeholder.com/90x728.jpg"
+          ]
+        },
+        "uId": "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+      }
+    ]
+  },
+  "areas": {
+    "area_status": [
+      [
+        [
+          [
+            {
+              "coordinates": {
+                "longitude": -130.5627874,
+                "latitude": 50.5627874,
+                "altitude": 130
+              },
+              "accuracy": 12
+            },
+            {
+              "coordinates": {
+                "longitude": -130.5627874,
+                "latitude": 50.5627874,
+                "altitude": 130
+              },
+              "accuracy": 12
+            },
+            {
+              "coordinates": {
+                "longitude": -130.5627874,
+                "latitude": 50.5627874,
+                "altitude": 130
+              },
+              "accuracy": 12
+            }
+          ]
+        ]
+      ]
+    ],
+    "area_history": [
+      {
+        "id": "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX",
+        "changedAt": "2018-11-13T20:20:39+00:00",
+        "definition": [
+          [
+            [
+              {
+                "coordinates": {
+                  "longitude": -130.5627874,
+                  "latitude": 50.5627874,
+                  "altitude": 130
+                },
+                "accuracy": 12
+              },
+              {
+                "coordinates": {
+                  "longitude": -130.5627874,
+                  "latitude": 50.5627874,
+                  "altitude": 130
+                },
+                "accuracy": 12
+              },
+              {
+                "coordinates": {
+                  "longitude": -130.5627874,
+                  "latitude": 50.5627874,
+                  "altitude": 130
+                },
+                "accuracy": 12
+              }
+            ]
+          ]
+        ],
+        "uId": "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+      }
+    ]
+  },
+  "extensions": {}
+}

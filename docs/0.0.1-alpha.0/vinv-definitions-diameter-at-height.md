@@ -1,7 +1,7 @@
 # Diameter at height Schema
 
 ```txt
-https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/items/5/items
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/crown/items
 ```
 
 Array including height and diameter at height
@@ -13,7 +13,7 @@ Array including height and diameter at height
 
 ## items Type
 
-`array` ([Diameter at height](vinv-definitions-diameter-at-height.md))
+`object` ([Diameter at height](vinv-definitions-diameter-at-height.md))
 
 ## items Constraints
 
@@ -80,4 +80,14 @@ Diameter in CENTIMETER at measured height
 
 **maximum**: the value of this number must smaller than or equal to: `100`
 
-**minimum**: the value of this number must greater than or equal to: `0.1`
+**minimum**: the value of this number must greater than or equal to: `10`
+
+### diameter Examples
+
+```json
+34
+```
+
+```json
+38
+```

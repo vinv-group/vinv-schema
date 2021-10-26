@@ -28,6 +28,7 @@ Changes to the track data
 | [id](#id)                 | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-track-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/id")      |
 | [changedAt](#changedat)   | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-change.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/changedAt") |
 | [definition](#definition) | `array`  | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")               |
+| [uId](#uid)               | `string` | Optional | cannot be null | [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/uId")       |
 
 ## id
 
@@ -56,6 +57,12 @@ URL-friendly id
 ```
 
 [try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D*%24 "try regular expression with regexr.com")
+
+### id Examples
+
+```json
+"ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+```
 
 ## changedAt
 
@@ -91,20 +98,46 @@ Date and time when change happened.
 `definition`
 
 -   is optional
--   Type: an array where each item follows the corresponding schema in the following list:
-
-    1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
+-   Type: `object[][][]` ([Location](vinv-definitions-location.md))
 -   cannot be null
 -   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/definition")
 
 ### definition Type
 
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
+`object[][][]` ([Location](vinv-definitions-location.md))
 
 ### definition Constraints
 
-**maximum number of items**: the maximum number of items for this array is: `1`
-
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+## uId
+
+
+
+
+`uId`
+
+-   is optional
+-   Type: `string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
+-   cannot be null
+-   defined in: [vinv](vinv-definitions-area-changes-properties-userid.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/properties/uId")
+
+### uId Type
+
+`string` ([UserId](vinv-definitions-area-changes-properties-userid.md))
+
+### uId Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[A-Za-z0-9_-]{1,36}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D%7B1%2C36%7D%24 "try regular expression with regexr.com")
+
+### uId Examples
+
+```json
+"FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+```

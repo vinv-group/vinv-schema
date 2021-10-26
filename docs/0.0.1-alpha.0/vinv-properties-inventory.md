@@ -17,10 +17,10 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory
 
 # Inventory Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                |
-| :---------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [tree_status](#tree_status)   | `object` | Optional | cannot be null | [vinv](vinv-properties-inventory-properties-tree-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status")          |
-| [tree_history](#tree_history) | `array`  | Optional | cannot be null | [vinv](vinv-properties-inventory-properties-tree-changes-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_history") |
+| Property                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                |
+| :---------------------------- | ------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [tree_status](#tree_status)   | `array` | Optional | cannot be null | [vinv](vinv-properties-inventory-properties-tree-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status")          |
+| [tree_history](#tree_history) | `array` | Optional | cannot be null | [vinv](vinv-properties-inventory-properties-tree-changes-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_history") |
 
 ## tree_status
 
@@ -30,13 +30,13 @@ Individual Tree Details
 `tree_status`
 
 -   is optional
--   Type: `object` ([Tree List](vinv-properties-inventory-properties-tree-list.md))
+-   Type: `object[]` ([Tree](vinv-definitions-tree.md))
 -   cannot be null
 -   defined in: [vinv](vinv-properties-inventory-properties-tree-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_status")
 
 ### tree_status Type
 
-`object` ([Tree List](vinv-properties-inventory-properties-tree-list.md))
+`object[]` ([Tree](vinv-definitions-tree.md))
 
 ## tree_history
 
@@ -46,18 +46,10 @@ Individual Tree Details
 `tree_history`
 
 -   is optional
--   Type: an array where each item follows the corresponding schema in the following list:
-
-    1.  [Tree Id](vinv-definitions-tree-changes-items-tree-id.md "check type definition")
-    2.  [Time of Change](vinv-definitions-tree-changes-items-time-of-change.md "check type definition")
-    3.  [Tree definition](vinv-definitions-tree-definition.md "check type definition")
+-   Type: `object[]` ([Tree Changes](vinv-definitions-tree-changes.md))
 -   cannot be null
 -   defined in: [vinv](vinv-properties-inventory-properties-tree-changes-list.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/properties/tree_history")
 
 ### tree_history Type
 
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Tree Id](vinv-definitions-tree-changes-items-tree-id.md "check type definition")
-2.  [Time of Change](vinv-definitions-tree-changes-items-time-of-change.md "check type definition")
-3.  [Tree definition](vinv-definitions-tree-definition.md "check type definition")
+`object[]` ([Tree Changes](vinv-definitions-tree-changes.md))

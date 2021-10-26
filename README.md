@@ -8,9 +8,15 @@ vinv allows sharing this information between software that supports `.vinv` file
 
 [![node ci](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml/badge.svg?branch=main)](https://github.com/vinv-group/vinv-schema/actions/workflows/node_ci.yml)
 
-| Version Code        | Status  | Documentation |
-| ------------- | ------------- |:-----:|
-| 0.0.1-alpha.0      | alpha | [view](./docs/0.0.1-alpha.0/vinv.md) |
+| Version Code        | Status  | Documentation (tiny) | Documentation (named) | Documentation (openapi conform) |
+| ------------- | ------------- | ----- | ----- |:-----:|
+| 0.0.1-alpha.0      | alpha | [view](./docs/0.0.1-alpha.0/vinv.md) [example file](./0.0.1-alpha.0/example-files/vinv.json)   | [**view**](./docs/0.0.1-alpha.0/vinv-named.md) [example file](./0.0.1-alpha.0/named/example-files/vinv-named.json) | [view](./docs/0.0.1-alpha.0/vinv-named-openapi.md) [example file](./0.0.1-alpha.0/openapi/example-files/vinv-named-openapi.json)
+
+- The **tiny** version is used for data transport.
+
+- The **named** version is the most readable. It is especially useful in the frontend to write readable code. This is created from the tiny version.
+
+- The **openapi conform** version can be used to create APIs from schema.
 
 ## Use
 

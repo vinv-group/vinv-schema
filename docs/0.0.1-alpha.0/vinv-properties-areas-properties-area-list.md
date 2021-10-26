@@ -13,36 +13,4 @@ Area Details
 
 ## area_status Type
 
-`object` ([Area List](vinv-properties-areas-properties-area-list.md))
-
-# Area List Properties
-
-| Property              | Type    | Required | Nullable       | Defined by                                                                                                                                                          |
-| :-------------------- | ------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Additional Properties | `array` | Optional | cannot be null | [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/additionalProperties") |
-
-## Additional Properties
-
-Additional properties are allowed, as long as they follow this schema:
-
-
-
-
--   is optional
--   Type: an array where each item follows the corresponding schema in the following list:
-
-    1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
--   cannot be null
--   defined in: [vinv](vinv-definitions-area-definition.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/areas/properties/area_status/additionalProperties")
-
-### additionalProperties Type
-
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
-
-### additionalProperties Constraints
-
-**maximum number of items**: the maximum number of items for this array is: `1`
-
-**minimum number of items**: the minimum number of items for this array is: `1`
+`object[][][][]` ([Location](vinv-definitions-location.md))

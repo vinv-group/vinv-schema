@@ -1,15 +1,15 @@
 # Tree Schema
 
 ```txt
-https://schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/trees_history/properties/definition
+https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/trees_history/properties/definition
 ```
 
 Tree definition
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.schema.json\*](../../0.1-alpha/dist/vinv.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
+| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [vinv.min.json\*](../../0.0.1-alpha.0/vinv.min.json "open original schema") |
 
 ## definition Type
 
@@ -17,17 +17,17 @@ Tree definition
 
 # Tree Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                    |
-| :-------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [id](#id)             | `string` | Required | cannot be null | [vinv](vinv-definitions-tree-properties-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/id")                         |
-| [location](#location) | `object` | Required | cannot be null | [vinv](vinv-definitions-location.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/location")                             |
-| [species](#species)   | `string` | Required | cannot be null | [vinv](vinv-definitions-tree-species.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/species")                          |
-| [dbh](#dbh)           | `number` | Required | cannot be null | [vinv](vinv-definitions-tree-properties-diameter-at-breast-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/dbh") |
-| [height](#height)     | `number` | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/height")                 |
-| [trunk](#trunk)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-additional-trunk-measurements.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/trunk")           |
-| [crown](#crown)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-additional-crown-measurements.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/crown")           |
-| [birth](#birth)       | `string` | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-birthday.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/birth")                |
-| [image](#image)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-images.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/image")                  |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                       |
+| :-------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)             | `string` | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-tree-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/id")                    |
+| [location](#location) | `object` | Required | cannot be null | [vinv](vinv-definitions-location.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/location")                             |
+| [species](#species)   | `string` | Required | cannot be null | [vinv](vinv-definitions-tree-species.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/species")                          |
+| [dbh](#dbh)           | `number` | Required | cannot be null | [vinv](vinv-definitions-tree-properties-diameter-at-breast-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/dbh") |
+| [height](#height)     | `number` | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/height")                 |
+| [trunk](#trunk)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-additional-trunk-measurements.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/trunk")           |
+| [crown](#crown)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-additional-crown-measurements.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/crown")           |
+| [birth](#birth)       | `string` | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-birthday.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/birth")                |
+| [image](#image)       | `array`  | Optional | cannot be null | [vinv](vinv-definitions-tree-properties-images.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/image")                  |
 
 ## id
 
@@ -36,14 +36,14 @@ Tree definition
 
 `id`
 
--   is required
--   Type: `string`
+-   is optional
+-   Type: `string` ([Tree Id](vinv-definitions-tree-properties-tree-id.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-properties-id.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/id")
+-   defined in: [vinv](vinv-definitions-tree-properties-tree-id.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/id")
 
 ### id Type
 
-`string`
+`string` ([Tree Id](vinv-definitions-tree-properties-tree-id.md))
 
 ### id Constraints
 
@@ -55,6 +55,12 @@ Tree definition
 
 [try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D%7B1%2C36%7D%24 "try regular expression with regexr.com")
 
+### id Examples
+
+```json
+"ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+```
+
 ## location
 
 
@@ -65,7 +71,7 @@ Tree definition
 -   is required
 -   Type: `object` ([Location](vinv-definitions-location.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-location.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/location")
+-   defined in: [vinv](vinv-definitions-location.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/location")
 
 ### location Type
 
@@ -81,7 +87,7 @@ Tree Species values taken from <https://github.com/b-lack/tree-species>
 -   is required
 -   Type: `string` ([Tree species](vinv-definitions-tree-species.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-species.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/species")
+-   defined in: [vinv](vinv-definitions-tree-species.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/species")
 
 ### species Type
 
@@ -97,6 +103,12 @@ Tree Species values taken from <https://github.com/b-lack/tree-species>
 
 [try pattern](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_-%5D%7B3%7D%24 "try regular expression with regexr.com")
 
+### species Examples
+
+```json
+"JM2"
+```
+
 ## dbh
 
 Diameter in centimeter
@@ -107,7 +119,7 @@ Diameter in centimeter
 -   is required
 -   Type: `number` ([Diameter at Breast Height](vinv-definitions-tree-properties-diameter-at-breast-height.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-properties-diameter-at-breast-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/dbh")
+-   defined in: [vinv](vinv-definitions-tree-properties-diameter-at-breast-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/dbh")
 
 ### dbh Type
 
@@ -121,6 +133,16 @@ Diameter in centimeter
 
 **minimum**: the value of this number must greater than or equal to: `1`
 
+### dbh Examples
+
+```json
+34
+```
+
+```json
+56
+```
+
 ## height
 
 Height in centimeter
@@ -131,7 +153,7 @@ Height in centimeter
 -   is optional
 -   Type: `number` ([Height](vinv-definitions-tree-properties-height.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-properties-height.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/height")
+-   defined in: [vinv](vinv-definitions-tree-properties-height.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/height")
 
 ### height Type
 
@@ -145,6 +167,16 @@ Height in centimeter
 
 **minimum**: the value of this number must greater than or equal to: `10`
 
+### height Examples
+
+```json
+134
+```
+
+```json
+156
+```
+
 ## trunk
 
 Diameter per height
@@ -155,7 +187,7 @@ Diameter per height
 -   is optional
 -   Type: `object[]` ([Diameter at height](vinv-definitions-diameter-at-height.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-additional-trunk-measurements.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/trunk")
+-   defined in: [vinv](vinv-definitions-additional-trunk-measurements.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/trunk")
 
 ### trunk Type
 
@@ -177,7 +209,7 @@ Diameter per height
 -   is optional
 -   Type: `object[]` ([Diameter at height](vinv-definitions-diameter-at-height.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-additional-crown-measurements.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/crown")
+-   defined in: [vinv](vinv-definitions-additional-crown-measurements.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/crown")
 
 ### crown Type
 
@@ -199,7 +231,7 @@ Birthday of the tree
 -   is optional
 -   Type: `string` ([Birthday](vinv-definitions-tree-properties-birthday.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-properties-birthday.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/birth")
+-   defined in: [vinv](vinv-definitions-tree-properties-birthday.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/birth")
 
 ### birth Type
 
@@ -208,6 +240,12 @@ Birthday of the tree
 ### birth Constraints
 
 **date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+### birth Examples
+
+```json
+"2010-09-13"
+```
 
 ## image
 
@@ -219,7 +257,7 @@ List of absolute or relative path to file
 -   is optional
 -   Type: `string[]` ([Images](vinv-definitions-images.md))
 -   cannot be null
--   defined in: [vinv](vinv-definitions-tree-properties-images.md "https&#x3A;//schema.vinv.io/0.1-alpha/dist/vinv.json#/definitions/tree/properties/image")
+-   defined in: [vinv](vinv-definitions-tree-properties-images.md "https&#x3A;//schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/tree/properties/image")
 
 ### image Type
 

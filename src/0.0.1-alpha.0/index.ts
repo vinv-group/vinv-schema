@@ -2,7 +2,7 @@ import Ajv from "ajv"
 import addFormats from "ajv-formats"
 
 import * as V01AlphaTuple from '../../0.0.1-alpha.0/vinv.json';
-import * as V01AlphaType from '../../0.0.1-alpha.0/vinv-type.min.json';
+import * as V01AlphaType from '../../0.0.1-alpha.0/named/vinv-named.min.json';
 
 const version: string = '0.0.1-alpha.0';
 const ajv = new Ajv({strict:false})

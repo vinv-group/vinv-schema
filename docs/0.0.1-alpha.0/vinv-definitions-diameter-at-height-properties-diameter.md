@@ -19,4 +19,14 @@ Diameter in CENTIMETER at measured height
 
 **maximum**: the value of this number must smaller than or equal to: `100`
 
-**minimum**: the value of this number must greater than or equal to: `0.1`
+**minimum**: the value of this number must greater than or equal to: `10`
+
+## diameter Examples
+
+```json
+34
+```
+
+```json
+38
+```
