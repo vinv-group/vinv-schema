@@ -6,107 +6,130 @@
   "additionalProperties": false,
   "definitions": {
     "tree": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "title": "Tree definition",
-      "description": "",
-      "type": "array",
-      "minItems": 4,
-      "maxItems": 8,
-      "items": [
-        {
+      "title": "Tree",
+      "description": "Tree definition",
+      "type": "object",
+      "required": [
+        "location",
+        "species",
+        "dbh"
+      ],
+      "properties": {
+        "id": {
+          "title": "Tree Id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+          ]
+        },
+        "location": {
           "$ref": "#/definitions/location"
         },
-        {
+        "species": {
           "$ref": "#/definitions/species"
         },
-        {
+        "dbh": {
           "title": "Diameter at Breast Height",
           "description": "Diameter in centimeter",
           "type": "number",
           "minimum": 1,
           "maximum": 100,
-          "multipleOf": 1
+          "multipleOf": 1,
+          "examples": [
+            34,
+            56
+          ]
         },
-        {
+        "height": {
           "title": "Height",
           "description": "Height in centimeter",
           "type": "number",
           "minimum": 10,
           "maximum": 1000,
-          "multipleOf": 1
+          "multipleOf": 1,
+          "examples": [
+            134,
+            156
+          ]
         },
-        {
+        "trunk": {
           "title": "Trunk definition",
           "description": "Diameter per height",
-          "type": [
-            "array",
-            "null"
-          ],
+          "type": "array",
           "$ref": "#/definitions/dimensions_trunk"
         },
-        {
+        "crown": {
           "title": "Crown definition",
           "description": "Diameter per height",
-          "type": [
-            "array",
-            "null"
-          ],
+          "type": "array",
           "$ref": "#/definitions/dimensions_crown"
         },
-        {
+        "birth": {
           "title": "Birthday",
           "description": "Birthday of the tree",
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date"
+          "type": "string",
+          "format": "date",
+          "examples": [
+            "2010-09-13"
+          ]
         },
-        {
+        "image": {
           "title": "Images",
           "description": "List of absolute or relative path to file",
-          "type": [
-            "array",
-            "null"
-          ],
+          "type": "array",
           "items": {
             "$ref": "#/definitions/image"
           }
         }
-      ]
+      }
     },
     "trees_history": {
       "title": "Tree Changes",
       "description": "Changes to the tree data",
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": [
-        {
+      "type": "object",
+      "required": [
+        "id",
+        "changedAt",
+        "definition"
+      ],
+      "properties": {
+        "id": {
           "title": "Tree Id",
           "description": "URL-friendly id",
           "type": "string",
           "pattern": "^[A-Za-z0-9_-]{1,36}$",
-          "maxLength": 36
+          "maxLength": 36,
+          "examples": [
+            "5ifq8QepMG_kSfuj6fKVBMynxNbRLN2tBKvF",
+            "8ETHsYK6eJcEn79HegkqCESvaAvQGr_qchRW"
+          ]
         },
-        {
+        "changedAt": {
           "title": "Time of Change",
           "description": "Date and time when change happened.",
+          "type": "string",
+          "format": "date-time",
           "examples": [
             "2018-11-13T20:20:39+00:00"
-          ],
-          "type": "string",
-          "format": "date-time"
+          ]
         },
-        {
+        "definition": {
           "title": "Tree data change",
           "description": "Tree state before manipulation.",
           "$ref": "#/definitions/tree"
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
         }
-      ]
+      }
     },
     "track": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Track definition",
       "description": "",
       "type": "array",
@@ -137,7 +160,6 @@
       ]
     },
     "track_history": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Track Changes",
       "description": "Changes to the track data",
       "type": "array",
@@ -149,7 +171,10 @@
           "description": "URL-friendly id",
           "type": "string",
           "pattern": "^[A-Za-z0-9_-]*$",
-          "maxLength": 36
+          "maxLength": 36,
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
         },
         {
           "title": "Change",
@@ -167,60 +192,27 @@
         }
       ]
     },
-    "plot": {
-      "title": "Plot",
-      "description": "",
-      "additionalProperties": false,
-      "oneOf": [
-        {
-          "$ref": "#/definitions/circle"
-        },
-        {
-          "$ref": "#/definitions/area"
-        }
-      ]
-    },
     "area": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Area definition",
       "description": "",
       "type": "array",
       "minItems": 1,
-      "maxItems": 1,
       "additionalItem": false,
-      "items": [
-        {
+      "items": {
+        "type": "array",
+        "title": "Polygon coordinates",
+        "minItems": 1,
+        "items": {
           "type": "array",
           "title": "Polygon coordinates",
-          "minItems": 3,
-          "additionalItems": {
+          "items": {
             "$ref": "#/definitions/location"
-          }
+          },
+          "minItems": 3
         }
-      ]
-    },
-    "circle": {
-      "title": "Circle",
-      "description": "Definition of geo circle by location and radius in meter",
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2,
-      "additionalItem": false,
-      "items": [
-        {
-          "type": "array",
-          "title": "Center of circle",
-          "$ref": "#/definitions/location"
-        },
-        {
-          "type": "number",
-          "multipleOf": 0.5,
-          "title": "Maximal distance from center location in meter"
-        }
-      ]
+      }
     },
     "area_history": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Area Changes",
       "description": "Changes to the track data",
       "type": "object",
@@ -232,7 +224,10 @@
           "description": "URL-friendly id",
           "type": "string",
           "pattern": "^[A-Za-z0-9_-]*$",
-          "maxLength": 36
+          "maxLength": 36,
+          "examples": [
+            "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+          ]
         },
         "changedAt": {
           "title": "Change",
@@ -247,45 +242,83 @@
           "title": "Track data change",
           "description": "Tree state before manipulation.",
           "$ref": "#/definitions/area"
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
         }
       }
     },
     "location": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Location",
       "description": "",
-      "type": "array",
-      "minItems": 1,
-      "maxItems": 2,
-      "additionalItems": false,
-      "items": [
-        {
+      "type": "object",
+      "required": [
+        "coordinates"
+      ],
+      "properties": {
+        "coordinates": {
           "$ref": "#/definitions/coordinates"
         },
-        {
+        "accuracy": {
           "title": "Accuracy",
           "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
           "type": "number",
-          "minimum": 0
+          "minimum": 0,
+          "examples": [
+            3,
+            12
+          ]
         }
-      ]
+      }
     },
     "coordinates": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Coordinates",
       "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
-      "type": "array",
+      "type": "object",
       "minItems": 2,
       "maxItems": 3,
       "additionalItems": false,
-      "items": {
-        "title": "Longitude",
-        "description": "The decimal east–west position of a point. (7 decimal places max)",
-        "type": "number"
+      "properties": {
+        "longitude": {
+          "title": "Longitude",
+          "description": "The decimal east–west position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "examples": [
+            12.4563,
+            -130.5627874
+          ]
+        },
+        "latitude": {
+          "title": "Latitude",
+          "description": "The decimal north–south position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "examples": [
+            -12.4563,
+            50.5627874
+          ]
+        },
+        "altitude": {
+          "type": "number",
+          "title": "[Altitude]",
+          "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+          "minimum": 0,
+          "examples": [
+            0,
+            130
+          ]
+        }
       }
     },
     "dbh": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Diameter at breast height",
       "description": "Array including height and diameter",
       "type": "array",
@@ -312,10 +345,12 @@
       "title": "Tree species",
       "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
       "type": "string",
-      "pattern": "^[a-zA-Z0-9_-]{3}$"
+      "pattern": "^[a-zA-Z0-9_-]{3}$",
+      "examples": [
+        "JM2"
+      ]
     },
     "dimensions_trunk": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Additional trunk measurements",
       "type": "array",
       "uniqueItems": true,
@@ -325,7 +360,6 @@
       }
     },
     "dimensions_crown": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Additional crown measurements",
       "type": "array",
       "uniqueItems": true,
@@ -335,10 +369,9 @@
       }
     },
     "diameter_height": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Diameter at height",
       "description": "Array including height and diameter at height",
-      "type": "array",
+      "type": "object",
       "minItems": 2,
       "maxItems": 2,
       "additionalItems": false,
@@ -358,8 +391,12 @@
           "type": "number",
           "title": "Diameter",
           "description": "Diameter in CENTIMETER at measured height",
-          "minimum": 0.1,
-          "maximum": 100
+          "minimum": 10,
+          "maximum": 100,
+          "examples": [
+            34,
+            38
+          ]
         }
       }
     },
@@ -496,16 +533,15 @@
       "title": "Images",
       "description": "A universal resource identifier (URI), according to RFC3986.",
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "examples": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/728x90.png",
+        "https://via.placeholder.com/90x728.jpg"
+      ]
     }
   },
   "properties": {
-    "$schema": {
-      "type": "string",
-      "examples": [
-        "https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
-      ]
-    },
     "v": {
       "title": "Version",
       "description": "Version of the used vinv schema, the file should be validated against",
@@ -520,7 +556,10 @@
       "title": "Document ID",
       "description": "Once created, this ID should never change.",
       "type": "string",
-      "pattern": "^[A-Za-z0-9_-]{1,36}$"
+      "pattern": "^[A-Za-z0-9_-]{1,36}$",
+      "examples": [
+        "tWJBpKAEMMOKzEOwdr49CV1ETJvGDrD8Zzvv"
+      ]
     },
     "created": {
       "title": "Created",
@@ -531,6 +570,12 @@
       "type": "string",
       "format": "date-time"
     },
+    "$schema": {
+      "type": "string",
+      "examples": [
+        "https://schema.vinv.io/0.0.1-alpha.0/vinv.json"
+      ]
+    },
     "inventory": {
       "title": "Inventory",
       "type": "object",
@@ -538,12 +583,9 @@
         "tree_status": {
           "title": "Tree List",
           "description": "Individual Tree Details",
-          "type": "object",
-          "additionalProperties": {
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/tree"
-          },
-          "propertyNames": {
-            "pattern": "^[A-Za-z0-9_-]{25,36}$"
           }
         },
         "tree_history": {
@@ -562,22 +604,9 @@
         "area_status": {
           "title": "Area List",
           "description": "Area Details",
-          "type": "object",
-          "additionalProperties": {
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/area"
-          },
-          "propertyNames": {
-            "pattern": "^[A-Za-z0-9_-]{25,36}$"
-          }
-        },
-        "plots": {
-          "title": "Plots",
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/plot"
-          },
-          "propertyNames": {
-            "pattern": "^[A-Za-z0-9_-]{25,36}$"
           }
         },
         "area_history": {
@@ -594,7 +623,7 @@
       "description": "List of functional extensions",
       "type": "object",
       "propertyNames": {
-        "pattern": "^[A-Za-z0-9_-]{25,36}$"
+        "pattern": "^[A-Za-z0-9_-]{1,36}$"
       },
       "properties": {}
     }
@@ -602,9 +631,7 @@
   "required": [
     "v",
     "id",
-    "created",
-    "inventory",
-    "areas"
+    "created"
   ],
   "$id": "https://schema.vinv.io/0.0.1-alpha.0/vinv.json"
 }

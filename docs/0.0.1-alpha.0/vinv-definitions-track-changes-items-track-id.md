@@ -26,3 +26,9 @@ URL-friendly id
 ```
 
 [try pattern](https://regexr.com/?expression=%5E%5BA-Za-z0-9_-%5D*%24 "try regular expression with regexr.com")
+
+## 0 Examples
+
+```json
+"FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+```

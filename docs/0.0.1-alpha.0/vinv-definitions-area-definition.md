@@ -13,12 +13,8 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/definitions/area_history/pro
 
 ## definition Type
 
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Polygon coordinates](vinv-definitions-area-definition-items-polygon-coordinates.md "check type definition")
+`object[][][]` ([Location](vinv-definitions-location.md))
 
 ## definition Constraints
-
-**maximum number of items**: the maximum number of items for this array is: `1`
 
 **minimum number of items**: the minimum number of items for this array is: `1`

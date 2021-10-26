@@ -1,0 +1,637 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "vinv",
+  "description": "Lightweight data standard for individual tree based forest management, visualisation & analytics",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "tree": {
+      "title": "Tree",
+      "description": "Tree definition",
+      "type": "object",
+      "required": [
+        "location",
+        "species",
+        "dbh"
+      ],
+      "properties": {
+        "id": {
+          "title": "Tree Id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+          ]
+        },
+        "location": {
+          "$ref": "#/definitions/location"
+        },
+        "species": {
+          "$ref": "#/definitions/species"
+        },
+        "dbh": {
+          "title": "Diameter at Breast Height",
+          "description": "Diameter in centimeter",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 100,
+          "multipleOf": 1,
+          "examples": [
+            34,
+            56
+          ]
+        },
+        "height": {
+          "title": "Height",
+          "description": "Height in centimeter",
+          "type": "number",
+          "minimum": 10,
+          "maximum": 1000,
+          "multipleOf": 1,
+          "examples": [
+            134,
+            156
+          ]
+        },
+        "trunk": {
+          "title": "Trunk definition",
+          "description": "Diameter per height",
+          "type": "array",
+          "$ref": "#/definitions/dimensions_trunk"
+        },
+        "crown": {
+          "title": "Crown definition",
+          "description": "Diameter per height",
+          "type": "array",
+          "$ref": "#/definitions/dimensions_crown"
+        },
+        "birth": {
+          "title": "Birthday",
+          "description": "Birthday of the tree",
+          "type": "string",
+          "format": "date",
+          "examples": [
+            "2010-09-13"
+          ]
+        },
+        "image": {
+          "title": "Images",
+          "description": "List of absolute or relative path to file",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/image"
+          }
+        }
+      }
+    },
+    "trees_history": {
+      "title": "Tree Changes",
+      "description": "Changes to the tree data",
+      "type": "object",
+      "required": [
+        "id",
+        "changedAt",
+        "definition"
+      ],
+      "properties": {
+        "id": {
+          "title": "Tree Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "maxLength": 36,
+          "examples": [
+            "5ifq8QepMG_kSfuj6fKVBMynxNbRLN2tBKvF",
+            "8ETHsYK6eJcEn79HegkqCESvaAvQGr_qchRW"
+          ]
+        },
+        "changedAt": {
+          "title": "Time of Change",
+          "description": "Date and time when change happened.",
+          "type": "string",
+          "format": "date-time",
+          "examples": [
+            "2018-11-13T20:20:39+00:00"
+          ]
+        },
+        "definition": {
+          "title": "Tree data change",
+          "description": "Tree state before manipulation.",
+          "$ref": "#/definitions/tree"
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
+        }
+      }
+    },
+    "track": {
+      "title": "Track definition",
+      "description": "",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "additionalItem": false,
+      "items": [
+        {
+          "title": "LineString coordinates",
+          "minItems": 2,
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/definitions/location"
+            }
+          ],
+          "additionalItems": {
+            "$ref": "#/definitions/location"
+          }
+        },
+        {
+          "title": "Width",
+          "description": "Width of the track in METER",
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10
+        }
+      ]
+    },
+    "track_history": {
+      "title": "Track Changes",
+      "description": "Changes to the track data",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": [
+        {
+          "title": "Track Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]*$",
+          "maxLength": 36,
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
+        },
+        {
+          "title": "Change",
+          "description": "Date and time when change happened.",
+          "examples": [
+            "2018-11-13T20:20:39+00:00"
+          ],
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "title": "Track data change",
+          "description": "Tree state before manipulation.",
+          "$ref": "#/definitions/track"
+        }
+      ]
+    },
+    "area": {
+      "title": "Area definition",
+      "description": "",
+      "type": "array",
+      "minItems": 1,
+      "additionalItem": false,
+      "items": {
+        "type": "array",
+        "title": "Polygon coordinates",
+        "minItems": 1,
+        "items": {
+          "type": "array",
+          "title": "Polygon coordinates",
+          "items": {
+            "$ref": "#/definitions/location"
+          },
+          "minItems": 3
+        }
+      }
+    },
+    "area_history": {
+      "title": "Area Changes",
+      "description": "Changes to the track data",
+      "type": "object",
+      "minItems": 3,
+      "maxItems": 3,
+      "properties": {
+        "id": {
+          "title": "Track Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]*$",
+          "maxLength": 36,
+          "examples": [
+            "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+          ]
+        },
+        "changedAt": {
+          "title": "Change",
+          "description": "Date and time when change happened.",
+          "examples": [
+            "2018-11-13T20:20:39+00:00"
+          ],
+          "type": "string",
+          "format": "date-time"
+        },
+        "definition": {
+          "title": "Track data change",
+          "description": "Tree state before manipulation.",
+          "$ref": "#/definitions/area"
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "examples": [
+            "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+          ]
+        }
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "",
+      "type": "object",
+      "required": [
+        "coordinates"
+      ],
+      "properties": {
+        "coordinates": {
+          "$ref": "#/definitions/coordinates"
+        },
+        "accuracy": {
+          "title": "Accuracy",
+          "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+          "type": "number",
+          "minimum": 0,
+          "examples": [
+            3,
+            12
+          ]
+        }
+      }
+    },
+    "coordinates": {
+      "title": "Coordinates",
+      "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+      "type": "object",
+      "minItems": 2,
+      "maxItems": 3,
+      "additionalItems": false,
+      "properties": {
+        "longitude": {
+          "title": "Longitude",
+          "description": "The decimal east–west position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "examples": [
+            12.4563,
+            -130.5627874
+          ]
+        },
+        "latitude": {
+          "title": "Latitude",
+          "description": "The decimal north–south position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "examples": [
+            -12.4563,
+            50.5627874
+          ]
+        },
+        "altitude": {
+          "type": "number",
+          "title": "[Altitude]",
+          "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+          "minimum": 0,
+          "examples": [
+            0,
+            130
+          ]
+        }
+      }
+    },
+    "dbh": {
+      "title": "Diameter at breast height",
+      "description": "Array including height and diameter",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": [
+        {
+          "type": "number",
+          "title": "Height",
+          "description": "Height in meter of diameter measurment",
+          "const": 1.3,
+          "default": 1.3
+        },
+        {
+          "type": "number",
+          "title": "Diameter",
+          "description": "Diameter in centimeter as measured height",
+          "minimum": 0,
+          "maximum": 100
+        }
+      ]
+    },
+    "species": {
+      "title": "Tree species",
+      "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{3}$",
+      "examples": [
+        "JM2"
+      ]
+    },
+    "dimensions_trunk": {
+      "title": "Additional trunk measurements",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/diameter_height"
+      }
+    },
+    "dimensions_crown": {
+      "title": "Additional crown measurements",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/diameter_height"
+      }
+    },
+    "diameter_height": {
+      "title": "Diameter at height",
+      "description": "Array including height and diameter at height",
+      "type": "object",
+      "minItems": 2,
+      "maxItems": 2,
+      "additionalItems": false,
+      "properties": {
+        "height": {
+          "type": "number",
+          "title": "Height",
+          "description": "Height of tree in PERCENT where diameter is measured",
+          "minimum": 0.1,
+          "maximum": 1,
+          "examples": [
+            0.5,
+            0.1
+          ]
+        },
+        "diameter": {
+          "type": "number",
+          "title": "Diameter",
+          "description": "Diameter in CENTIMETER at measured height",
+          "minimum": 10,
+          "maximum": 100,
+          "examples": [
+            34,
+            38
+          ]
+        }
+      }
+    },
+    "filter": {
+      "title": "Filter definition",
+      "type": "array",
+      "items": [
+        {
+          "title": "Location radius",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": [
+            {
+              "$ref": "#/definitions/coordinates"
+            },
+            {
+              "title": "Radius",
+              "description": "Radius in Meter.",
+              "examples": [
+                "56.42"
+              ],
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "title": "Tree Species",
+          "description": "Array of tree species to be filtered.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/species"
+          }
+        },
+        {
+          "title": "DBH range",
+          "description": "Define range of maximum set tree diameter.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum diameter",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            {
+              "title": "Maximum diameter",
+              "type": [
+                "number",
+                "null"
+              ],
+              "maximum": 100
+            }
+          ]
+        },
+        {
+          "title": "Height range",
+          "description": "Define Range of tree height to filter",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum height",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 1,
+              "multipleOf": 1
+            },
+            {
+              "title": "Maximum height",
+              "type": [
+                "number",
+                "null"
+              ],
+              "maximum": 1000,
+              "multipleOf": 1
+            }
+          ]
+        },
+        {
+          "title": "Birthday range",
+          "description": "Define Range of tree age to filter",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum height",
+              "description": "Minimum date of the trees birthday.",
+              "examples": [
+                "2018-11-13"
+              ],
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "title": "Maximum height",
+              "description": "Maximum date of the  trees birthday.",
+              "examples": [
+                "2018-11-13"
+              ],
+              "type": "string",
+              "format": "date"
+            }
+          ]
+        }
+      ],
+      "additionalItems": false
+    },
+    "image": {
+      "title": "Images",
+      "description": "A universal resource identifier (URI), according to RFC3986.",
+      "type": "string",
+      "format": "uri",
+      "examples": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/728x90.png",
+        "https://via.placeholder.com/90x728.jpg"
+      ]
+    }
+  },
+  "properties": {
+    "v": {
+      "title": "Version",
+      "description": "Version of the used vinv schema, the file should be validated against",
+      "type": "string",
+      "pattern": "^[0-9]\\.[0-9]\\.[0-9](-alpha\\.[0-9]|-beta\\.[0-9])?$",
+      "examples": [
+        "0.0.1",
+        "0.0.1-beta.0"
+      ]
+    },
+    "id": {
+      "title": "Document ID",
+      "description": "Once created, this ID should never change.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,36}$",
+      "examples": [
+        "tWJBpKAEMMOKzEOwdr49CV1ETJvGDrD8Zzvv"
+      ]
+    },
+    "created": {
+      "title": "Created",
+      "description": "Date and time this document was created.",
+      "examples": [
+        "2018-11-13T20:20:39+00:00"
+      ],
+      "type": "string",
+      "format": "date-time"
+    },
+    "$schema": {
+      "type": "string",
+      "examples": [
+        "https://schema.vinv.io/0.0.1-alpha.0/vinv-named.json"
+      ]
+    },
+    "inventory": {
+      "title": "Inventory",
+      "type": "object",
+      "properties": {
+        "tree_status": {
+          "title": "Tree List",
+          "description": "Individual Tree Details",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tree"
+          }
+        },
+        "tree_history": {
+          "title": "Tree Changes List",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/trees_history"
+          }
+        }
+      }
+    },
+    "areas": {
+      "title": "Areas",
+      "type": "object",
+      "properties": {
+        "area_status": {
+          "title": "Area List",
+          "description": "Area Details",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/area"
+          }
+        },
+        "area_history": {
+          "title": "Area Changes List",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/area_history"
+          }
+        }
+      }
+    },
+    "extensions": {
+      "title": "Extensions",
+      "description": "List of functional extensions",
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z0-9_-]{1,36}$"
+      },
+      "properties": {}
+    }
+  },
+  "required": [
+    "v",
+    "id",
+    "created"
+  ],
+  "$id": "https://schema.vinv.io/0.0.1-alpha.0/vinv-named.json"
+}

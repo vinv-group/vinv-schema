@@ -13,8 +13,4 @@ https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json#/properties/inventory/propert
 
 ## tree_history Type
 
-an array where each item follows the corresponding schema in the following list:
-
-1.  [Tree Id](vinv-definitions-tree-changes-items-tree-id.md "check type definition")
-2.  [Time of Change](vinv-definitions-tree-changes-items-time-of-change.md "check type definition")
-3.  [Tree definition](vinv-definitions-tree-definition.md "check type definition")
+`object[]` ([Tree Changes](vinv-definitions-tree-changes.md))

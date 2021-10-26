@@ -6,10 +6,8 @@
   "module": "dist/schema.umd.js",
   "types": "./dist/src/index.d.ts",
   "scripts": {
-    "build": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./build/build.js && npm run test && npm run documentation",
-    "test": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./test/test.js",
-    "documentation": "npm run test && jsonschema2md -x - -d 0.0.1-alpha.0 -o docs/0.0.1-alpha.0/ -e min.json",
-    
+    "build": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./build/build_from_typed.js && npm run documentation",
+    "documentation": "rm -rf docs/0.0.1-alpha.0/ && jsonschema2md -x - -d 0.0.1-alpha.0 -o docs/0.0.1-alpha.0/ -e min.json",
     "build-0.1-alpha": "npm run build && npm run buildRollup && npm run documentation",
     "generate": "openapi --input ./tmp/openapi_json/0.1-alpha.json --output ./tmp/openapi/test3.d.ts",
     "dev": "rollup --config -w",
@@ -44,9 +42,8 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@rollup/plugin-typescript": "^8.2.3",
-    "@vinv/vinv-types": "file:../vinv-types",
-    "ajv": "^8.6.2",
-    "ajv-formats": "^2.1.0",
+    "ansi-regex": "^6.0.1",
+    "immer": "^9.0.6",
     "json-schema-to-typescript": "^10.1.4",
     "json2ts": "^0.0.7",
     "mocha": "^9.0.2",
@@ -58,5 +55,10 @@
     "trim": ">=0.0.3",
     "typescript": "^4.3.5"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "ajv": "^8.6.2",
+    "ajv-formats": "^2.1.0",
+    "@vinv/vinv-types": "file:../vinv-types"
+  }
 }
