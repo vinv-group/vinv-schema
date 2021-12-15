@@ -1,6 +1,0 @@
-{
-    "title": "Tree species",
-    "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
-    "type": "string",
-    "pattern": "^[a-zA-Z0-9_-]{3}$"
-}

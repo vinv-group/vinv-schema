@@ -1,14 +1,33 @@
-function generateDataFromSchema(schema, definitions) {
+import {nanoid} from 'nanoid';
+
+function generateDataFromSchema(schema, definitions, parentId) {
     if (!schema) { return }
   
     if(schema.type === 'object'){
         
         const parsedData = {}
     
-        Object.keys(schema.properties).forEach( (item) => {
-          parsedData[item] = generateDataFromSchema(schema.properties[item], definitions)
-        })
-      
+        if(schema.properties)
+            Object.keys(schema.properties).forEach( (item) => {
+                parsedData[item] = generateDataFromSchema(schema.properties[item], definitions)
+            })
+        else if(schema.patternProperties){
+            const id = nanoid();
+            
+            Object.values(schema.patternProperties).forEach( (item) => {
+                if(item['$ref']){
+                    const refName = item['$ref'].split('/')[2];
+                    parsedData[id] = generateDataFromSchema(definitions[refName], definitions, id)
+                }
+                //parsedData[id] = generateDataFromSchema(item, definitions, id)
+            })
+        }
+
+        if(parsedData['id'] && parentId){
+            delete parsedData['id']
+        }
+            
+            
         return parsedData
     }else if(schema['$ref']){
         const refName = schema['$ref'].split('/')[2];

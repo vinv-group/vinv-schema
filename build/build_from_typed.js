@@ -1,8 +1,7 @@
 import fs from 'fs'
-
 import { createFile } from './types/create-test-schema.js'
 
-console.log('Building:' + process.env.ENV_VINV_VERSION);
+const VERSIONCODE = process.env.npm_package_version
 
 const UnsupportedKeywordsOpenApi = [
     "$schema",
@@ -10,7 +9,6 @@ const UnsupportedKeywordsOpenApi = [
     "const",
     "contains",
     "dependencies",
-    "id",
     "$id",
     "patternProperties",
     "propertyNames",
@@ -19,26 +17,30 @@ const UnsupportedKeywordsOpenApi = [
 const UnsupportedKeywords = [
     "$schema"
 ];
+const UnsupportedKeywordsTulip = [
+    "$schema",
+    "id"
+];
 
 async function building(){
     try{
     
-        if (fs.existsSync(process.env.ENV_VINV_VERSION)) 
-            fs.rmdirSync(process.env.ENV_VINV_VERSION, { recursive: true })
+        if (fs.existsSync(VERSIONCODE)) 
+            fs.rmdirSync(VERSIONCODE, { recursive: true })
     
-        if (!fs.existsSync(process.env.ENV_VINV_VERSION)){
-            fs.mkdirSync(process.env.ENV_VINV_VERSION + '/example-files', { recursive: true })
-            fs.mkdirSync(process.env.ENV_VINV_VERSION + '/named/example-files', { recursive: true })
-            fs.mkdirSync(process.env.ENV_VINV_VERSION + '/openapi/example-files', { recursive: true })
+        if (!fs.existsSync(VERSIONCODE)){
+            fs.mkdirSync(VERSIONCODE + '/example-files', { recursive: true })
+            fs.mkdirSync(VERSIONCODE + '/named', { recursive: true })
+            fs.mkdirSync(VERSIONCODE + '/openapi', { recursive: true })
         }
             
     
         console.log('---');
-        await createFile('vinv-named', process.env.ENV_VINV_VERSION, '/named', UnsupportedKeywords)
+        await createFile('vinv-named', VERSIONCODE, '/named', UnsupportedKeywords, false)
         console.log('---');
-        await createFile('vinv-named-openapi', process.env.ENV_VINV_VERSION, '/openapi', UnsupportedKeywordsOpenApi)
+        await createFile('vinv-named-openapi', VERSIONCODE, '/openapi', UnsupportedKeywordsOpenApi, false, 'dereference')
         console.log('---');
-        await createFile('vinv', process.env.ENV_VINV_VERSION, '', UnsupportedKeywords)
+        await createFile('vinv', VERSIONCODE, '', UnsupportedKeywordsTulip, true)
     
     }catch(error){
         throw('ERROR: ', error);

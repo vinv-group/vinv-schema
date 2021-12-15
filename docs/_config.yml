@@ -3,11 +3,9 @@ email: support@vinv.io
 description: >- # this means to ignore newlines until "baseurl:"
   Lightweight data standard and structure for single-tree based forest management, visualization & analytics
 
-
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://vinv.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://schema.vinv.io" # the base hostname & protocol for your site, e.g. http://example.com
 name: "vinv Virtual Inventory"
-description: " vinv documentation"
 language: "en"
 tags: "forestry, inventory, vinv, standard, exchange"
 

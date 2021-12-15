@@ -1,16 +1,18 @@
 {
   "name": "@vinv/vinv-schema",
-  "version": "0.0.1-alpha.0",
-  "description": "vinv virtual inventory schema",
-  "main": "dist/schema.umd.js",
-  "module": "dist/schema.umd.js",
+  "version": "0.0.1-alpha",
+  "description": "vinv - virtual forest inventory schema",
+  "main": "dist/schema.iife.js",
+  "module": "dist/schema.cjs",
   "types": "./dist/src/index.d.ts",
   "scripts": {
-    "build": "ENV_VINV_VERSION=0.0.1-alpha.0 node --experimental-json-modules ./build/build_from_typed.js && npm run documentation",
-    "documentation": "rm -rf docs/0.0.1-alpha.0/ && jsonschema2md -x - -d 0.0.1-alpha.0 -o docs/0.0.1-alpha.0/ -e min.json",
-    "build-0.1-alpha": "npm run build && npm run buildRollup && npm run documentation",
-    "dev": "rollup --config -w",
-    "buildRollup": "npm run build && rm -rf dist && rollup --config && tsc --emitDeclarationOnly"
+    "check-env": "node -e 'console.log(process.env)' | grep npm",
+    "build": "node --experimental-json-modules ./build/build_from_typed.js && npm run documentation && npm run buildOpenApi && npm run buildGraphQl",
+    "buildOpenApi": "node --experimental-json-modules ./build/api/json-schema-to-openapi.cjs",
+    "buildGraphQl": "node --experimental-json-modules ./build/api/openapi-to-graphql.cjs",
+    "documentation": "rm -rf docs/0.0.1-alpha/ && jsonschema2md -x - -d 0.0.1-alpha -o docs/0.0.1-alpha/ -e min.json",
+    "dev": "rm -rf dist && rollup -c rollup.config.js -w",
+    "test": "node examples/node.js"
   },
   "repository": {
     "type": "git",
@@ -33,27 +35,32 @@
     "test": "test"
   },
   "devDependencies": {
-    "@adobe/jsonschema2md": "^4.0.0",
+    "@adobe/jsonschema2md": "^6.1.4",
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^19.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.2",
-    "@rollup/plugin-typescript": "^8.2.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "ajv": "^8.8.2",
+    "ajv-formats": "^2.1.0",
     "ansi-regex": "^6.0.1",
+    "graphql": "^16.1.0",
     "immer": "^9.0.6",
-    "mocha": "^9.0.2",
+    "mocha": "^9.1.3",
+    "node-fetch": "^3.1.0",
+    "openapi-to-graphql": "^2.5.2",
     "remark-html": "^15.0.0",
     "rollup": "^2.53.3",
+    "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "set-value": "^4.1.0",
     "trim": ">=0.0.3",
+    "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
   "type": "module",
   "dependencies": {
-    "ajv": "^8.6.2",
-    "ajv-formats": "^2.1.0",
     "@vinv/vinv-types": "file:../vinv-types"
   }
 }
