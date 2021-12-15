@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../../dist/schema.iife.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+        /*async function init(){
+            var file = await VinvSchema.getExampleDocument();
+            console.log(file);
+
+            var isValid = await VinvSchema.validateDocument({document: file});
+            console.log('document is valid:',  isValid);
+
+            var treeValid = await VinvSchema.validateTree(file.inventory.trees.data[0]);
+            console.log('tree is valid:',  treeValid);
+        }
+
+        init();*/
+
+        var vinv = new VinvSchema({v:'0.0.1-alpha'});
+        
+        async function init(){
+            console.log('ready')
+            var exampleDocument = await vinv.getExample();
+            console.log(exampleDocument);
+
+            var isValid = await vinv.validate(exampleDocument);
+            console.log('isValid:',  isValid);
+
+            var singleTree = Object.values(exampleDocument.inventory.trees.data)[0];
+            var treeValid = await vinv.validate(singleTree, 'Tree');
+            console.log('isValid:',  treeValid);
+        }
+
+        init();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "vinv",
+    "description": "Lightweight data standard for single-tree based forest management, visualisation & analytics.",
+    "contact": {
+      "name": "API Support",
+      "url": "http://www.vinv.io/",
+      "email": "support@vinv.io"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://github.com/vinv-group/vinv-schema/blob/main/LICENSE"
+    },
+    "version": "0.0.1-alpha.0"
+  },
+  "servers": [
+    {
+      "url": "https://{username}.gigantic-server.com:{port}/{basePath}",
+      "description": "Development server",
+      "variables": {
+        "username": {
+          "default": "demo",
+          "description": "this value is assigned by the service provider, in this example `gigantic-server.com`"
+        },
+        "port": {
+          "enum": [
+            "8443",
+            "443"
+          ],
+          "default": "8443"
+        },
+        "basePath": {
+          "default": "v2"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/tree": {
+      "get": {
+        "description": "Returns trees based on ID",
+        "summary": "Find trees by ID",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "ID of the document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "treeId",
+            "in": "query",
+            "description": "ID of the tree",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tree"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Returns trees based on ID",
+        "summary": "Find trees by ID",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "ID of the document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "tree to add",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tree"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tree"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes tree based on ID",
+        "summary": "Find trees by ID",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "ID of the document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "treeId",
+            "in": "query",
+            "description": "ID of the tree",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/id"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trees": {
+      "get": {
+        "description": "Returns all trees",
+        "summary": "Find trees by ID",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "ID of the document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/tree"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/circlePlot": {
+      "post": {
+        "description": "Returns trees based on ID",
+        "summary": "Find trees by ID",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "ID of the document",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "tree to add",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/circle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/circle"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "tree": {
+        "title": "Tree",
+        "description": "Tree definition",
+        "type": "object",
+        "required": [
+          "location",
+          "species",
+          "dbh"
+        ],
+        "properties": {
+          "id": {
+            "title": "Tree Id",
+            "description": "Unique identifying ID String",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$",
+            "minLength": 1,
+            "maxLength": 36
+          },
+          "location": {
+            "title": "Location",
+            "description": "",
+            "type": "object",
+            "required": [
+              "coordinates"
+            ],
+            "properties": {
+              "coordinates": {
+                "title": "Coordinates",
+                "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                "type": "object",
+                "minItems": 2,
+                "maxItems": 3,
+                "properties": {
+                  "longitude": {
+                    "title": "Longitude",
+                    "description": "The decimal east–west position of a point. (7 decimal places max)",
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                  },
+                  "latitude": {
+                    "title": "Latitude",
+                    "description": "The decimal north–south position of a point. (7 decimal places max)",
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
+                  },
+                  "altitude": {
+                    "type": "number",
+                    "title": "[Altitude]",
+                    "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                    "minimum": 0
+                  }
+                }
+              },
+              "accuracy": {
+                "title": "Accuracy",
+                "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "species": {
+            "title": "Tree species",
+            "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{3}$"
+          },
+          "dbh": {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf": 1
+          },
+          "height": {
+            "title": "Height",
+            "description": "Height in centimeter",
+            "type": "number",
+            "minimum": 10,
+            "maximum": 1000,
+            "multipleOf": 1
+          },
+          "trunk": {
+            "title": "Trunk definition",
+            "description": "Diameter per height",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "title": "Diameter at height",
+              "description": "Array including height and diameter at height",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 2,
+              "properties": {
+                "height": {
+                  "type": "number",
+                  "title": "Height",
+                  "description": "Height of tree in PERCENT where diameter is measured",
+                  "minimum": 0.1,
+                  "maximum": 1
+                },
+                "diameter": {
+                  "type": "number",
+                  "title": "Diameter",
+                  "description": "Diameter in CENTIMETER at measured height",
+                  "minimum": 10,
+                  "maximum": 100
+                }
+              }
+            }
+          },
+          "crown": {
+            "title": "Crown definition",
+            "description": "Diameter per height",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "title": "Diameter at height",
+              "description": "Array including height and diameter at height",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 2,
+              "properties": {
+                "height": {
+                  "type": "number",
+                  "title": "Height",
+                  "description": "Height of tree in PERCENT where diameter is measured",
+                  "minimum": 0.1,
+                  "maximum": 1
+                },
+                "diameter": {
+                  "type": "number",
+                  "title": "Diameter",
+                  "description": "Diameter in CENTIMETER at measured height",
+                  "minimum": 10,
+                  "maximum": 100
+                }
+              }
+            }
+          },
+          "birth": {
+            "title": "Birthday",
+            "description": "Birthday of the tree",
+            "type": "string",
+            "format": "date"
+          },
+          "image": {
+            "title": "Images",
+            "description": "List of absolute or relative path to file",
+            "type": "array",
+            "items": {
+              "title": "Images",
+              "description": "A universal resource identifier (URI), according to RFC3986.",
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,36}$",
+        "minLength": 1,
+        "maxLength": 36
+      },
+      "circle": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "title": "Location",
+            "description": "",
+            "type": "object",
+            "required": [
+              "coordinates"
+            ],
+            "properties": {
+              "coordinates": {
+                "title": "Coordinates",
+                "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                "type": "object",
+                "minItems": 2,
+                "maxItems": 3,
+                "properties": {
+                  "longitude": {
+                    "title": "Longitude",
+                    "description": "The decimal east–west position of a point. (7 decimal places max)",
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                  },
+                  "latitude": {
+                    "title": "Latitude",
+                    "description": "The decimal north–south position of a point. (7 decimal places max)",
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
+                  },
+                  "altitude": {
+                    "type": "number",
+                    "title": "[Altitude]",
+                    "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                    "minimum": 0
+                  }
+                }
+              },
+              "accuracy": {
+                "title": "Accuracy",
+                "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "radius": {
+            "type": "number",
+            "title": "Radius",
+            "description": "Radius in meter",
+            "default": 10
+          }
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "documentId",
+        "in": "query",
+        "description": "ID of the document",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/id"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "plotCircle",
+        "plotPolygon"
+    ],
+    "properties": {
+        "plotCircle": {
+            "$ref": "./circle.json"
+        },
+        "plotPolygon": {
+            "$ref": "./polygon.json"
+        }
+    }
+  }

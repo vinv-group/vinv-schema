@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "vinv",
+  "description": "Lightweight data standard for individual tree based forest management, visualisation & analytics",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "tree": {
+      "$ref": "./subschema/tree.json"
+    },
+    "trees_history": {
+      "$ref": "./subschema/tree_history.json"
+    },
+    "track": {
+      "$ref": "./subschema/track.json"
+    },
+    "track_history": {
+      "$ref": "./subschema/track_history.json"
+    },
+    "area": {
+      "$ref": "./subschema/area.json"
+    },
+    "area_history": {
+      "$ref": "./subschema/area_history.json"
+    },
+    "location": {
+      "$ref": "./subschema/location.json"
+    },
+    "coordinates": {
+      "$ref": "./subschema/coordinates.json"
+    },
+    "dbh": {
+      "$ref": "./subschema/dbh.json"
+    },
+    "species": {
+      "$ref": "./subschema/species.json"
+    },
+    "dimensions_trunk": {
+      "$ref": "./subschema/dimensions_trunk.json"
+    },
+    "dimensions_crown": {
+      "$ref": "./subschema/dimensions_crown.json"
+    },
+    "diameter_height": {
+      "$ref": "./subschema/diameter_height.json"
+    },
+    "filter": {
+      "$ref": "./subschema/filter.json"
+    },
+    "image": {
+      "$ref": "./subschema/image.json"
+    },
+    "id": {
+      "$ref": "./subschema/id.json"
+    },
+    "workOrderDef": {
+      "$ref": "./subschema/work-order.json"
+    },
+    "plotTypes":{
+      "$ref": "./subschema/plot-types.json"
+    },
+    "polygon":{
+      "$ref": "./subschema/polygon.json"
+    },
+    "circle":{
+      "$ref": "./subschema/circle.json"
+    }
+  },
+  "properties": {
+    "v": {
+      "title": "Version",
+      "description": "Version of the used vinv schema, the file should be validated against",
+      "type": "string",
+      "pattern": "^[0-9]\\.[0-9]\\.[0-9](-alpha|-beta)?$",
+      "examples": [
+        "0.0.1-alpha"
+      ]
+    },
+    "id": {
+      "title": "Document ID",
+      "description": "Once created, this ID should never change.",
+      "$ref": "#/definitions/id"
+    },
+    "created": {
+      "title": "Created",
+      "description": "Date and time this document was created.",
+      "examples": [
+        "2018-11-13T20:20:39+00:00"
+      ],
+      "type": "string",
+      "format": "date-time"
+    },
+    "$schema": {
+      "type": "string",
+      "examples": [
+        "https://schema.vinv.io/0.0.1-alpha.0/vinv.min.json"
+      ]
+    },
+    "inventory": {
+      "title": "Inventory",
+      "type": "object",
+      "properties": {
+        "trees":{
+          "title": "Tree Inventory",
+          "description": "Tree data & history",
+          "type":"object",
+          "properties":{
+            "data": {
+              "title": "TreeList",
+              "description": "List of trees defined",
+              "type": "object",
+              "patternProperties": {
+                "^[A-Za-z0-9_-]{1,36}$" : {
+                  "$ref": "#/definitions/tree"
+                }
+              }
+            },
+            "actions": {
+              "title": "TreeChangesList",
+              "description": "List of tree data changed",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/trees_history"
+              }
+            }
+          }
+        },
+        "plots":{
+          "title": "Plots ",
+          "description": "Plots data",
+          "type":"object",
+          "properties":{
+            "data": {
+              "title": "PlotTypes",
+              "description": "Types of plot",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/plotTypes"
+              }
+            },
+            "actions":{
+              "title": "PlotsChangesList",
+              "description": "List of plots data changed",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/area_history"
+              }
+            }
+          }
+        },
+        "areas":{
+          "title": "Area Inventory",
+          "description": "Area data & actions",
+          "type":"object",
+          "properties":{
+            "data": {
+              "title": "AreaList",
+              "description": "List of areas defined",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/area"
+              }
+            },
+            "actions":{
+              "title": "AreaChangesList",
+              "description": "List of area data changed",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/area_history"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "v",
+    "id",
+    "created"
+  ]
+}

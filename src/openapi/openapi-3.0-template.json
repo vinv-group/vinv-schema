@@ -1,0 +1,243 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "vinv",
+        "description": "Lightweight data standard for single-tree based forest management, visualisation & analytics.",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.vinv.io/",
+            "email": "support@vinv.io"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://github.com/vinv-group/vinv-schema/blob/main/LICENSE"
+        },
+        "version": "0.0.1-alpha.0"
+    },
+    "servers": [
+        {
+            "url": "https://{username}.gigantic-server.com:{port}/{basePath}",
+            "description": "Development server",
+            "variables": {
+                "username": {
+                    "default": "demo",
+                    "description": "this value is assigned by the service provider, in this example `gigantic-server.com`"
+                },
+                "port": {
+                    "enum": [
+                        "8443",
+                        "443"
+                    ],
+                    "default": "8443"
+                },
+                "basePath": {
+                    "default": "v2"
+                }
+            }
+        }
+    ],
+    "paths": {
+        "/tree": {
+            "get": {
+                "description": "Returns trees based on ID",
+                "summary": "Find trees by ID",
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "query",
+                        "description": "ID of the document",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "treeId",
+                        "in": "query",
+                        "description": "ID of the tree",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return a 200 status to indicate that the data was received successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/tree"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Returns trees based on ID",
+                "summary": "Find trees by ID",
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "query",
+                        "description": "ID of the document",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "tree to add",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/tree"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Return a 200 status to indicate that the data was received successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/tree"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+              "description": "Deletes tree based on ID",
+              "summary": "Find trees by ID",
+              "parameters": [
+                  {
+                      "name": "documentId",
+                      "in": "query",
+                      "description": "ID of the document",
+                      "required": true,
+                      "schema": {
+                          "type": "string"
+                      }
+                  },
+                  {
+                      "name": "treeId",
+                      "in": "query",
+                      "description": "ID of the tree",
+                      "required": true,
+                      "schema": {
+                          "type": "string"
+                      }
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "Return a 200 status to indicate that the data was received successfully",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "$ref": "#/components/schemas/id"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+        },
+        "/trees": {
+            "get": {
+                "description": "Returns all trees",
+                "summary": "Find trees by ID",
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "query",
+                        "description": "ID of the document",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return a 200 status to indicate that the data was received successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/tree"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/circlePlot": {
+            "post": {
+                "description": "Returns trees based on ID",
+                "summary": "Find trees by ID",
+                "parameters": [
+                    {
+                        "name": "documentId",
+                        "in": "query",
+                        "description": "ID of the document",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "tree to add",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/circle"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Return a 200 status to indicate that the data was received successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/circle"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "tree": {},
+            "id": {},
+            "circle": {}
+        },
+        "parameters": {
+            "id": {
+                "name": "documentId",
+                "in": "query",
+                "description": "ID of the document",
+                "required": true,
+                "schema": {
+                  "$ref": "#/components/schemas/id"
+                }
+            }
+        }
+    }
+}

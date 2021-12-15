@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "location": {
+            "$ref": "./location.json"
+        },
+        "radius": {
+            "type": "number",
+            "title": "Radius",
+            "description": "Radius in meter",
+            "default": 10,
+            "examples": [10, 15]
+        }
+    }
+}

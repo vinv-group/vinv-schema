@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Area Changes",
+    "description": "Changes to the area data",
+    "type": "object",
+    "minItems": 3,
+    "maxItems": 4,
+    "properties": {
+        "id": {
+            "title": "Area Id",
+            "description": "URL-friendly id",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]*$",
+            "maxLength": 36,
+            "examples": [
+                "ZUMLoqZeuWdYCtHBWTOexYvGl1NDTlp4yacX"
+            ]
+        },
+        "changedAt": {
+            "title": "Change",
+            "description": "Date and time when change happened.",
+            "examples": ["2018-11-13T20:20:39+00:00"],
+            "type": "string",
+            "format": "date-time"
+        },
+        "definition": {
+            "title": "Area data change",
+            "description": "Tree state before manipulation.",
+            "$ref": "./area.json"
+        },
+        "uId": {
+            "title": "UserId",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$",
+            "examples": [
+                "FJet9-q0pzhhPhi4vw4M-0qMZ0FtQ5r1VLTR"
+            ]
+        }
+    }
+}

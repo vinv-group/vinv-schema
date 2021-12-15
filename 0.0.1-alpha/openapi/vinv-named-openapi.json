@@ -1,0 +1,2168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "vinv",
+  "description": "Lightweight data standard for individual tree based forest management, visualisation & analytics",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "tree": {
+      "title": "Tree",
+      "description": "Tree definition",
+      "type": "object",
+      "required": [
+        "location",
+        "species",
+        "dbh"
+      ],
+      "properties": {
+        "id": {
+          "title": "Tree Id",
+          "description": "Unique identifying ID String",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "location": {
+          "title": "Location",
+          "description": "",
+          "type": "object",
+          "required": [
+            "coordinates"
+          ],
+          "properties": {
+            "coordinates": {
+              "title": "Coordinates",
+              "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 3,
+              "properties": {
+                "longitude": {
+                  "title": "Longitude",
+                  "description": "The decimal east–west position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "latitude": {
+                  "title": "Latitude",
+                  "description": "The decimal north–south position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "altitude": {
+                  "type": "number",
+                  "title": "[Altitude]",
+                  "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                  "minimum": 0
+                }
+              }
+            },
+            "accuracy": {
+              "title": "Accuracy",
+              "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "species": {
+          "title": "Tree species",
+          "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]{3}$"
+        },
+        "dbh": {
+          "title": "Diameter at Breast Height",
+          "description": "Diameter in centimeter",
+          "type": "number",
+          "minimum": 1,
+          "maximum": 100,
+          "multipleOf": 1
+        },
+        "height": {
+          "title": "Height",
+          "description": "Height in centimeter",
+          "type": "number",
+          "minimum": 10,
+          "maximum": 1000,
+          "multipleOf": 1
+        },
+        "trunk": {
+          "title": "Trunk definition",
+          "description": "Diameter per height",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": "object",
+            "minItems": 2,
+            "maxItems": 2,
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        "crown": {
+          "title": "Crown definition",
+          "description": "Diameter per height",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": "object",
+            "minItems": 2,
+            "maxItems": 2,
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        "birth": {
+          "title": "Birthday",
+          "description": "Birthday of the tree",
+          "type": "string",
+          "format": "date"
+        },
+        "image": {
+          "title": "Images",
+          "description": "List of absolute or relative path to file",
+          "type": "array",
+          "items": {
+            "title": "Images",
+            "description": "A universal resource identifier (URI), according to RFC3986.",
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "trees_history": {
+      "title": "Tree Changes",
+      "description": "Changes to the tree data",
+      "type": "object",
+      "required": [
+        "id",
+        "changedAt",
+        "definition"
+      ],
+      "properties": {
+        "id": {
+          "title": "Tree Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "maxLength": 36
+        },
+        "changedAt": {
+          "title": "Time of Change",
+          "description": "Date and time when change happened.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "definition": {
+          "title": "Tree",
+          "description": "Tree definition",
+          "type": "object",
+          "required": [
+            "location",
+            "species",
+            "dbh"
+          ],
+          "properties": {
+            "id": {
+              "title": "Tree Id",
+              "description": "Unique identifying ID String",
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,36}$",
+              "minLength": 1,
+              "maxLength": 36
+            },
+            "location": {
+              "title": "Location",
+              "description": "",
+              "type": "object",
+              "required": [
+                "coordinates"
+              ],
+              "properties": {
+                "coordinates": {
+                  "title": "Coordinates",
+                  "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                  "type": "object",
+                  "minItems": 2,
+                  "maxItems": 3,
+                  "properties": {
+                    "longitude": {
+                      "title": "Longitude",
+                      "description": "The decimal east–west position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "latitude": {
+                      "title": "Latitude",
+                      "description": "The decimal north–south position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "altitude": {
+                      "type": "number",
+                      "title": "[Altitude]",
+                      "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "accuracy": {
+                  "title": "Accuracy",
+                  "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "species": {
+              "title": "Tree species",
+              "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]{3}$"
+            },
+            "dbh": {
+              "title": "Diameter at Breast Height",
+              "description": "Diameter in centimeter",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100,
+              "multipleOf": 1
+            },
+            "height": {
+              "title": "Height",
+              "description": "Height in centimeter",
+              "type": "number",
+              "minimum": 10,
+              "maximum": 1000,
+              "multipleOf": 1
+            },
+            "trunk": {
+              "title": "Trunk definition",
+              "description": "Diameter per height",
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "title": "Diameter at height",
+                "description": "Array including height and diameter at height",
+                "type": "object",
+                "minItems": 2,
+                "maxItems": 2,
+                "properties": {
+                  "height": {
+                    "type": "number",
+                    "title": "Height",
+                    "description": "Height of tree in PERCENT where diameter is measured",
+                    "minimum": 0.1,
+                    "maximum": 1
+                  },
+                  "diameter": {
+                    "type": "number",
+                    "title": "Diameter",
+                    "description": "Diameter in CENTIMETER at measured height",
+                    "minimum": 10,
+                    "maximum": 100
+                  }
+                }
+              }
+            },
+            "crown": {
+              "title": "Crown definition",
+              "description": "Diameter per height",
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "title": "Diameter at height",
+                "description": "Array including height and diameter at height",
+                "type": "object",
+                "minItems": 2,
+                "maxItems": 2,
+                "properties": {
+                  "height": {
+                    "type": "number",
+                    "title": "Height",
+                    "description": "Height of tree in PERCENT where diameter is measured",
+                    "minimum": 0.1,
+                    "maximum": 1
+                  },
+                  "diameter": {
+                    "type": "number",
+                    "title": "Diameter",
+                    "description": "Diameter in CENTIMETER at measured height",
+                    "minimum": 10,
+                    "maximum": 100
+                  }
+                }
+              }
+            },
+            "birth": {
+              "title": "Birthday",
+              "description": "Birthday of the tree",
+              "type": "string",
+              "format": "date"
+            },
+            "image": {
+              "title": "Images",
+              "description": "List of absolute or relative path to file",
+              "type": "array",
+              "items": {
+                "title": "Images",
+                "description": "A universal resource identifier (URI), according to RFC3986.",
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$"
+        }
+      }
+    },
+    "track": {
+      "title": "Track definition",
+      "description": "",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "additionalItem": false,
+      "items": [
+        {
+          "title": "LineString coordinates",
+          "minItems": 2,
+          "type": "array",
+          "items": [
+            {
+              "title": "Location",
+              "description": "",
+              "type": "object",
+              "required": [
+                "coordinates"
+              ],
+              "properties": {
+                "coordinates": {
+                  "title": "Coordinates",
+                  "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                  "type": "object",
+                  "minItems": 2,
+                  "maxItems": 3,
+                  "properties": {
+                    "longitude": {
+                      "title": "Longitude",
+                      "description": "The decimal east–west position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "latitude": {
+                      "title": "Latitude",
+                      "description": "The decimal north–south position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "altitude": {
+                      "type": "number",
+                      "title": "[Altitude]",
+                      "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "accuracy": {
+                  "title": "Accuracy",
+                  "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "title": "Width",
+          "description": "Width of the track in METER",
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10
+        }
+      ]
+    },
+    "track_history": {
+      "title": "Track Changes",
+      "description": "Changes to the track data",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": [
+        {
+          "title": "Track Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]*$",
+          "maxLength": 36
+        },
+        {
+          "title": "Change",
+          "description": "Date and time when change happened.",
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "title": "Track definition",
+          "description": "",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "additionalItem": false,
+          "items": [
+            {
+              "title": "LineString coordinates",
+              "minItems": 2,
+              "type": "array",
+              "items": [
+                {
+                  "title": "Location",
+                  "description": "",
+                  "type": "object",
+                  "required": [
+                    "coordinates"
+                  ],
+                  "properties": {
+                    "coordinates": {
+                      "title": "Coordinates",
+                      "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                      "type": "object",
+                      "minItems": 2,
+                      "maxItems": 3,
+                      "properties": {
+                        "longitude": {
+                          "title": "Longitude",
+                          "description": "The decimal east–west position of a point. (7 decimal places max)",
+                          "type": "number",
+                          "minimum": -180,
+                          "maximum": 180
+                        },
+                        "latitude": {
+                          "title": "Latitude",
+                          "description": "The decimal north–south position of a point. (7 decimal places max)",
+                          "type": "number",
+                          "minimum": -90,
+                          "maximum": 90
+                        },
+                        "altitude": {
+                          "type": "number",
+                          "title": "[Altitude]",
+                          "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "accuracy": {
+                      "title": "Accuracy",
+                      "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Width",
+              "description": "Width of the track in METER",
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 10
+            }
+          ]
+        }
+      ]
+    },
+    "area": {
+      "title": "Area definition",
+      "description": "Area definition",
+      "type": "object",
+      "additionalItem": false,
+      "required": [
+        "polygon"
+      ],
+      "properties": {
+        "id": {
+          "title": "Area Id",
+          "description": "Unique identifying ID String",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "minLength": 1,
+          "maxLength": 36
+        },
+        "polygon": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "title": "Polygon coordinates",
+            "items": {
+              "title": "Location",
+              "description": "",
+              "type": "object",
+              "required": [
+                "coordinates"
+              ],
+              "properties": {
+                "coordinates": {
+                  "title": "Coordinates",
+                  "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                  "type": "object",
+                  "minItems": 2,
+                  "maxItems": 3,
+                  "properties": {
+                    "longitude": {
+                      "title": "Longitude",
+                      "description": "The decimal east–west position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "latitude": {
+                      "title": "Latitude",
+                      "description": "The decimal north–south position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "altitude": {
+                      "type": "number",
+                      "title": "[Altitude]",
+                      "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "accuracy": {
+                  "title": "Accuracy",
+                  "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "minItems": 3
+          }
+        }
+      }
+    },
+    "area_history": {
+      "title": "Area Changes",
+      "description": "Changes to the area data",
+      "type": "object",
+      "minItems": 3,
+      "maxItems": 4,
+      "properties": {
+        "id": {
+          "title": "Area Id",
+          "description": "URL-friendly id",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]*$",
+          "maxLength": 36
+        },
+        "changedAt": {
+          "title": "Change",
+          "description": "Date and time when change happened.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "definition": {
+          "title": "Area definition",
+          "description": "Area definition",
+          "type": "object",
+          "additionalItem": false,
+          "required": [
+            "polygon"
+          ],
+          "properties": {
+            "id": {
+              "title": "Area Id",
+              "description": "Unique identifying ID String",
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,36}$",
+              "minLength": 1,
+              "maxLength": 36
+            },
+            "polygon": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "title": "Polygon coordinates",
+                "items": {
+                  "title": "Location",
+                  "description": "",
+                  "type": "object",
+                  "required": [
+                    "coordinates"
+                  ],
+                  "properties": {
+                    "coordinates": {
+                      "title": "Coordinates",
+                      "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                      "type": "object",
+                      "minItems": 2,
+                      "maxItems": 3,
+                      "properties": {
+                        "longitude": {
+                          "title": "Longitude",
+                          "description": "The decimal east–west position of a point. (7 decimal places max)",
+                          "type": "number",
+                          "minimum": -180,
+                          "maximum": 180
+                        },
+                        "latitude": {
+                          "title": "Latitude",
+                          "description": "The decimal north–south position of a point. (7 decimal places max)",
+                          "type": "number",
+                          "minimum": -90,
+                          "maximum": 90
+                        },
+                        "altitude": {
+                          "type": "number",
+                          "title": "[Altitude]",
+                          "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "accuracy": {
+                      "title": "Accuracy",
+                      "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "minItems": 3
+              }
+            }
+          }
+        },
+        "uId": {
+          "title": "UserId",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$"
+        }
+      }
+    },
+    "location": {
+      "title": "Location",
+      "description": "",
+      "type": "object",
+      "required": [
+        "coordinates"
+      ],
+      "properties": {
+        "coordinates": {
+          "title": "Coordinates",
+          "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+          "type": "object",
+          "minItems": 2,
+          "maxItems": 3,
+          "properties": {
+            "longitude": {
+              "title": "Longitude",
+              "description": "The decimal east–west position of a point. (7 decimal places max)",
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            "latitude": {
+              "title": "Latitude",
+              "description": "The decimal north–south position of a point. (7 decimal places max)",
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            "altitude": {
+              "type": "number",
+              "title": "[Altitude]",
+              "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+              "minimum": 0
+            }
+          }
+        },
+        "accuracy": {
+          "title": "Accuracy",
+          "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "coordinates": {
+      "title": "Coordinates",
+      "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+      "type": "object",
+      "minItems": 2,
+      "maxItems": 3,
+      "properties": {
+        "longitude": {
+          "title": "Longitude",
+          "description": "The decimal east–west position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "latitude": {
+          "title": "Latitude",
+          "description": "The decimal north–south position of a point. (7 decimal places max)",
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "altitude": {
+          "type": "number",
+          "title": "[Altitude]",
+          "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+          "minimum": 0
+        }
+      }
+    },
+    "dbh": {
+      "title": "Diameter at breast height",
+      "description": "Array including height and diameter",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": [
+        {
+          "type": "number",
+          "title": "Height",
+          "description": "Height in meter of diameter measurment",
+          "default": 1.3
+        },
+        {
+          "type": "number",
+          "title": "Diameter",
+          "description": "Diameter in centimeter as measured height",
+          "minimum": 0,
+          "maximum": 100
+        }
+      ]
+    },
+    "species": {
+      "title": "Tree species",
+      "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{3}$"
+    },
+    "dimensions_trunk": {
+      "title": "Additional trunk measurements",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "title": "Diameter at height",
+        "description": "Array including height and diameter at height",
+        "type": "object",
+        "minItems": 2,
+        "maxItems": 2,
+        "properties": {
+          "height": {
+            "type": "number",
+            "title": "Height",
+            "description": "Height of tree in PERCENT where diameter is measured",
+            "minimum": 0.1,
+            "maximum": 1
+          },
+          "diameter": {
+            "type": "number",
+            "title": "Diameter",
+            "description": "Diameter in CENTIMETER at measured height",
+            "minimum": 10,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "dimensions_crown": {
+      "title": "Additional crown measurements",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "title": "Diameter at height",
+        "description": "Array including height and diameter at height",
+        "type": "object",
+        "minItems": 2,
+        "maxItems": 2,
+        "properties": {
+          "height": {
+            "type": "number",
+            "title": "Height",
+            "description": "Height of tree in PERCENT where diameter is measured",
+            "minimum": 0.1,
+            "maximum": 1
+          },
+          "diameter": {
+            "type": "number",
+            "title": "Diameter",
+            "description": "Diameter in CENTIMETER at measured height",
+            "minimum": 10,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "diameter_height": {
+      "title": "Diameter at height",
+      "description": "Array including height and diameter at height",
+      "type": "object",
+      "minItems": 2,
+      "maxItems": 2,
+      "properties": {
+        "height": {
+          "type": "number",
+          "title": "Height",
+          "description": "Height of tree in PERCENT where diameter is measured",
+          "minimum": 0.1,
+          "maximum": 1
+        },
+        "diameter": {
+          "type": "number",
+          "title": "Diameter",
+          "description": "Diameter in CENTIMETER at measured height",
+          "minimum": 10,
+          "maximum": 100
+        }
+      }
+    },
+    "filter": {
+      "title": "Filter definition",
+      "type": "array",
+      "items": [
+        {
+          "title": "Location radius",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": [
+            {
+              "title": "Coordinates",
+              "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 3,
+              "properties": {
+                "longitude": {
+                  "title": "Longitude",
+                  "description": "The decimal east–west position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "latitude": {
+                  "title": "Latitude",
+                  "description": "The decimal north–south position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "altitude": {
+                  "type": "number",
+                  "title": "[Altitude]",
+                  "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                  "minimum": 0
+                }
+              }
+            },
+            {
+              "title": "Radius",
+              "description": "Radius in Meter.",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "title": "Tree Species",
+          "description": "Array of tree species to be filtered.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "title": "Tree species",
+            "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{3}$"
+          }
+        },
+        {
+          "title": "DBH range",
+          "description": "Define range of maximum set tree diameter.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum diameter",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            {
+              "title": "Maximum diameter",
+              "type": [
+                "number",
+                "null"
+              ],
+              "maximum": 100
+            }
+          ]
+        },
+        {
+          "title": "Height range",
+          "description": "Define Range of tree height to filter",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum height",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 1,
+              "multipleOf": 1
+            },
+            {
+              "title": "Maximum height",
+              "type": [
+                "number",
+                "null"
+              ],
+              "maximum": 1000,
+              "multipleOf": 1
+            }
+          ]
+        },
+        {
+          "title": "Birthday range",
+          "description": "Define Range of tree age to filter",
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "title": "Minimum height",
+              "description": "Minimum date of the trees birthday.",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "title": "Maximum height",
+              "description": "Maximum date of the  trees birthday.",
+              "type": "string",
+              "format": "date"
+            }
+          ]
+        }
+      ]
+    },
+    "image": {
+      "title": "Images",
+      "description": "A universal resource identifier (URI), according to RFC3986.",
+      "type": "string",
+      "format": "uri"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,36}$",
+      "minLength": 1,
+      "maxLength": 36
+    },
+    "workOrderDef": {
+      "type": "object",
+      "required": [
+        "created",
+        "authority",
+        "contractors"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "minLength": 1,
+          "maxLength": 36,
+          "title": "Workorder Id",
+          "description": "Id of the workorder"
+        },
+        "created": {
+          "title": "Created",
+          "description": "Date and time this document was created.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "authority": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,36}$",
+          "minLength": 1,
+          "maxLength": 36,
+          "title": "User Id",
+          "description": "Id of the user created the workorder"
+        },
+        "contractors": {
+          "title": "User Id",
+          "description": "Ids of the users receiving the workorder",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,36}$",
+            "minLength": 1,
+            "maxLength": 36
+          }
+        }
+      }
+    },
+    "plotTypes": {
+      "type": "object",
+      "required": [
+        "plotCircle",
+        "plotPolygon"
+      ],
+      "properties": {
+        "plotCircle": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "title": "Location",
+              "description": "",
+              "type": "object",
+              "required": [
+                "coordinates"
+              ],
+              "properties": {
+                "coordinates": {
+                  "title": "Coordinates",
+                  "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                  "type": "object",
+                  "minItems": 2,
+                  "maxItems": 3,
+                  "properties": {
+                    "longitude": {
+                      "title": "Longitude",
+                      "description": "The decimal east–west position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "latitude": {
+                      "title": "Latitude",
+                      "description": "The decimal north–south position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "altitude": {
+                      "type": "number",
+                      "title": "[Altitude]",
+                      "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "accuracy": {
+                  "title": "Accuracy",
+                  "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "radius": {
+              "type": "number",
+              "title": "Radius",
+              "description": "Radius in meter",
+              "default": 10
+            }
+          }
+        },
+        "plotPolygon": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "title": "Polygon coordinates",
+            "items": {
+              "title": "Location",
+              "description": "",
+              "type": "object",
+              "required": [
+                "coordinates"
+              ],
+              "properties": {
+                "coordinates": {
+                  "title": "Coordinates",
+                  "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                  "type": "object",
+                  "minItems": 2,
+                  "maxItems": 3,
+                  "properties": {
+                    "longitude": {
+                      "title": "Longitude",
+                      "description": "The decimal east–west position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "latitude": {
+                      "title": "Latitude",
+                      "description": "The decimal north–south position of a point. (7 decimal places max)",
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "altitude": {
+                      "type": "number",
+                      "title": "[Altitude]",
+                      "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "accuracy": {
+                  "title": "Accuracy",
+                  "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "minItems": 3
+          }
+        }
+      }
+    },
+    "polygon": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "title": "Polygon coordinates",
+        "items": {
+          "title": "Location",
+          "description": "",
+          "type": "object",
+          "required": [
+            "coordinates"
+          ],
+          "properties": {
+            "coordinates": {
+              "title": "Coordinates",
+              "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 3,
+              "properties": {
+                "longitude": {
+                  "title": "Longitude",
+                  "description": "The decimal east–west position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "latitude": {
+                  "title": "Latitude",
+                  "description": "The decimal north–south position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "altitude": {
+                  "type": "number",
+                  "title": "[Altitude]",
+                  "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                  "minimum": 0
+                }
+              }
+            },
+            "accuracy": {
+              "title": "Accuracy",
+              "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "minItems": 3
+      }
+    },
+    "circle": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "title": "Location",
+          "description": "",
+          "type": "object",
+          "required": [
+            "coordinates"
+          ],
+          "properties": {
+            "coordinates": {
+              "title": "Coordinates",
+              "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+              "type": "object",
+              "minItems": 2,
+              "maxItems": 3,
+              "properties": {
+                "longitude": {
+                  "title": "Longitude",
+                  "description": "The decimal east–west position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "latitude": {
+                  "title": "Latitude",
+                  "description": "The decimal north–south position of a point. (7 decimal places max)",
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "altitude": {
+                  "type": "number",
+                  "title": "[Altitude]",
+                  "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                  "minimum": 0
+                }
+              }
+            },
+            "accuracy": {
+              "title": "Accuracy",
+              "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "radius": {
+          "type": "number",
+          "title": "Radius",
+          "description": "Radius in meter",
+          "default": 10
+        }
+      }
+    }
+  },
+  "properties": {
+    "v": {
+      "title": "Version",
+      "description": "Version of the used vinv schema, the file should be validated against",
+      "type": "string",
+      "pattern": "^[0-9]\\.[0-9]\\.[0-9](-alpha|-beta)?$",
+      "examples": [
+        "0.0.1-alpha"
+      ]
+    },
+    "id": {
+      "title": "Document ID",
+      "description": "Once created, this ID should never change.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,36}$",
+      "minLength": 1,
+      "maxLength": 36,
+      "examples": [
+        "tWJBpKAEMMOKzEOwdr49CV1ETJvGDrD8Zzvv"
+      ]
+    },
+    "created": {
+      "title": "Created",
+      "description": "Date and time this document was created.",
+      "examples": [
+        "2018-11-13T20:20:39+00:00"
+      ],
+      "type": "string",
+      "format": "date-time"
+    },
+    "$schema": {
+      "type": "string",
+      "examples": [
+        "https://schema.vinv.io/0.0.1-alpha/vinv-named-openapi.json"
+      ]
+    },
+    "inventory": {
+      "title": "Inventory",
+      "type": "object",
+      "properties": {
+        "trees": {
+          "title": "Tree Inventory",
+          "description": "Tree data & history",
+          "type": "object",
+          "properties": {
+            "data": {
+              "title": "TreeList",
+              "description": "List of trees defined",
+              "type": "object",
+              "patternProperties": {
+                "^[A-Za-z0-9_-]{1,36}$": {
+                  "title": "Tree",
+                  "description": "Tree definition",
+                  "type": "object",
+                  "required": [
+                    "location",
+                    "species",
+                    "dbh"
+                  ],
+                  "properties": {
+                    "id": {
+                      "title": "Tree Id",
+                      "description": "Unique identifying ID String",
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                      "minLength": 1,
+                      "maxLength": 36
+                    },
+                    "location": {
+                      "title": "Location",
+                      "description": "",
+                      "type": "object",
+                      "required": [
+                        "coordinates"
+                      ],
+                      "properties": {
+                        "coordinates": {
+                          "title": "Coordinates",
+                          "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                          "type": "object",
+                          "minItems": 2,
+                          "maxItems": 3,
+                          "properties": {
+                            "longitude": {
+                              "title": "Longitude",
+                              "description": "The decimal east–west position of a point. (7 decimal places max)",
+                              "type": "number",
+                              "minimum": -180,
+                              "maximum": 180
+                            },
+                            "latitude": {
+                              "title": "Latitude",
+                              "description": "The decimal north–south position of a point. (7 decimal places max)",
+                              "type": "number",
+                              "minimum": -90,
+                              "maximum": 90
+                            },
+                            "altitude": {
+                              "type": "number",
+                              "title": "[Altitude]",
+                              "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                              "minimum": 0
+                            }
+                          }
+                        },
+                        "accuracy": {
+                          "title": "Accuracy",
+                          "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                          "type": "number",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "species": {
+                      "title": "Tree species",
+                      "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9_-]{3}$"
+                    },
+                    "dbh": {
+                      "title": "Diameter at Breast Height",
+                      "description": "Diameter in centimeter",
+                      "type": "number",
+                      "minimum": 1,
+                      "maximum": 100,
+                      "multipleOf": 1
+                    },
+                    "height": {
+                      "title": "Height",
+                      "description": "Height in centimeter",
+                      "type": "number",
+                      "minimum": 10,
+                      "maximum": 1000,
+                      "multipleOf": 1
+                    },
+                    "trunk": {
+                      "title": "Trunk definition",
+                      "description": "Diameter per height",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "title": "Diameter at height",
+                        "description": "Array including height and diameter at height",
+                        "type": "object",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "properties": {
+                          "height": {
+                            "type": "number",
+                            "title": "Height",
+                            "description": "Height of tree in PERCENT where diameter is measured",
+                            "minimum": 0.1,
+                            "maximum": 1
+                          },
+                          "diameter": {
+                            "type": "number",
+                            "title": "Diameter",
+                            "description": "Diameter in CENTIMETER at measured height",
+                            "minimum": 10,
+                            "maximum": 100
+                          }
+                        }
+                      }
+                    },
+                    "crown": {
+                      "title": "Crown definition",
+                      "description": "Diameter per height",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "title": "Diameter at height",
+                        "description": "Array including height and diameter at height",
+                        "type": "object",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "properties": {
+                          "height": {
+                            "type": "number",
+                            "title": "Height",
+                            "description": "Height of tree in PERCENT where diameter is measured",
+                            "minimum": 0.1,
+                            "maximum": 1
+                          },
+                          "diameter": {
+                            "type": "number",
+                            "title": "Diameter",
+                            "description": "Diameter in CENTIMETER at measured height",
+                            "minimum": 10,
+                            "maximum": 100
+                          }
+                        }
+                      }
+                    },
+                    "birth": {
+                      "title": "Birthday",
+                      "description": "Birthday of the tree",
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "image": {
+                      "title": "Images",
+                      "description": "List of absolute or relative path to file",
+                      "type": "array",
+                      "items": {
+                        "title": "Images",
+                        "description": "A universal resource identifier (URI), according to RFC3986.",
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "actions": {
+              "title": "TreeChangesList",
+              "description": "List of tree data changed",
+              "type": "array",
+              "items": {
+                "title": "Tree Changes",
+                "description": "Changes to the tree data",
+                "type": "object",
+                "required": [
+                  "id",
+                  "changedAt",
+                  "definition"
+                ],
+                "properties": {
+                  "id": {
+                    "title": "Tree Id",
+                    "description": "URL-friendly id",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                    "maxLength": 36
+                  },
+                  "changedAt": {
+                    "title": "Time of Change",
+                    "description": "Date and time when change happened.",
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "definition": {
+                    "title": "Tree",
+                    "description": "Tree definition",
+                    "type": "object",
+                    "required": [
+                      "location",
+                      "species",
+                      "dbh"
+                    ],
+                    "properties": {
+                      "id": {
+                        "title": "Tree Id",
+                        "description": "Unique identifying ID String",
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                        "minLength": 1,
+                        "maxLength": 36
+                      },
+                      "location": {
+                        "title": "Location",
+                        "description": "",
+                        "type": "object",
+                        "required": [
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "coordinates": {
+                            "title": "Coordinates",
+                            "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                            "type": "object",
+                            "minItems": 2,
+                            "maxItems": 3,
+                            "properties": {
+                              "longitude": {
+                                "title": "Longitude",
+                                "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -180,
+                                "maximum": 180
+                              },
+                              "latitude": {
+                                "title": "Latitude",
+                                "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -90,
+                                "maximum": 90
+                              },
+                              "altitude": {
+                                "type": "number",
+                                "title": "[Altitude]",
+                                "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "accuracy": {
+                            "title": "Accuracy",
+                            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        }
+                      },
+                      "species": {
+                        "title": "Tree species",
+                        "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_-]{3}$"
+                      },
+                      "dbh": {
+                        "title": "Diameter at Breast Height",
+                        "description": "Diameter in centimeter",
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 100,
+                        "multipleOf": 1
+                      },
+                      "height": {
+                        "title": "Height",
+                        "description": "Height in centimeter",
+                        "type": "number",
+                        "minimum": 10,
+                        "maximum": 1000,
+                        "multipleOf": 1
+                      },
+                      "trunk": {
+                        "title": "Trunk definition",
+                        "description": "Diameter per height",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "items": {
+                          "title": "Diameter at height",
+                          "description": "Array including height and diameter at height",
+                          "type": "object",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "properties": {
+                            "height": {
+                              "type": "number",
+                              "title": "Height",
+                              "description": "Height of tree in PERCENT where diameter is measured",
+                              "minimum": 0.1,
+                              "maximum": 1
+                            },
+                            "diameter": {
+                              "type": "number",
+                              "title": "Diameter",
+                              "description": "Diameter in CENTIMETER at measured height",
+                              "minimum": 10,
+                              "maximum": 100
+                            }
+                          }
+                        }
+                      },
+                      "crown": {
+                        "title": "Crown definition",
+                        "description": "Diameter per height",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "items": {
+                          "title": "Diameter at height",
+                          "description": "Array including height and diameter at height",
+                          "type": "object",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "properties": {
+                            "height": {
+                              "type": "number",
+                              "title": "Height",
+                              "description": "Height of tree in PERCENT where diameter is measured",
+                              "minimum": 0.1,
+                              "maximum": 1
+                            },
+                            "diameter": {
+                              "type": "number",
+                              "title": "Diameter",
+                              "description": "Diameter in CENTIMETER at measured height",
+                              "minimum": 10,
+                              "maximum": 100
+                            }
+                          }
+                        }
+                      },
+                      "birth": {
+                        "title": "Birthday",
+                        "description": "Birthday of the tree",
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "image": {
+                        "title": "Images",
+                        "description": "List of absolute or relative path to file",
+                        "type": "array",
+                        "items": {
+                          "title": "Images",
+                          "description": "A universal resource identifier (URI), according to RFC3986.",
+                          "type": "string",
+                          "format": "uri"
+                        }
+                      }
+                    }
+                  },
+                  "uId": {
+                    "title": "UserId",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,36}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "plots": {
+          "title": "Plots ",
+          "description": "Plots data",
+          "type": "object",
+          "properties": {
+            "data": {
+              "title": "PlotTypes",
+              "description": "Types of plot",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "plotCircle",
+                  "plotPolygon"
+                ],
+                "properties": {
+                  "plotCircle": {
+                    "type": "object",
+                    "properties": {
+                      "location": {
+                        "title": "Location",
+                        "description": "",
+                        "type": "object",
+                        "required": [
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "coordinates": {
+                            "title": "Coordinates",
+                            "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                            "type": "object",
+                            "minItems": 2,
+                            "maxItems": 3,
+                            "properties": {
+                              "longitude": {
+                                "title": "Longitude",
+                                "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -180,
+                                "maximum": 180
+                              },
+                              "latitude": {
+                                "title": "Latitude",
+                                "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -90,
+                                "maximum": 90
+                              },
+                              "altitude": {
+                                "type": "number",
+                                "title": "[Altitude]",
+                                "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "accuracy": {
+                            "title": "Accuracy",
+                            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        }
+                      },
+                      "radius": {
+                        "type": "number",
+                        "title": "Radius",
+                        "description": "Radius in meter",
+                        "default": 10
+                      }
+                    }
+                  },
+                  "plotPolygon": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "array",
+                      "title": "Polygon coordinates",
+                      "items": {
+                        "title": "Location",
+                        "description": "",
+                        "type": "object",
+                        "required": [
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "coordinates": {
+                            "title": "Coordinates",
+                            "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                            "type": "object",
+                            "minItems": 2,
+                            "maxItems": 3,
+                            "properties": {
+                              "longitude": {
+                                "title": "Longitude",
+                                "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -180,
+                                "maximum": 180
+                              },
+                              "latitude": {
+                                "title": "Latitude",
+                                "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -90,
+                                "maximum": 90
+                              },
+                              "altitude": {
+                                "type": "number",
+                                "title": "[Altitude]",
+                                "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "accuracy": {
+                            "title": "Accuracy",
+                            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        }
+                      },
+                      "minItems": 3
+                    }
+                  }
+                }
+              }
+            },
+            "actions": {
+              "title": "PlotsChangesList",
+              "description": "List of plots data changed",
+              "type": "array",
+              "items": {
+                "title": "Area Changes",
+                "description": "Changes to the area data",
+                "type": "object",
+                "minItems": 3,
+                "maxItems": 4,
+                "properties": {
+                  "id": {
+                    "title": "Area Id",
+                    "description": "URL-friendly id",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]*$",
+                    "maxLength": 36
+                  },
+                  "changedAt": {
+                    "title": "Change",
+                    "description": "Date and time when change happened.",
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "definition": {
+                    "title": "Area definition",
+                    "description": "Area definition",
+                    "type": "object",
+                    "additionalItem": false,
+                    "required": [
+                      "polygon"
+                    ],
+                    "properties": {
+                      "id": {
+                        "title": "Area Id",
+                        "description": "Unique identifying ID String",
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                        "minLength": 1,
+                        "maxLength": 36
+                      },
+                      "polygon": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "array",
+                          "title": "Polygon coordinates",
+                          "items": {
+                            "title": "Location",
+                            "description": "",
+                            "type": "object",
+                            "required": [
+                              "coordinates"
+                            ],
+                            "properties": {
+                              "coordinates": {
+                                "title": "Coordinates",
+                                "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                                "type": "object",
+                                "minItems": 2,
+                                "maxItems": 3,
+                                "properties": {
+                                  "longitude": {
+                                    "title": "Longitude",
+                                    "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                    "type": "number",
+                                    "minimum": -180,
+                                    "maximum": 180
+                                  },
+                                  "latitude": {
+                                    "title": "Latitude",
+                                    "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                    "type": "number",
+                                    "minimum": -90,
+                                    "maximum": 90
+                                  },
+                                  "altitude": {
+                                    "type": "number",
+                                    "title": "[Altitude]",
+                                    "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                    "minimum": 0
+                                  }
+                                }
+                              },
+                              "accuracy": {
+                                "title": "Accuracy",
+                                "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                                "type": "number",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "minItems": 3
+                        }
+                      }
+                    }
+                  },
+                  "uId": {
+                    "title": "UserId",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,36}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "areas": {
+          "title": "Area Inventory",
+          "description": "Area data & actions",
+          "type": "object",
+          "properties": {
+            "data": {
+              "title": "AreaList",
+              "description": "List of areas defined",
+              "type": "array",
+              "items": {
+                "title": "Area definition",
+                "description": "Area definition",
+                "type": "object",
+                "additionalItem": false,
+                "required": [
+                  "polygon"
+                ],
+                "properties": {
+                  "id": {
+                    "title": "Area Id",
+                    "description": "Unique identifying ID String",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                    "minLength": 1,
+                    "maxLength": 36
+                  },
+                  "polygon": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "array",
+                      "title": "Polygon coordinates",
+                      "items": {
+                        "title": "Location",
+                        "description": "",
+                        "type": "object",
+                        "required": [
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "coordinates": {
+                            "title": "Coordinates",
+                            "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                            "type": "object",
+                            "minItems": 2,
+                            "maxItems": 3,
+                            "properties": {
+                              "longitude": {
+                                "title": "Longitude",
+                                "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -180,
+                                "maximum": 180
+                              },
+                              "latitude": {
+                                "title": "Latitude",
+                                "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                "type": "number",
+                                "minimum": -90,
+                                "maximum": 90
+                              },
+                              "altitude": {
+                                "type": "number",
+                                "title": "[Altitude]",
+                                "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "accuracy": {
+                            "title": "Accuracy",
+                            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        }
+                      },
+                      "minItems": 3
+                    }
+                  }
+                }
+              }
+            },
+            "actions": {
+              "title": "AreaChangesList",
+              "description": "List of area data changed",
+              "type": "array",
+              "items": {
+                "title": "Area Changes",
+                "description": "Changes to the area data",
+                "type": "object",
+                "minItems": 3,
+                "maxItems": 4,
+                "properties": {
+                  "id": {
+                    "title": "Area Id",
+                    "description": "URL-friendly id",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]*$",
+                    "maxLength": 36
+                  },
+                  "changedAt": {
+                    "title": "Change",
+                    "description": "Date and time when change happened.",
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "definition": {
+                    "title": "Area definition",
+                    "description": "Area definition",
+                    "type": "object",
+                    "additionalItem": false,
+                    "required": [
+                      "polygon"
+                    ],
+                    "properties": {
+                      "id": {
+                        "title": "Area Id",
+                        "description": "Unique identifying ID String",
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9_-]{1,36}$",
+                        "minLength": 1,
+                        "maxLength": 36
+                      },
+                      "polygon": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "array",
+                          "title": "Polygon coordinates",
+                          "items": {
+                            "title": "Location",
+                            "description": "",
+                            "type": "object",
+                            "required": [
+                              "coordinates"
+                            ],
+                            "properties": {
+                              "coordinates": {
+                                "title": "Coordinates",
+                                "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+                                "type": "object",
+                                "minItems": 2,
+                                "maxItems": 3,
+                                "properties": {
+                                  "longitude": {
+                                    "title": "Longitude",
+                                    "description": "The decimal east–west position of a point. (7 decimal places max)",
+                                    "type": "number",
+                                    "minimum": -180,
+                                    "maximum": 180
+                                  },
+                                  "latitude": {
+                                    "title": "Latitude",
+                                    "description": "The decimal north–south position of a point. (7 decimal places max)",
+                                    "type": "number",
+                                    "minimum": -90,
+                                    "maximum": 90
+                                  },
+                                  "altitude": {
+                                    "type": "number",
+                                    "title": "[Altitude]",
+                                    "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+                                    "minimum": 0
+                                  }
+                                }
+                              },
+                              "accuracy": {
+                                "title": "Accuracy",
+                                "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+                                "type": "number",
+                                "minimum": 0
+                              }
+                            }
+                          },
+                          "minItems": 3
+                        }
+                      }
+                    }
+                  },
+                  "uId": {
+                    "title": "UserId",
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,36}$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "v",
+    "id",
+    "created"
+  ],
+  "$id": "https://schema.vinv.io/0.0.1-alpha/vinv-named-openapi.json"
+}

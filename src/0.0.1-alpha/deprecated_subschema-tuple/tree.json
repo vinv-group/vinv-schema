@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Tree definition",
+    "description": "",
+    "type": "array",
+    "minItems": 4,
+    "maxItems": 8,
+    "items": [
+        {
+            "$ref": "./location.json"
+        },
+        {
+            "$ref": "./species.json"
+        },
+        {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf": 1
+        },
+        {
+            "title": "Height",
+            "description": "Height in centimeter",
+            "type": "number",
+            "minimum": 10,
+            "maximum": 1000,
+            "multipleOf": 1
+        },
+        {
+            "title": "Trunk definition",
+            "description": "Diameter per height",
+            "type": [
+                "array",
+                "null"
+            ],
+            "$ref": "./dimensions_trunk.json"
+        },
+        {
+            "title": "Crown definition",
+            "description": "Diameter per height",
+            "type": [
+                "array",
+                "null"
+            ],
+            "$ref": "./dimensions_crown.json"
+        },
+        {
+            "title": "Birthday",
+            "description": "Birthday of the tree",
+            "type": ["string", "null"],
+            "format": "date"
+        },
+        {
+            "title": "Images",
+            "description": "List of absolute or relative path to file",
+            "type": ["array", "null"],
+            "items": {
+                "$ref": "./image.json"
+            }
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+type Query {
+  """
+  Returns trees based on ID
+  
+  Equivalent to GET /tree
+  """
+  tree(
+    """ID of the document"""
+    documentId: String!
+
+    """ID of the tree"""
+    treeId: String!
+  ): Tree
+
+  """
+  Returns all trees
+  
+  Equivalent to GET /trees
+  """
+  trees(
+    """ID of the document"""
+    documentId: String!
+  ): [Tree]
+}
+
+"""Tree definition"""
+type Tree {
+  """Birthday of the tree"""
+  birth: String
+
+  """Diameter per height"""
+  crown: [CrownListItem]
+
+  """Diameter in centimeter"""
+  dbh: Float!
+
+  """Height in centimeter"""
+  height: Float
+
+  """Unique identifying ID String"""
+  id: String
+
+  """List of absolute or relative path to file"""
+  image: [String]
+
+  """"""
+  location: Location!
+
+  """Tree Species values taken from https://github.com/b-lack/tree-species"""
+  species: String!
+
+  """Diameter per height"""
+  trunk: [TrunkListItem]
+}
+
+"""Array including height and diameter at height"""
+type CrownListItem {
+  """Diameter in CENTIMETER at measured height"""
+  diameter: Float
+
+  """Height of tree in PERCENT where diameter is measured"""
+  height: Float
+}
+
+""""""
+type Location {
+  """The decimal accuracy of coordinates in meter (2 decimal places max)."""
+  accuracy: Float
+
+  """
+  Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.
+  """
+  coordinates: Coordinates!
+}
+
+"""
+Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.
+"""
+type Coordinates {
+  """
+  The altitude of the position in meters above mean sea level. (2 decimal places max)
+  """
+  altitude: Float
+
+  """The decimal north–south position of a point. (7 decimal places max)"""
+  latitude: Float
+
+  """The decimal east–west position of a point. (7 decimal places max)"""
+  longitude: Float
+}
+
+"""Array including height and diameter at height"""
+type TrunkListItem {
+  """Diameter in CENTIMETER at measured height"""
+  diameter: Float
+
+  """Height of tree in PERCENT where diameter is measured"""
+  height: Float
+}
+
+type Mutation {
+  """
+  Deletes tree based on ID
+  
+  Equivalent to DELETE /tree
+  """
+  deleteTree(
+    """ID of the document"""
+    documentId: String!
+
+    """ID of the tree"""
+    treeId: String!
+  ): String
+
+  """
+  Returns trees based on ID
+  
+  Equivalent to POST /circlePlot
+  """
+  postCirclePlot(
+    circleInput: CircleInput!
+
+    """ID of the document"""
+    documentId: String!
+  ): Circle
+
+  """
+  Returns trees based on ID
+  
+  Equivalent to POST /tree
+  """
+  postTree(
+    """ID of the document"""
+    documentId: String!
+
+    """Tree definition"""
+    treeInput: TreeInput!
+  ): Tree
+}
+
+type Circle {
+  """"""
+  location: Location
+
+  """Radius in meter"""
+  radius: Float
+}
+
+input CircleInput {
+  """"""
+  location: LocationInput
+
+  """Radius in meter"""
+  radius: Float
+}
+
+""""""
+input LocationInput {
+  """The decimal accuracy of coordinates in meter (2 decimal places max)."""
+  accuracy: Float
+
+  """
+  Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.
+  """
+  coordinates: CoordinatesInput!
+}
+
+"""
+Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.
+"""
+input CoordinatesInput {
+  """
+  The altitude of the position in meters above mean sea level. (2 decimal places max)
+  """
+  altitude: Float
+
+  """The decimal north–south position of a point. (7 decimal places max)"""
+  latitude: Float
+
+  """The decimal east–west position of a point. (7 decimal places max)"""
+  longitude: Float
+}
+
+"""Tree definition"""
+input TreeInput {
+  """Birthday of the tree"""
+  birth: String
+
+  """Diameter per height"""
+  crown: [CrownListItemInput]
+
+  """Diameter in centimeter"""
+  dbh: Float!
+
+  """Height in centimeter"""
+  height: Float
+
+  """Unique identifying ID String"""
+  id: String
+
+  """List of absolute or relative path to file"""
+  image: [String]
+
+  """"""
+  location: LocationInput!
+
+  """Tree Species values taken from https://github.com/b-lack/tree-species"""
+  species: String!
+
+  """Diameter per height"""
+  trunk: [TrunkListItemInput]
+}
+
+"""Array including height and diameter at height"""
+input CrownListItemInput {
+  """Diameter in CENTIMETER at measured height"""
+  diameter: Float
+
+  """Height of tree in PERCENT where diameter is measured"""
+  height: Float
+}
+
+"""Array including height and diameter at height"""
+input TrunkListItemInput {
+  """Diameter in CENTIMETER at measured height"""
+  diameter: Float
+
+  """Height of tree in PERCENT where diameter is measured"""
+  height: Float
+}

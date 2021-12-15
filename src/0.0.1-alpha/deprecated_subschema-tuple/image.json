@@ -1,0 +1,6 @@
+{
+    "title": "Images",
+    "description": "A universal resource identifier (URI), according to RFC3986.",
+    "type": "string",
+    "format": "uri"
+}

@@ -1,1 +1,1 @@
-export * as V001Alpha from './0.0.1-alpha.0';
+export * as V001Alpha from './0.0.1-alpha';

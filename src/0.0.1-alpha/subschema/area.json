@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Area definition",
+    "description": "Area definition",
+    "type": "object",
+    "additionalItem": false,
+    "required": [
+        "polygon"
+    ],
+    "properties": {
+        "id": {
+            "title": "Area Id",
+            "description": "Unique identifying ID String",
+            "$ref": "./id.json"
+        },
+        "polygon": {
+            "$ref": "./polygon.json"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node.js",
+  "scripts": {
+    "dev": "parcel bundled/index.html",
+    "build": "parcel build bundled/index.html",
+    "test": "node node.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@vinv/vinv-schema": "file:../"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
+}

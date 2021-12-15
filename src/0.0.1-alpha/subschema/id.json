@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "pattern": "^[A-Za-z0-9_-]{1,36}$",
+    "minLength": 1,
+    "maxLength": 36,
+    "examples": [
+      "tWJBpKAEMMOKzEOwdr49CV1ETJvGDrD8Zzvv"
+    ]
+  }
