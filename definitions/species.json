@@ -1,6 +1,6 @@
 {
     "species": {
-        "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/specied.json",
+        "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/species.json",
         "$schema": "http://json-schema.org/draft-07/schema#",
 
         "title": "Tree species",
