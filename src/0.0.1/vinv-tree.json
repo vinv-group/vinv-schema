@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/dist/0.0.1/vinv-tree.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json",
     "title": "Tree",
     "description": "Tree definition",
     "type": "object",

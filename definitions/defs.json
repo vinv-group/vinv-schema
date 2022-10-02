@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/defs.json",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/defs.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$defs": {
       "species": {
