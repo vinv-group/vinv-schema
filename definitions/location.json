@@ -1,0 +1,54 @@
+{
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/location.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Location",
+    "description": "",
+    "definition": "location",
+    "type": "object",
+    "required": [
+        "coordinates",
+        "accuracy"
+    ],
+    "properties": {
+        "coordinates": {
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/coordinates.json"
+        },
+        "accuracy": {
+            "title": "Accuracy",
+            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+            "type": "number",
+            "minimum": 0,
+            "examples": [
+                3,
+                12
+            ]
+        },
+        "geogrid": {
+            "title": "Where",
+            "description": "Where the event occurred",
+            "type": ["object", "null"],
+            "properties": {
+                "h3": {
+                    "title": "h3-Location",
+                    "description": "Location of the event (h3)",
+                    "type": ["string", "null"],
+                    "minLength": 15,
+                    "maxLength": 15,
+                    "examples": [
+                        "8428309ffffffff"
+                    ]
+                },
+                "geohash": {
+                    "title": "geohash-Location",
+                    "description": "Location of the event (geohash)",
+                    "type": ["string", "null"],
+                    "minLength": 1,
+                    "maxLength": 12,
+                    "examples": [
+                        "ww8p1r4t8"
+                    ]
+                }
+            }
+        }
+    }
+}

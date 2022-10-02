@@ -1,0 +1,23 @@
+{
+  "name": "@vinv/vinv-tree",
+  "version": "0.0.1",
+  "description": "Individual tree schema",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./build/combine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinv-group/vinv-tree.git"
+  },
+  "author": "Gerrit Balindt",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/vinv-group/vinv-tree/issues"
+  },
+  "homepage": "https://github.com/vinv-group/vinv-tree#readme",
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.9"
+  }
+}

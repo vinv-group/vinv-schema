@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/dist/0.0.1/vinv-tree.json",
+    "title": "Tree",
+    "description": "Tree definition",
+    "type": "object",
+    "required": [
+        "location",
+        "species",
+        "dbh"
+    ],
+    "properties": {
+        "location": { // EXT
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/location.json"
+        },
+        "species": {// EXT
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/defs.json/#/$defs/species"
+        },
+        "dbh": {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf" : 1,
+            "examples": [
+                34,
+                56
+            ]
+        },
+        "height":{
+            "title": "Height",
+            "description": "Height in Meter",
+            "type": ["number", "null"],
+            "minimum": 0.5,
+            "maximum": 99,
+            "multipleOf" : 0.1,
+            "examples": [
+                14,
+                13.5,
+                15.60
+            ]
+        },
+        "trunk": {
+            "title": "Trunk definition",
+            "description": "Diameter per height",
+            "$ref": "#/$defs/dimension_at_height"
+        },
+        "crown": {
+            "title": "Crown definition",
+            "description": "Diameter per height",
+            "$ref": "#/$defs/dimension_at_height"
+        },
+        "birth": {
+            "title": "Birthday",
+            "description": "Birthday of the tree",
+            "type": ["string", "null"],
+            "format": "date",
+            "examples": [
+                "2010-09-13"
+            ]
+        },
+        "images": {
+            "title": "Images",
+            "description": "List of absolute or relative path to file",
+            "type": ["object", "null"],
+            "required": [
+                "image_trunk",
+                "image_crown"
+            ],
+            "properties": {
+                "image_trunk": { "$ref": "./image.json"},
+                "image_crown": { "$ref": "./image.json"}
+            }
+        }
+    },
+    "$defs": {
+        "dimension_at_height":{
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": "object",
+            "minItems":2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "properties": {
+                "height":{
+                    "type": "number",
+                    "title": "Height",
+                    "description": "Height of tree in PERCENT where diameter is measured",
+                    "minimum": 0.1,
+                    "maximum": 1,
+                    "examples": [
+                        0.5,
+                        0.1
+                    ]
+                },
+                "diameter": {
+                    "type": "number",
+                    "title": "Diameter",
+                    "description": "Diameter in CENTIMETER at measured height",
+                    "minimum": 10,
+                    "maximum": 100,
+                    "examples": [
+                        34,
+                        38
+                    ]
+                }
+            }
+        }
+    }
+}
