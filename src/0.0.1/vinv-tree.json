@@ -10,11 +10,11 @@
         "dbh"
     ],
     "properties": {
-        "location": { // EXT
-            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/location.json"
+        "location": {
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/location.json"
         },
-        "species": {// EXT
-            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/defs.json/#/$defs/species"
+        "species": {
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/defs.json#/$defs/species"
         },
         "dbh": {
             "title": "Diameter at Breast Height",
@@ -69,8 +69,8 @@
                 "image_crown"
             ],
             "properties": {
-                "image_trunk": { "$ref": "./image.json"},
-                "image_crown": { "$ref": "./image.json"}
+                "image_trunk": { "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/defs.json#/$defs/image"},
+                "image_crown": { "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/defs.json#/$defs/image"}
             }
         }
     },

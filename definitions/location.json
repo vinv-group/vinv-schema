@@ -11,7 +11,7 @@
     ],
     "properties": {
         "coordinates": {
-            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/definitions/coordinates.json"
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/coordinates.json"
         },
         "accuracy": {
             "title": "Accuracy",

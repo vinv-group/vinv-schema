@@ -1,9 +1,0 @@
-{
-    "pattern": "^[A-Za-z0-9_\\-\\/]{10,}$",
-    "minLength": 10,
-    "maxLength": 100,
-    "type": "string",
-    "examples": [
-        "3e4666bf-d5e5-4aa7-b8ce-cefe41c7568a"
-    ]
-}
