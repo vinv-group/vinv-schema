@@ -11,8 +11,6 @@
   ],
   "properties": {
     "location": {
-      "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/location.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Location",
       "description": "",
       "definition": "location",
@@ -23,8 +21,6 @@
       ],
       "properties": {
         "coordinates": {
-          "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/coordinates.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "title": "Coordinates",
           "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
           "type": "object",
@@ -43,7 +39,8 @@
               "examples": [
                 -130.5627874,
                 130.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.longitude"
             },
             "latitude": {
               "title": "Latitude",
@@ -54,7 +51,8 @@
               "examples": [
                 -12.4563,
                 50.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.latitude"
             },
             "altitude": {
               "type": [
@@ -68,9 +66,11 @@
               "examples": [
                 0,
                 130
-              ]
+              ],
+              "$anchor": "location.coordinates.altitude"
             }
-          }
+          },
+          "$anchor": "location.coordinates"
         },
         "accuracy": {
           "title": "Accuracy",
@@ -80,7 +80,8 @@
           "examples": [
             3,
             12
-          ]
+          ],
+          "$anchor": "location.accuracy"
         },
         "geogrid": {
           "title": "Where",
@@ -101,7 +102,8 @@
               "maxLength": 15,
               "examples": [
                 "8428309ffffffff"
-              ]
+              ],
+              "$anchor": "location.geogrid.h3"
             },
             "geohash": {
               "title": "geohash-Location",
@@ -114,24 +116,27 @@
               "maxLength": 12,
               "examples": [
                 "ww8p1r4t8"
-              ]
+              ],
+              "$anchor": "location.geogrid.geohash"
             }
-          }
+          },
+          "$anchor": "location.geogrid"
         }
-      }
+      },
+      "$anchor": "location"
     },
     "species": {
       "species": {
-        "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/species.json",
-        "$schema": "http://json-schema.org/draft-07/schema#",
         "title": "Tree species",
         "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
         "type": "string",
         "pattern": "^[a-zA-Z0-9_-]{3}$",
         "examples": [
           "JM2"
-        ]
-      }
+        ],
+        "$anchor": "species.species"
+      },
+      "$anchor": "species"
     },
     "dbh": {
       "title": "Diameter at Breast Height",
@@ -143,7 +148,8 @@
       "examples": [
         34,
         56
-      ]
+      ],
+      "$anchor": "dbh"
     },
     "height": {
       "title": "Height",
@@ -159,17 +165,20 @@
         14,
         13.5,
         15.6
-      ]
+      ],
+      "$anchor": "height"
     },
     "trunk": {
       "title": "Trunk definition",
       "description": "Diameter per height",
-      "$ref": "#/$defs/dimension_at_height"
+      "$ref": "#/$defs/dimension_at_height",
+      "$anchor": "trunk"
     },
     "crown": {
       "title": "Crown definition",
       "description": "Diameter per height",
-      "$ref": "#/$defs/dimension_at_height"
+      "$ref": "#/$defs/dimension_at_height",
+      "$anchor": "crown"
     },
     "birth": {
       "title": "Birthday",
@@ -181,7 +190,8 @@
       "format": "date",
       "examples": [
         "2010-09-13"
-      ]
+      ],
+      "$anchor": "birth"
     },
     "images": {
       "title": "Images",
@@ -196,8 +206,6 @@
       ],
       "properties": {
         "image_trunk": {
-          "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "title": "Image",
           "description": "A universal resource identifier (URI), according to RFC3986.",
           "type": [
@@ -217,7 +225,8 @@
               "contentMediaType": "image/jpeg",
               "examples": [
                 "R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs="
-              ]
+              ],
+              "$anchor": "images.image_trunk.base64"
             },
             "encoder": {
               "title": "Encoder",
@@ -234,7 +243,8 @@
               "examples": [
                 "image/webp",
                 "image/jpeg"
-              ]
+              ],
+              "$anchor": "images.image_trunk.encoder"
             },
             "compression": {
               "title": "Compression",
@@ -248,7 +258,8 @@
               "default": 1,
               "examples": [
                 0.8
-              ]
+              ],
+              "$anchor": "images.image_trunk.compression"
             },
             "width": {
               "title": "Width",
@@ -259,7 +270,8 @@
               ],
               "examples": [
                 500
-              ]
+              ],
+              "$anchor": "images.image_trunk.width"
             },
             "height": {
               "title": "Height",
@@ -270,14 +282,18 @@
               ],
               "examples": [
                 500
-              ]
+              ],
+              "$anchor": "images.image_trunk.height"
             }
-          }
+          },
+          "$anchor": "images.image_trunk"
         },
         "image_crown": {
-          "$ref": "#/properties/images/properties/image_trunk"
+          "$ref": "#/properties/images/properties/image_trunk",
+          "$anchor": "images.image_crown"
         }
-      }
+      },
+      "$anchor": "images"
     }
   },
   "$defs": {

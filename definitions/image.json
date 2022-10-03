@@ -4,7 +4,6 @@
     "title": "Image",
     "description": "A universal resource identifier (URI), according to RFC3986.",
     "type": ["object", "null"],
-    "definition": "image",
     "required":[
         "base64"
     ],

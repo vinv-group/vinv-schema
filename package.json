@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/vinv-group/vinv-tree#readme",
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^9.0.9"
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "ajv": "^8.11.0",
+    "ajv-formats": "^2.1.1"
   }
 }
