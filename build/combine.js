@@ -70,7 +70,7 @@ ajv = new Ajv({strict:false, allErrors:true});
 addFormats(ajv)
 
 const compiledSchema = ajv.addSchema(schema, 'dereferenced');
-console.log(ajv.getSchema('https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json#location').schema);
+console.log(ajv.getSchema('https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json#images.image_trunk.compression').schema);
 if(compiledSchema.errors){
     console.error(compiledSchema.errors);
 }else{
@@ -81,16 +81,16 @@ if(compiledSchema.errors){
 
 const bundled_schema = await bundle(VERSION, SCHEMANAME);
 bundled_schema.properties = clearUnsupportedKeywords(bundled_schema.properties, ['$id', '$schema'], true, true, []);
-// DARF NICHT 2 mal hinzugefügt werden
-ajv = new Ajv({strict:false, allErrors:true});
-addFormats(ajv)
-const bundledSchema = ajv.addSchema(bundled_schema, 'bundled_schema');
-console.log(JSON.stringify(ajv.getSchema('bundled_schema#location').schema, null, 2));
 
-if(bundledSchema.errors){
+ajv = new Ajv({strict:true, allErrors:true});
+addFormats(ajv)
+
+const bundledSchema = ajv.addSchema(bundled_schema, 'bundled_schema');
+console.log(ajv.getSchema('https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json#images.image_trunk.compression').schema);
+
+if(bundledSchema.errors || ajv.getSchema('https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json#images.image_trunk.compression').schema === undefined){
     console.error(bundledSchema.errors);
 }else{
-    //await writeFileAsync(`${distDirectory}/${SCHEMANAME}.json`, JSON.stringify(bundled_schema, null, 2))
     await writeFileAsync(`${distDirectory}/${SCHEMANAME}.min.json`, JSON.stringify(bundled_schema))
 }
 
