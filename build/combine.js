@@ -50,7 +50,7 @@ function clearUnsupportedKeywords(schema, unsupportedKeywords, mute, multitype){
 
 
 const schema = await dereference(VERSION, SCHEMANAME);
-schema.properties = clearUnsupportedKeywords(schema.properties, ['$id', '$defs', '$schema'], true, true);
+schema.properties = clearUnsupportedKeywords(schema.properties, ['$defs'], true, true);
 await writeFileAsync(`${distDirectory}/${SCHEMANAME}.dereferenced.min.json`, JSON.stringify(schema))
 
 const bundled_schema = await bundle(VERSION, SCHEMANAME);
