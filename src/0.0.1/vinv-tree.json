@@ -22,7 +22,7 @@
             "type": "number",
             "minimum": 1,
             "maximum": 100,
-            "multipleOf" : 1,
+            "multipleOf" : 0.1,
             "examples": [
                 34,
                 56

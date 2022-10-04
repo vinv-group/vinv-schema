@@ -17,6 +17,10 @@
             "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
             "type": "number",
             "minimum": 0,
+            "maximum": 10000,
+            "multipleOf" : 0.1,
+            "vinv:unit": "Meter",
+            "vinv:unitSymbol": "m",
             "examples": [
                 3,
                 12
