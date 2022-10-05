@@ -83,7 +83,7 @@
             "$schema": "http://json-schema.org/draft-07/schema#",
             "title": "Diameter at height",
             "description": "Array including height and diameter at height",
-            "type": "object",
+            "type": ["object", "null"],
             "minItems":2,
             "maxItems": 2,
             "additionalItems": false,
