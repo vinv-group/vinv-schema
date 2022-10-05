@@ -48,12 +48,14 @@
         "trunk": {
             "title": "Trunk definition",
             "description": "Diameter per height",
-            "$ref": "#/$defs/dimension_at_height"
+            "type": "array",
+            "items": {"$ref": "#/$defs/dimension_at_height"}
         },
         "crown": {
             "title": "Crown definition",
             "description": "Diameter per height",
-            "$ref": "#/$defs/dimension_at_height"
+            "type": "array",
+            "items": {"$ref": "#/$defs/dimension_at_height"}
         },
         "birth": {
             "title": "Birthday",
