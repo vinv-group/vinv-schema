@@ -51,11 +51,21 @@
             "type": "array",
             "items": {"$ref": "#/$defs/dimension_at_height"}
         },
+        "image_trunk": { 
+            "title": "Image of the trunk",
+            "description": "Image of the trunk",
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+        },
         "crown": {
             "title": "Crown definition",
             "description": "Diameter per height",
             "type": "array",
             "items": {"$ref": "#/$defs/dimension_at_height"}
+        },
+        "image_crown": { 
+            "title": "Image of the crown",
+            "description": "Image of the crown",
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
         },
         "birth": {
             "title": "Birthday",
@@ -65,19 +75,6 @@
             "examples": [
                 "2010-09-13"
             ]
-        },
-        "images": {
-            "title": "Images",
-            "description": "List of absolute or relative path to file",
-            "type": ["object", "null"],
-            "required": [
-                "image_trunk",
-                "image_crown"
-            ],
-            "properties": {
-                "image_trunk": { "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"},
-                "image_crown": { "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"}
-            }
         }
     },
     "$defs": {

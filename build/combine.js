@@ -94,7 +94,7 @@ const bundledSchema = ajv.addSchema(bundled_schema, 'bundled_schema');
 //var result = ajv.getSchema("bundled_schema#location", {});
 //console.log(result);
 
-if(bundledSchema.errors || ajv.getSchema('https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json#images.image_trunk.compression').schema === undefined){
+if(bundledSchema.errors){
     console.error(bundledSchema.errors);
 }else{
     await writeFileAsync(`${distDirectory}/${SCHEMANAME}.min.json`, JSON.stringify(bundled_schema))
