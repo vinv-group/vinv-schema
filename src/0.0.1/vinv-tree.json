@@ -46,26 +46,46 @@
             "vinv:unitSymbol": "m"
         },
         "trunk": {
+            "type": "object",
             "title": "Trunk definition",
-            "description": "Diameter per height",
-            "type": "array",
-            "items": {"$ref": "#/$defs/dimension_at_height"}
-        },
-        "image_trunk": { 
-            "title": "Image of the trunk",
-            "description": "Image of the trunk",
-            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+            "description": "Trunk definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Trunk Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                },
+                "image_trunk": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+                }
+            }
         },
         "crown": {
-            "title": "Crown definition",
-            "description": "Diameter per height",
-            "type": "array",
-            "items": {"$ref": "#/$defs/dimension_at_height"}
-        },
-        "image_crown": { 
-            "title": "Image of the crown",
-            "description": "Image of the crown",
-            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+            "type": "object",
+            "title": "Crown",
+            "description": "Crown definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Crown Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                },
+                "image_crown": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+                }
+            }
         },
         "birth": {
             "title": "Birthday",
