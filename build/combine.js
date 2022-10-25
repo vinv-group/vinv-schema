@@ -70,7 +70,7 @@ function clearUnsupportedKeywords(schema, unsupportedKeywords, multitype=false, 
 
 let schema = await dereference(VERSION, SCHEMANAME);
 
-schema.properties = clearUnsupportedKeywords(schema.properties, ['$id', '$schema'], true, true, []);
+schema.properties = clearUnsupportedKeywords(schema.properties, ['$id', 'id', '$schema'], true, true, []);
 schema = clearUnsupportedKeywords(schema, ['$defs'], true, true, []);
 
 ajv = new Ajv({strict:false, allErrors:true});
