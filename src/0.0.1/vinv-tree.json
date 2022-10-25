@@ -46,7 +46,7 @@
             "vinv:unitSymbol": "m"
         },
         "trunk": {
-            "type": "object",
+            "type": ["object", "null"],
             "title": "Trunk definition",
             "description": "Trunk definition",
             "required": [
@@ -67,7 +67,7 @@
             }
         },
         "crown": {
-            "type": "object",
+            "type": ["object", "null"],
             "title": "Crown",
             "description": "Crown definition",
             "required": [
