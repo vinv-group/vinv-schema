@@ -18,7 +18,11 @@ addFormats(ajv)
 const argv = process.argv.slice(2);
 
 const VERSION = argv[0];
-if(!VERSION) console.error('No version given');
+if(!VERSION) {
+    throw new Error("No version specified");
+}
+console.error('Build:', VERSION);
+
 const SCHEMANAME = 'vinv-tree';
 
 const distDirectory = `./dist/${VERSION}`;
