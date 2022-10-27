@@ -28,7 +28,8 @@
                 56
             ],
             "vinv:unit": "Centimeter",
-            "vinv:unitSymbol": "cm"
+            "vinv:unitSymbol": "cm",
+            "vinv:speech": true
         },
         "height":{
             "title": "Height",
@@ -43,7 +44,8 @@
                 15.60
             ],
             "vinv:unit": "Meter",
-            "vinv:unitSymbol": "m"
+            "vinv:unitSymbol": "m",
+            "vinv:speech": true
         },
         "trunk": {
             "type": ["object", "null"],
