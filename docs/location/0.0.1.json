@@ -11,7 +11,7 @@
     ],
     "properties": {
         "coordinates": {
-            "$ref": "https://schema.vinv.io/coordinates/0.0.1.json"
+            "$ref": "../coordinates/0.0.1.json"
         },
         "accuracy": {
             "title": "Accuracy",

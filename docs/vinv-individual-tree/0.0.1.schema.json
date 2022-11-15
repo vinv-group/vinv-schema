@@ -11,10 +11,10 @@
     ],
     "properties": {
         "location": {
-            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+            "$ref": "../location/0.0.1.json"
         },
         "species": {
-            "$ref": "https://schema.vinv.io/species/0.0.1.json"
+            "$ref": "../species/0.0.1.json"
         },
         "dbh": {
             "title": "Diameter at Breast Height",
