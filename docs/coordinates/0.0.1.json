@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/coordinates.json",
+    "$id": "https://schema.vinv.io/coordinates/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Coordinates",
     "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
