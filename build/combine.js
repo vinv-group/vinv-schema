@@ -33,7 +33,7 @@ const dereference = async (version, schemaName) => {
     return await $RefParser.dereference(`./src/${version}/${schemaName}.json`);
 }
 const bundle = async (version, schemaName) => {
-    return await $RefParser.bundle(`./src/${version}/${schemaName}.json`);
+    return await $RefParser.bundle(`./src/${version}/${schemaName}.json`)
 }
 
 function clearUnsupportedKeywords(schema, unsupportedKeywords, multitype=false, anchor = null, anchors = []){
@@ -81,7 +81,7 @@ const compiledSchema = ajv.addSchema(schema, 'dereferenced');
 if(compiledSchema.errors){
     console.error(compiledSchema.errors);
 }else{
-    await writeFileAsync(`${distDirectory}/${SCHEMANAME}.dereferenced.min.json`, JSON.stringify(schema))
+    await writeFileAsync(`${distDirectory}/${SCHEMANAME}.dereferenced.min.schema.json`, JSON.stringify(schema))
 }
 
 
@@ -101,7 +101,7 @@ const bundledSchema = ajv.addSchema(bundled_schema, 'bundled_schema');
 if(bundledSchema.errors){
     console.error(bundledSchema.errors);
 }else{
-    await writeFileAsync(`${distDirectory}/${SCHEMANAME}.min.json`, JSON.stringify(bundled_schema))
+    await writeFileAsync(`${distDirectory}/subschema/${SCHEMANAME}.min.schema.json`, JSON.stringify(bundled_schema))
 }
 
 

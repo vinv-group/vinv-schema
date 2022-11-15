@@ -1,0 +1,137 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/dist/0.0.1/vinv-tree.json",
+    "title": "Tree",
+    "description": "Tree definition",
+    "type": "object",
+    "required": [
+        "location",
+        "species",
+        "dbh"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "./src/0.0.1/definitions/location.json"
+        },
+        "species": {
+            "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/species.json"
+        },
+        "dbh": {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf" : 0.1,
+            "examples": [
+                34,
+                56
+            ],
+            "vinv:unit": "Centimeter",
+            "vinv:unitSymbol": "cm",
+            "vinv:speech": true
+        },
+        "height":{
+            "title": "Height",
+            "description": "Height in Meter",
+            "type": ["number", "null"],
+            "minimum": 0.5,
+            "maximum": 99,
+            "multipleOf" : 0.1,
+            "examples": [
+                14,
+                13.5,
+                15.60
+            ],
+            "vinv:unit": "Meter",
+            "vinv:unitSymbol": "m",
+            "vinv:speech": true
+        },
+        "trunk": {
+            "type": ["object", "null"],
+            "title": "Trunk definition",
+            "description": "Trunk definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Trunk Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                },
+                "image_trunk": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+                }
+            }
+        },
+        "crown": {
+            "type": ["object", "null"],
+            "title": "Crown",
+            "description": "Crown definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Crown Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                },
+                "image_crown": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://raw.githubusercontent.com/vinv-group/vinv-tree/main/definitions/image.json"
+                }
+            }
+        },
+        "birth": {
+            "title": "Birthday",
+            "description": "Birthday of the tree",
+            "type": ["string", "null"],
+            "format": "date",
+            "examples": [
+                "2010-09-13"
+            ]
+        }
+    },
+    "$defs": {
+        "dimension_at_height":{
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": ["object", "null"],
+            "minItems":2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "properties": {
+                "height":{
+                    "type": "number",
+                    "title": "Height",
+                    "description": "Height of tree in PERCENT where diameter is measured",
+                    "minimum": 0.1,
+                    "maximum": 1,
+                    "examples": [
+                        0.5,
+                        0.1
+                    ]
+                },
+                "diameter": {
+                    "type": "number",
+                    "title": "Diameter",
+                    "description": "Diameter in CENTIMETER at measured height",
+                    "minimum": 10,
+                    "maximum": 100,
+                    "examples": [
+                        34,
+                        38
+                    ]
+                }
+            }
+        }
+    }
+}
