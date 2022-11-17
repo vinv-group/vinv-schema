@@ -106,6 +106,10 @@ typings/
 
 .DS_Store
 
-build
+processing
 
 out
+
+dist
+
+definitions

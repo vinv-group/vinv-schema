@@ -13,8 +13,11 @@ jsonschema2md -d dist/0.0.1/dereferenced -o ../../documentation/src/vinv-individ
 
 jsonschema2md -d dist/0.0.1/dereferenced -o ../../documentation/src/vinv-individual-tree -l en_US
 
+## Envelope
+node ./build/combine.js 0.0.1 envelope
+jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/envelope -o /Users/b-mac/sites/vinv/documentation/src/basics/envelope/0.0.1 -l en_US -n -p vinv:id -e doc.json
 
-
+## Individual Tree
 node ./build/combine.js 0.0.1 vinv-individual-tree
 jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-individual-tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-individual-tree/0.0.1 -l en_US -n -p vinv:id -e doc.json
 
