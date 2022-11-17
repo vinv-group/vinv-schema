@@ -139,8 +139,8 @@ const bundledSchema = ajv.addSchema(bundled_schema, 'bundled_schema');
 if(bundledSchema.errors){
     console.error(bundledSchema.errors);
 }else{
-    await writeFileAsync(`${distDirectory}dereferenced.doc.json`, JSON.stringify(bundled_schema, null, 2))
-    await writeFileAsync(`${distDirectory}example.json`, JSON.stringify(exampleFile, null, 2))
+    await writeFileAsync(`${distDirectory}${VERSION}/dereferenced.doc.json`, JSON.stringify(bundled_schema, null, 2))
+    await writeFileAsync(`${distDirectory}${VERSION}/example.json`, JSON.stringify(exampleFile, null, 2))
 }
 
 
