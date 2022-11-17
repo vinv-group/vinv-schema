@@ -1,0 +1,12 @@
+{
+  "coordinates": {
+    "longitude": 130.5627874,
+    "latitude": 50.5627874,
+    "altitude": 130
+  },
+  "accuracy": 12,
+  "geogrid": {
+    "h3": "8428309ffffffff",
+    "geohash": "ww8p1r4t8"
+  }
+}

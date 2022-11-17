@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/vinv-group/vinv-tree#readme",
   "dependencies": {
+    "@adobe/jsonschema2md": "^7.1.3",
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "ajv": "^8.11.0",
-    "ajv-formats": "^2.1.1"
+    "ajv-formats": "^2.1.1",
+    "nanoid": "^4.0.0"
   }
 }
