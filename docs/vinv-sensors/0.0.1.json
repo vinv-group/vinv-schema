@@ -1,0 +1,117 @@
+{
+    "$id": "https://schema.vinv.io/vinv-sensors/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Sensors",
+    "description": "Tree definition",
+    "type": "object",
+    "required": [
+        "location"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "settings":{
+            "type": "object",
+            "title": "Settings",
+            "description": "Settings for the device orientation sensor.",
+            "properties": {
+                "frequency": {
+                    "title": "Frequency",
+                    "description": "The requested number of times per second the sensor should be sampled.",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 86400,
+                    "default": 60,
+                    "examples": [
+                        60
+                    ]
+                }
+            }
+        },
+        "sensor_data": {
+            "type": "array",
+            "title": "Device Orientation",
+            "description": "The device orientation sensor provides information about the physical orientation of a hosting device. This data includes the rotation of the device around three axes in three-dimensional space.",
+            "items": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "device_orientation"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "title": "Timestamp",
+                        "description": "The time at which the data was retrieved, in milliseconds since the Unix epoch.",
+                        "type": "number",
+                        "minimum": 0,
+                        "default": 0,
+                        "examples": [
+                            0
+                        ],
+                        "readOnly": true
+                    },
+                    "device_orientation": {
+                        "$ref": "#/$defs/device_orientation"
+                    }
+                }
+            }
+        }
+    },
+    "$defs": {
+        "device_orientation": {
+            "type": "object",
+            "required": [
+                "alpha",
+                "beta",
+                "gamma"
+            ],
+            "properties": {
+                "alpha": {
+                    "title": "Alpha",
+                    "description": "The z-axis rotation of the device, in degrees, around the z-axis. This value represents the compass direction the device is facing.",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 360,
+                    "default": 0,
+                    "examples": [
+                        0
+                    ],
+                    "readOnly": true
+                },
+                "beta": {
+                    "title": "Beta",
+                    "description": "The x-axis rotation of the device, in degrees, around the x-axis. This value represents the front-to-back tilt of the device.",
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180,
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "gamma": {
+                    "title": "Gamma",
+                    "description": "The y-axis rotation of the device, in degrees, around the y-axis. This value represents the left-to-right tilt of the device.",
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90,
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "absolute": {
+                    "title": "Absolute",
+                    "description": "A boolean value that indicates whether the device's orientation is provided as relative to the Earth's coordinate system or as relative to the device's coordinate system.",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                }
+            }
+        }
+    }
+}

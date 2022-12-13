@@ -1,0 +1,74 @@
+{
+  "location": {
+    "coordinates": {
+      "longitude": 130.5627874,
+      "latitude": 50.5627874,
+      "altitude": 130
+    },
+    "accuracy": 12,
+    "geogrid": {
+      "h3": "8428309ffffffff",
+      "geohash": "ww8p1r4t8"
+    }
+  },
+  "trunks": [
+    {
+      "species": "JM2",
+      "dimensions": [
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        }
+      ]
+    },
+    {
+      "species": "JM2",
+      "dimensions": [
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        }
+      ]
+    },
+    {
+      "species": "JM2",
+      "dimensions": [
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        },
+        {
+          "height": 0.1,
+          "diameter": 38
+        }
+      ]
+    }
+  ],
+  "image_pile_front": {
+    "uri": "https://schema.vinv.io/asset/img/logo.png",
+    "encoder": "image/jpeg",
+    "compression": 0.8,
+    "width": 500,
+    "height": 500
+  }
+}

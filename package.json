@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./processing/combine.js 0.0.1"
+    "build": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
+    "build:sensors": "node ./processing/combine.js 0.0.1 vinv-sensors"
   },
   "repository": {
     "type": "git",
