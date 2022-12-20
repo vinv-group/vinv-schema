@@ -11,8 +11,6 @@
   ],
   "properties": {
     "location": {
-      "$id": "https://schema.vinv.io/location/0.0.1.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Location",
       "description": "",
       "type": "object",
@@ -24,8 +22,6 @@
       "properties": {
         "coordinates": {
           "vinv:basics": "https://documentation.vinv.io/coordinates/0.0.1/0.html",
-          "$id": "https://schema.vinv.io/coordinates/0.0.1.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "title": "Coordinates",
           "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
           "type": "object",
@@ -45,7 +41,8 @@
               "examples": [
                 -130.5627874,
                 130.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.longitude"
             },
             "latitude": {
               "title": "Latitude",
@@ -57,7 +54,8 @@
               "examples": [
                 -12.4563,
                 50.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.latitude"
             },
             "altitude": {
               "type": [
@@ -74,9 +72,11 @@
               "examples": [
                 0,
                 130
-              ]
+              ],
+              "$anchor": "location.coordinates.altitude"
             }
-          }
+          },
+          "$anchor": "location.coordinates"
         },
         "accuracy": {
           "title": "Accuracy",
@@ -90,7 +90,8 @@
           "examples": [
             3,
             12
-          ]
+          ],
+          "$anchor": "location.accuracy"
         },
         "geogrid": {
           "title": "Geo Grid",
@@ -111,7 +112,8 @@
               "maxLength": 15,
               "examples": [
                 "8428309ffffffff"
-              ]
+              ],
+              "$anchor": "location.geogrid.h3"
             },
             "geohash": {
               "title": "geohash-Location",
@@ -124,15 +126,16 @@
               "maxLength": 12,
               "examples": [
                 "ww8p1r4t8"
-              ]
+              ],
+              "$anchor": "location.geogrid.geohash"
             }
-          }
+          },
+          "$anchor": "location.geogrid"
         }
-      }
+      },
+      "$anchor": "location"
     },
     "species": {
-      "$id": "https://schema.vinv.io/species/0.0.1.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Tree species",
       "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
       "type": "string",
@@ -140,7 +143,8 @@
       "examples": [
         "JM2"
       ],
-      "vinv:enum": "https://schema.vinv.io/species/0.0.1.json"
+      "vinv:enum": "https://schema.vinv.io/species/0.0.1.json",
+      "$anchor": "species"
     },
     "dbh": {
       "title": "Diameter at Breast Height",
@@ -155,7 +159,8 @@
       ],
       "vinv:unit": "Centimeter",
       "vinv:unitSymbol": "cm",
-      "vinv:speech": true
+      "vinv:speech": true,
+      "$anchor": "dbh"
     },
     "height": {
       "title": "Height",
@@ -174,7 +179,8 @@
       ],
       "vinv:unit": "Meter",
       "vinv:unitSymbol": "m",
-      "vinv:speech": true
+      "vinv:speech": true,
+      "$anchor": "height"
     },
     "trunk": {
       "type": [
@@ -192,14 +198,52 @@
           "description": "Diameter per height",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/dimension_at_height"
-          }
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": [
+              "object",
+              "null"
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "required": [
+              "height",
+              "diameter"
+            ],
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1,
+                "examples": [
+                  0.5,
+                  0.1
+                ],
+                "$anchor": "trunk.dimensions.items.height"
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100,
+                "examples": [
+                  34,
+                  38
+                ],
+                "$anchor": "trunk.dimensions.items.diameter"
+              }
+            },
+            "$anchor": "trunk.dimensions.items"
+          },
+          "$anchor": "trunk.dimensions"
         },
         "image_trunk": {
           "title": "Image of the trunk",
           "description": "Image of the trunk",
-          "$id": "https://schema.vinv.io/image/0.0.1.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": [
             "object",
             "null"
@@ -216,7 +260,8 @@
               "format": "uri",
               "examples": [
                 "https://schema.vinv.io/asset/img/logo.png"
-              ]
+              ],
+              "$anchor": "trunk.image_trunk.uri"
             },
             "encoder": {
               "title": "Encoder",
@@ -233,7 +278,8 @@
               "examples": [
                 "image/webp",
                 "image/jpeg"
-              ]
+              ],
+              "$anchor": "trunk.image_trunk.encoder"
             },
             "compression": {
               "title": "Compression",
@@ -247,7 +293,8 @@
               "default": 1,
               "examples": [
                 0.8
-              ]
+              ],
+              "$anchor": "trunk.image_trunk.compression"
             },
             "width": {
               "title": "Width",
@@ -262,7 +309,8 @@
                 500
               ],
               "vinv:unit": "Pixel",
-              "vinv:unitSymbol": "px"
+              "vinv:unitSymbol": "px",
+              "$anchor": "trunk.image_trunk.width"
             },
             "height": {
               "title": "Height",
@@ -277,11 +325,14 @@
                 500
               ],
               "vinv:unit": "Pixel",
-              "vinv:unitSymbol": "px"
+              "vinv:unitSymbol": "px",
+              "$anchor": "trunk.image_trunk.height"
             }
-          }
+          },
+          "$anchor": "trunk.image_trunk"
         }
-      }
+      },
+      "$anchor": "trunk"
     },
     "crown": {
       "type": [
@@ -299,15 +350,19 @@
           "description": "Diameter per height",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/dimension_at_height"
-          }
+            "$ref": "#/properties/trunk/properties/dimensions/items",
+            "$anchor": "crown.dimensions.items"
+          },
+          "$anchor": "crown.dimensions"
         },
         "image_crown": {
           "title": "Image of the trunk",
           "description": "Image of the trunk",
-          "$ref": "#/properties/trunk/properties/image_trunk"
+          "$ref": "#/properties/trunk/properties/image_trunk",
+          "$anchor": "crown.image_crown"
         }
-      }
+      },
+      "$anchor": "crown"
     },
     "birth": {
       "title": "Birthday",
@@ -319,45 +374,8 @@
       "format": "date",
       "examples": [
         "2010-09-13"
-      ]
-    }
-  },
-  "$defs": {
-    "dimension_at_height": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "title": "Diameter at height",
-      "description": "Array including height and diameter at height",
-      "type": [
-        "object",
-        "null"
       ],
-      "minItems": 2,
-      "maxItems": 2,
-      "additionalItems": false,
-      "properties": {
-        "height": {
-          "type": "number",
-          "title": "Height",
-          "description": "Height of tree in PERCENT where diameter is measured",
-          "minimum": 0.1,
-          "maximum": 1,
-          "examples": [
-            0.5,
-            0.1
-          ]
-        },
-        "diameter": {
-          "type": "number",
-          "title": "Diameter",
-          "description": "Diameter in CENTIMETER at measured height",
-          "minimum": 10,
-          "maximum": 100,
-          "examples": [
-            34,
-            38
-          ]
-        }
-      }
+      "$anchor": "birth"
     }
   }
 }
