@@ -6,7 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
-    "build:sensors": "node ./processing/combine.js 0.0.1 vinv-sensors"
+
+    "build:diameter_at_height": "npm run combine:diameter_at_height && npm run document:diameter_at_height",
+    "combine:diameter_at_height": "node ./processing/combine.js 0.0.1 diameter_at_height",
+    "document:diameter_at_height": "jsonschema2md -d ./docs/diameter_at_height/ -o /Users/b-mac/sites/vinv/documentation/src/basics/diameter_at_height/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
+
+
+    "build:sensors": "npm run combine:sensors && npm run document:sensors",
+    "combine:sensors": "node ./processing/combine.js 0.0.1 sensors",
+    "document:sensors": "jsonschema2md -d ./docs/sensors/ -o /Users/b-mac/sites/vinv/documentation/src/basics/sensors/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
+
+    "build:roundwoodPile": "npm run combine:roundwoodPile && npm run document:roundwoodPile",
+    "combine:roundwoodPile": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
+    "document:roundwoodPile": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-roundwood-pile -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-roundwood-pile/0.0.1 -l en_US -n -p vinv:id -e doc.json",
+
+    "build:individualTree": "npm run combine:individualTree && npm run document:individualTree",
+    "combine:individualTree": "node ./processing/combine.js 0.0.1 vinv-individual-tree",
+    "document:individualTree": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-individual-tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-individual-tree/0.0.1 -l en_US -n -p vinv:id -e doc.json"
   },
   "repository": {
     "type": "git",

@@ -15,12 +15,7 @@
   "dbh": 56,
   "height": 15.6,
   "trunk": {
-    "dimensions": [
-      {
-        "height": 0.1,
-        "diameter": 38
-      }
-    ],
+    "dimensions": [],
     "image_trunk": {
       "uri": "https://schema.vinv.io/asset/img/logo.png",
       "encoder": "image/jpeg",
@@ -30,12 +25,7 @@
     }
   },
   "crown": {
-    "dimensions": [
-      {
-        "height": 0.1,
-        "diameter": 38
-      }
-    ]
+    "dimensions": []
   },
   "birth": "2010-09-13"
 }

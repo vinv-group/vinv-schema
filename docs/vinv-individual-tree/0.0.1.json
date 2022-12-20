@@ -51,7 +51,7 @@
         },
         "trunk": {
             "type": ["object", "null"],
-            "title": "Trunk definition",
+            "title": "Trunk",
             "description": "Trunk definition",
             "required": [
                 "dimensions"
@@ -61,7 +61,7 @@
                     "title": "Trunk Dimensions",
                     "description": "Diameter per height",
                     "type": "array",
-                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                    "items": {"$ref": "https://schema.vinv.io/dimension_at_height/0.0.1.json"}
                 },
                 "image_trunk": { 
                     "title": "Image of the trunk",
@@ -82,7 +82,7 @@
                     "title": "Crown Dimensions",
                     "description": "Diameter per height",
                     "type": "array",
-                    "items": {"$ref": "#/$defs/dimension_at_height"}
+                    "items": {"$ref": "https://schema.vinv.io/dimension_at_height/0.0.1.json"}
                 },
                 "image_crown": { 
                     "title": "Image of the trunk",

@@ -181,7 +181,7 @@
         "object",
         "null"
       ],
-      "title": "Trunk definition",
+      "title": "Trunk",
       "description": "Trunk definition",
       "required": [
         "dimensions"
