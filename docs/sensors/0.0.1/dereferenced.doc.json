@@ -2,15 +2,13 @@
   "$id": "https://schema.vinv.io/vinv-sensors/0.0.1.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Sensors",
-  "description": "Tree definition",
+  "description": "Sensors definition",
   "type": "object",
   "required": [
     "location"
   ],
   "properties": {
     "location": {
-      "$id": "https://schema.vinv.io/location/0.0.1.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Location",
       "description": "",
       "type": "object",
@@ -22,8 +20,6 @@
       "properties": {
         "coordinates": {
           "vinv:basics": "https://documentation.vinv.io/coordinates/0.0.1/0.html",
-          "$id": "https://schema.vinv.io/coordinates/0.0.1.json",
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "title": "Coordinates",
           "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
           "type": "object",
@@ -43,7 +39,8 @@
               "examples": [
                 -130.5627874,
                 130.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.longitude"
             },
             "latitude": {
               "title": "Latitude",
@@ -55,7 +52,8 @@
               "examples": [
                 -12.4563,
                 50.5627874
-              ]
+              ],
+              "$anchor": "location.coordinates.latitude"
             },
             "altitude": {
               "type": [
@@ -72,9 +70,11 @@
               "examples": [
                 0,
                 130
-              ]
+              ],
+              "$anchor": "location.coordinates.altitude"
             }
-          }
+          },
+          "$anchor": "location.coordinates"
         },
         "accuracy": {
           "title": "Accuracy",
@@ -88,7 +88,8 @@
           "examples": [
             3,
             12
-          ]
+          ],
+          "$anchor": "location.accuracy"
         },
         "geogrid": {
           "title": "Geo Grid",
@@ -109,7 +110,8 @@
               "maxLength": 15,
               "examples": [
                 "8428309ffffffff"
-              ]
+              ],
+              "$anchor": "location.geogrid.h3"
             },
             "geohash": {
               "title": "geohash-Location",
@@ -122,11 +124,14 @@
               "maxLength": 12,
               "examples": [
                 "ww8p1r4t8"
-              ]
+              ],
+              "$anchor": "location.geogrid.geohash"
             }
-          }
+          },
+          "$anchor": "location.geogrid"
         }
-      }
+      },
+      "$anchor": "location"
     },
     "settings": {
       "type": "object",
@@ -142,9 +147,11 @@
           "default": 60,
           "examples": [
             60
-          ]
+          ],
+          "$anchor": "settings.frequency"
         }
-      }
+      },
+      "$anchor": "settings"
     },
     "sensor_data": {
       "type": "array",
@@ -166,13 +173,72 @@
             "examples": [
               0
             ],
-            "readOnly": true
+            "readOnly": true,
+            "$anchor": "sensor_data.items.timestamp"
           },
           "device_orientation": {
-            "$ref": "#/$defs/device_orientation"
+            "type": "object",
+            "required": [
+              "alpha",
+              "beta",
+              "gamma"
+            ],
+            "properties": {
+              "alpha": {
+                "title": "Alpha",
+                "description": "The z-axis rotation of the device, in degrees, around the z-axis. This value represents the compass direction the device is facing.",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 360,
+                "default": 0,
+                "examples": [
+                  0
+                ],
+                "readOnly": true,
+                "$anchor": "sensor_data.items.device_orientation.alpha"
+              },
+              "beta": {
+                "title": "Beta",
+                "description": "The x-axis rotation of the device, in degrees, around the x-axis. This value represents the front-to-back tilt of the device.",
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180,
+                "default": 0,
+                "examples": [
+                  0
+                ],
+                "$anchor": "sensor_data.items.device_orientation.beta"
+              },
+              "gamma": {
+                "title": "Gamma",
+                "description": "The y-axis rotation of the device, in degrees, around the y-axis. This value represents the left-to-right tilt of the device.",
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90,
+                "default": 0,
+                "examples": [
+                  0
+                ],
+                "$anchor": "sensor_data.items.device_orientation.gamma"
+              },
+              "absolute": {
+                "title": "Absolute",
+                "description": "A boolean value that indicates whether the device's orientation is provided as relative to the Earth's coordinate system or as relative to the device's coordinate system.",
+                "type": "boolean",
+                "default": false,
+                "examples": [
+                  false,
+                  true
+                ],
+                "$anchor": "sensor_data.items.device_orientation.absolute"
+              }
+            },
+            "$anchor": "sensor_data.items.device_orientation"
           }
-        }
-      }
+        },
+        "$anchor": "sensor_data.items"
+      },
+      "$anchor": "sensor_data"
     }
   },
   "$defs": {
