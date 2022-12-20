@@ -25,7 +25,14 @@
     }
   },
   "crown": {
-    "dimensions": []
+    "dimensions": [],
+    "image_crown": {
+      "uri": "https://schema.vinv.io/asset/img/logo.png",
+      "encoder": "image/jpeg",
+      "compression": 0.8,
+      "width": 500,
+      "height": 500
+    }
   },
   "birth": "2010-09-13"
 }

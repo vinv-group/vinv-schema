@@ -41,8 +41,7 @@
               "examples": [
                 -130.5627874,
                 130.5627874
-              ],
-              "$anchor": "location.coordinates.longitude"
+              ]
             },
             "latitude": {
               "title": "Latitude",
@@ -54,8 +53,7 @@
               "examples": [
                 -12.4563,
                 50.5627874
-              ],
-              "$anchor": "location.coordinates.latitude"
+              ]
             },
             "altitude": {
               "type": [
@@ -72,11 +70,9 @@
               "examples": [
                 0,
                 130
-              ],
-              "$anchor": "location.coordinates.altitude"
+              ]
             }
-          },
-          "$anchor": "location.coordinates"
+          }
         },
         "accuracy": {
           "title": "Accuracy",
@@ -90,8 +86,7 @@
           "examples": [
             3,
             12
-          ],
-          "$anchor": "location.accuracy"
+          ]
         },
         "geogrid": {
           "title": "Geo Grid",
@@ -112,8 +107,7 @@
               "maxLength": 15,
               "examples": [
                 "8428309ffffffff"
-              ],
-              "$anchor": "location.geogrid.h3"
+              ]
             },
             "geohash": {
               "title": "geohash-Location",
@@ -126,14 +120,11 @@
               "maxLength": 12,
               "examples": [
                 "ww8p1r4t8"
-              ],
-              "$anchor": "location.geogrid.geohash"
+              ]
             }
-          },
-          "$anchor": "location.geogrid"
+          }
         }
-      },
-      "$anchor": "location"
+      }
     },
     "species": {
       "title": "Tree species",
@@ -143,8 +134,7 @@
       "examples": [
         "JM2"
       ],
-      "vinv:enum": "https://schema.vinv.io/species/0.0.1.json",
-      "$anchor": "species"
+      "vinv:enum": "https://schema.vinv.io/species/0.0.1.json"
     },
     "dbh": {
       "title": "Diameter at Breast Height",
@@ -159,8 +149,7 @@
       ],
       "vinv:unit": "Centimeter",
       "vinv:unitSymbol": "cm",
-      "vinv:speech": true,
-      "$anchor": "dbh"
+      "vinv:speech": true
     },
     "height": {
       "title": "Height",
@@ -179,8 +168,7 @@
       ],
       "vinv:unit": "Meter",
       "vinv:unitSymbol": "m",
-      "vinv:speech": true,
-      "$anchor": "height"
+      "vinv:speech": true
     },
     "trunk": {
       "type": [
@@ -221,8 +209,7 @@
                 "examples": [
                   0.5,
                   0.1
-                ],
-                "$anchor": "trunk.dimensions.items.height"
+                ]
               },
               "diameter": {
                 "type": "number",
@@ -233,13 +220,10 @@
                 "examples": [
                   34,
                   38
-                ],
-                "$anchor": "trunk.dimensions.items.diameter"
+                ]
               }
-            },
-            "$anchor": "trunk.dimensions.items"
-          },
-          "$anchor": "trunk.dimensions"
+            }
+          }
         },
         "image_trunk": {
           "title": "Image of the trunk",
@@ -260,8 +244,7 @@
               "format": "uri",
               "examples": [
                 "https://schema.vinv.io/asset/img/logo.png"
-              ],
-              "$anchor": "trunk.image_trunk.uri"
+              ]
             },
             "encoder": {
               "title": "Encoder",
@@ -278,8 +261,7 @@
               "examples": [
                 "image/webp",
                 "image/jpeg"
-              ],
-              "$anchor": "trunk.image_trunk.encoder"
+              ]
             },
             "compression": {
               "title": "Compression",
@@ -293,8 +275,7 @@
               "default": 1,
               "examples": [
                 0.8
-              ],
-              "$anchor": "trunk.image_trunk.compression"
+              ]
             },
             "width": {
               "title": "Width",
@@ -309,8 +290,7 @@
                 500
               ],
               "vinv:unit": "Pixel",
-              "vinv:unitSymbol": "px",
-              "$anchor": "trunk.image_trunk.width"
+              "vinv:unitSymbol": "px"
             },
             "height": {
               "title": "Height",
@@ -325,14 +305,11 @@
                 500
               ],
               "vinv:unit": "Pixel",
-              "vinv:unitSymbol": "px",
-              "$anchor": "trunk.image_trunk.height"
+              "vinv:unitSymbol": "px"
             }
-          },
-          "$anchor": "trunk.image_trunk"
+          }
         }
-      },
-      "$anchor": "trunk"
+      }
     },
     "crown": {
       "type": [
@@ -350,19 +327,130 @@
           "description": "Diameter per height",
           "type": "array",
           "items": {
-            "$ref": "#/properties/trunk/properties/dimensions/items",
-            "$anchor": "crown.dimensions.items"
-          },
-          "$anchor": "crown.dimensions"
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": [
+              "object",
+              "null"
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "required": [
+              "height",
+              "diameter"
+            ],
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1,
+                "examples": [
+                  0.5,
+                  0.1
+                ]
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100,
+                "examples": [
+                  34,
+                  38
+                ]
+              }
+            }
+          }
         },
         "image_crown": {
           "title": "Image of the trunk",
           "description": "Image of the trunk",
-          "$ref": "#/properties/trunk/properties/image_trunk",
-          "$anchor": "crown.image_crown"
+          "type": [
+            "object",
+            "null"
+          ],
+          "vinv:id": "https://schema.vinv.io/image/0.0.1.json",
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "title": "Image",
+              "description": "A universal resource identifier (URI), according to RFC3986.",
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://schema.vinv.io/asset/img/logo.png"
+              ]
+            },
+            "encoder": {
+              "title": "Encoder",
+              "description": "The encoder used to encode the image.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": "image/webp",
+              "enum": [
+                "image/jpeg",
+                "image/webp"
+              ],
+              "examples": [
+                "image/webp",
+                "image/jpeg"
+              ]
+            },
+            "compression": {
+              "title": "Compression",
+              "description": "The compression used to encode the image.",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1,
+              "examples": [
+                0.8
+              ]
+            },
+            "width": {
+              "title": "Width",
+              "description": "Width of the image.",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "vinv:unit": "Pixel",
+              "vinv:unitSymbol": "px"
+            },
+            "height": {
+              "title": "Height",
+              "description": "Height of the image",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "vinv:unit": "Pixel",
+              "vinv:unitSymbol": "px"
+            }
+          }
         }
-      },
-      "$anchor": "crown"
+      }
     },
     "birth": {
       "title": "Birthday",
@@ -374,8 +462,7 @@
       "format": "date",
       "examples": [
         "2010-09-13"
-      ],
-      "$anchor": "birth"
+      ]
     }
   }
 }
