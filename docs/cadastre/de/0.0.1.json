@@ -1,0 +1,123 @@
+{
+    "$id": "https://schema.vinv.io/cadastre/de/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Baumkataster",
+    "description": "Tree cadastre",
+    "type": "object",
+    "required": [
+        "location",
+        "species",
+        "dbh"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "species": {
+            "$ref": "https://schema.vinv.io/species/0.0.1.json"
+        },
+        "dbh": {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf" : 0.1,
+            "examples": [
+                34,
+                56
+            ],
+            "vinv:unit": "Centimeter",
+            "vinv:unitSymbol": "cm",
+            "vinv:speech": true
+        },
+        "height":{
+            "title": "Height",
+            "description": "Height in Meter",
+            "type": ["number", "null"],
+            "minimum": 0.5,
+            "maximum": 99,
+            "multipleOf" : 0.1,
+            "examples": [
+                14,
+                13.5,
+                15.60
+            ],
+            "vinv:unit": "Meter",
+            "vinv:unitSymbol": "m",
+            "vinv:speech": true
+        },
+        "trunk": {
+            "type": ["object", "null"],
+            "title": "Trunk",
+            "description": "Trunk definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Trunk Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/0.0.1.json"}
+                },
+                "image_trunk": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://schema.vinv.io/image/0.0.1.json"
+                }
+            }
+        },
+        "crown": {
+            "type": ["object", "null"],
+            "title": "Crown",
+            "description": "Crown definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Crown Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/0.0.1.json"}
+                },
+                "image_crown": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://schema.vinv.io/image/0.0.1.json"
+                }
+            }
+        },
+        "root": {
+            "type": ["object", "null"],
+            "title": "Root",
+            "description": "Tree root definition",
+            "required": [
+                "dimensions"
+            ],
+            "properties": {
+                "dimensions": {
+                    "title": "Crown Dimensions",
+                    "description": "Diameter per height",
+                    "type": "array",
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/0.0.1.json"}
+                },
+                "image_crown": { 
+                    "title": "Image of the trunk",
+                    "description": "Image of the trunk",
+                    "$ref": "https://schema.vinv.io/image/0.0.1.json"
+                }
+            }
+        },
+        "birth": {
+            "title": "Birthday",
+            "description": "Birthday of the tree",
+            "type": ["string", "null"],
+            "format": "date",
+            "examples": [
+                "2010-09-13"
+            ]
+        }
+    }
+}

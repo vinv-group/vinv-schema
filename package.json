@@ -22,7 +22,12 @@
 
     "build:individualTree": "npm run combine:individualTree && npm run document:individualTree",
     "combine:individualTree": "node ./processing/combine.js 0.0.1 vinv-individual-tree",
-    "document:individualTree": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-individual-tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-individual-tree/0.0.1 -l en_US -n -p vinv:id -e doc.json"
+    "document:individualTree": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-individual-tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-individual-tree/0.0.1 -l en_US -n -p vinv:id -e doc.json",
+    
+    "build:cadastreDe": "npm run combine:cadastreDe && npm run document:cadastreDe",
+    "combine:cadastreDe": "node ./processing/combine.js 0.0.1 cadastre de",
+    "document:cadastreDe": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/cadastre/de -o /Users/b-mac/sites/vinv/documentation/src/specifications/cadastre/de/0.0.1 -l en_US -n -p vinv:id -e doc.json"
+  
   },
   "repository": {
     "type": "git",
