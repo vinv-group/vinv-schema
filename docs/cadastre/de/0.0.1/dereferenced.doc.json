@@ -1,6 +1,5 @@
 {
   "$id": "https://schema.vinv.io/cadastre/de/0.0.1.json",
-  "vinv:id": "https://schema.vinv.io/cadastre/de/0.0.1.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Baumkataster",
   "description": "Tree cadastre",
@@ -484,6 +483,96 @@
       "examples": [
         "protected",
         "not protected"
+      ]
+    },
+    "root": {
+      "title": "Wurzel",
+      "description": "Root of the tree.",
+      "type": "object",
+      "required": [
+        "raised_root_plate",
+        "floor_cracks"
+      ],
+      "properties": {
+        "raised_root_plate": {
+          "title": "angehobener Wurzelteller",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false,
+            true
+          ]
+        },
+        "floor_cracks": {
+          "title": "Bodenrisse",
+          "description": "konzentrische Bodenrisse quer zur Wurzel (auch Wegedecken, Mauern usw.)",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "trunk": {
+      "title": "Stammfuß und Stamm ",
+      "description": "trunk foot and trunk",
+      "type": "object",
+      "required": [
+        "misalignment",
+        "juice_leakage"
+      ],
+      "properties": {
+        "misalignment": {
+          "title": "Schiefstellung",
+          "description": "Schiefstellung (akutes Kippen)",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false,
+            true
+          ]
+        },
+        "juice_leakage": {
+          "title": "Saftaustritt",
+          "description": "dunkler Saftaustritt am Stammfuß",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "crown": {
+      "title": "Stammfuß und Stamm ",
+      "description": "trunk foot and trunk",
+      "type": "object",
+      "required": [
+        "mushroom"
+      ],
+      "properties": {
+        "mushroom": {
+          "title": "Pilzfruchtkörper",
+          "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
+          "type": "boolean",
+          "default": false,
+          "examples": [
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "annotation": {
+      "title": "Anmerkung",
+      "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
+      "type": "string",
+      "maxLength": 500,
+      "examples": [
+        "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
       ]
     }
   }

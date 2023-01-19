@@ -37,5 +37,17 @@
     },
     "birth": "2010-09-13"
   },
-  "conservation_status": "not protected"
+  "conservation_status": "not protected",
+  "root": {
+    "raised_root_plate": true,
+    "floor_cracks": true
+  },
+  "trunk": {
+    "misalignment": true,
+    "juice_leakage": true
+  },
+  "crown": {
+    "mushroom": true
+  },
+  "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
 }
