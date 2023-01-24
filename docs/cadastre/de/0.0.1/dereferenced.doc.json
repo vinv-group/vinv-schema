@@ -44,11 +44,11 @@
         },
         "conservation_status": {
           "title": "Naturschutzstatus",
-          "type": "string",
-          "maxLength": 50,
+          "type": "boolean",
+          "default": false,
           "examples": [
-            "protected",
-            "not protected"
+            false,
+            true
           ]
         },
         "development_phase": {
@@ -655,7 +655,10 @@
         "misalignment": {
           "title": "Schiefstellung",
           "description": "akutes Kippen",
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
             "shear_crack": {
               "title": "mit Schubriss",
@@ -772,7 +775,10 @@
         },
         "wound_rot": {
           "title": "Wunde mit Fäule",
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
             "hollow": {
               "title": "mit Hohlklang",
@@ -788,7 +794,10 @@
         },
         "capping": {
           "title": "Kappung",
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "required": [
             "height"
           ],
@@ -958,6 +967,7 @@
       "additionalProperties": false,
       "properties": {
         "further_visual_inspection": {
+          "title": "Weitere Sichtkontrolle",
           "type": "boolean",
           "default": false,
           "examples": [
@@ -967,6 +977,7 @@
         },
         "further_visual_inspection_comment": {
           "title": "Eingehende Untersuchung",
+          "type": "boolean",
           "default": false,
           "examples": [
             false,

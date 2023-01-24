@@ -2,7 +2,7 @@
   "base_data": {
     "treeNumber": "3",
     "safety_expectation": "höher",
-    "conservation_status": "not protected",
+    "conservation_status": true,
     "development_phase": "Alterungsphase"
   },
   "tree": {
