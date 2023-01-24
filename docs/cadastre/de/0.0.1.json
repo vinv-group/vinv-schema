@@ -2,7 +2,7 @@
     "$id": "https://schema.vinv.io/cadastre/de/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Baumkontrolle",
-    "description": "Tree cadastre",
+    "description": "Baumkontrolle nach Vorgaben der Bundesanstalt für Gewässerkunde (bfa)",
     "type": "object",
     "required": [
         "base_data",
@@ -173,7 +173,7 @@
                 },
                 "annotation": {
                     "title": "Anmerkung",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "maxLength": 500,
                     "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
@@ -313,6 +313,7 @@
                 },
                 "wound_rot": {
                     "title": "Wunde mit Fäule",
+                    "description": "Aufgrund einer Verletzung abgestorbenes, ausfaulendes Holz.",
                     "type": [
                         "object",
                         "null"
@@ -332,6 +333,7 @@
                 },
                 "capping": {
                     "title": "Kappung",
+                    "description": "Baumzerstörende Einkürzung der Krone ohne Rücksicht auf die Wuchsform, Notmaßnahme zur Herstellung der Verkehrssicherheit. Geeignete Minderungsmaßnahme zur Entwicklung von Totholz-Lebensraum anstelle einer Fällung. Solange ein Totholzstumpf durch mögliches Umstürzen eine Verkehrsfläche erreichen kann, wird er der Regelkontrolle unterzogen.",
                     "type": [
                         "object",
                         "null"
@@ -342,14 +344,14 @@
                     "properties": {
                         "height": {
                             "title": "Höhe der Kappung",
-                            "description": "Baumzerstörende Einkürzung der Krone ohne Rücksicht auf die Wuchsform, Notmaßnahme zur Herstellung der Verkehrssicherheit. Geeignete Minderungsmaßnahme zur Entwicklung von Totholz-Lebensraum anstelle einer Fällung. Solange ein Totholzstumpf durch mögliches Umstürzen eine Verkehrsfläche erreichen kann, wird er der Regelkontrolle unterzogen.",
                             "type": "number",
                             "minimum": 0,
                             "maximum": 100,
                             "examples": [
                                 0,
                                 100
-                            ]
+                            ],
+                            "vinv:unit": "Meter"
                         },
                         "deadwood_stump": {
                             "title": "Totholzstumpf",
@@ -365,7 +367,7 @@
                 },
                 "annotation": {
                     "title": "Anmerkung",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "maxLength": 500,
                     "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
@@ -491,7 +493,7 @@
                 },
                 "annotation": {
                     "title": "Anmerkung",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "maxLength": 500,
                     "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
