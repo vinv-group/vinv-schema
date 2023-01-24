@@ -9,9 +9,9 @@
         "tree"
     ],
     "properties": {
-        "base_data":{
+        "base_data": {
             "title": "Grunddaten",
-            "type":"object",
+            "type": "object",
             "additionalProperties": false,
             "required": [
                 "treeNumber",
@@ -23,7 +23,7 @@
                     "description": "Tree number",
                     "type": "string",
                     "maxLength": 50,
-                    "examples":[
+                    "examples": [
                         "1",
                         "2",
                         "3"
@@ -33,24 +33,38 @@
                     "title": "Berechtigte Sicherheitserwartung des Verkehrs",
                     "type": "string",
                     "default": "geringer",
-                    "enum": ["geringer", "höher"],
-                    "examples":["geringer", "höher"]
+                    "enum": [
+                        "geringer",
+                        "höher"
+                    ],
+                    "examples": [
+                        "geringer",
+                        "höher"
+                    ]
                 },
                 "conservation_status": {
                     "title": "Naturschutzstatus",
-                    "type": "string",
-                    "maxLength": 50,
-                    "examples":[
-                        "protected",
-                        "not protected"
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
                     ]
                 },
                 "development_phase": {
                     "title": "Vitalitätsstufe",
                     "type": "string",
                     "default": "vital",
-                    "enum": ["Jugendphase", "Reifephase", "Alterungsphase"],
-                    "examples":["Jugendphase", "Reifephase", "Alterungsphase"]
+                    "enum": [
+                        "Jugendphase",
+                        "Reifephase",
+                        "Alterungsphase"
+                    ],
+                    "examples": [
+                        "Jugendphase",
+                        "Reifephase",
+                        "Alterungsphase"
+                    ]
                 }
             }
         },
@@ -62,7 +76,7 @@
             "title": "Freistellung",
             "type": "boolean",
             "default": false,
-            "examples":[
+            "examples": [
                 false,
                 true
             ]
@@ -71,8 +85,18 @@
             "title": "Vitalitätsstufe",
             "type": "string",
             "default": "vital",
-            "enum": ["vital", "leicht geschwächt", "geschwächt", "stark geschwächt"],
-            "examples":["vital", "leicht geschwächt", "geschwächt", "stark geschwächt"]
+            "enum": [
+                "vital",
+                "leicht geschwächt",
+                "geschwächt",
+                "stark geschwächt"
+            ],
+            "examples": [
+                "vital",
+                "leicht geschwächt",
+                "geschwächt",
+                "stark geschwächt"
+            ]
         },
         "root": {
             "title": "Wurzel",
@@ -87,7 +111,7 @@
                     "title": "angehobener Wurzelteller",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -97,7 +121,7 @@
                     "description": "konzentrische Bodenrisse quer zur Wurzel (auch Wegedecken, Mauern usw.)",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -106,7 +130,7 @@
                     "title": "windseitige Hauptwurzelschäden",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -115,7 +139,7 @@
                     "title": "stammnahe Schachtungen",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -124,7 +148,7 @@
                     "title": "stammnahe Schachtungen",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -133,7 +157,7 @@
                     "title": "Stelzwurzeln",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -142,7 +166,7 @@
                     "title": "freigespülte Wurzeln",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -151,7 +175,7 @@
                     "title": "Anmerkung",
                     "type": "string",
                     "maxLength": 500,
-                    "examples":[
+                    "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
                     ]
                 }
@@ -169,13 +193,16 @@
                 "misalignment": {
                     "title": "Schiefstellung",
                     "description": "akutes Kippen",
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "shear_crack": {
                             "title": "mit Schubriss",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -184,7 +211,7 @@
                             "title": "mit nacktem Dreieck",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -193,7 +220,7 @@
                             "title": "mit rundem Stammquerschnitt",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -202,7 +229,7 @@
                             "title": "mit gerader Stammachse",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -215,7 +242,7 @@
                     "description": "dunkler Saftaustritt am Stammfuß",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -225,7 +252,7 @@
                     "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -234,7 +261,7 @@
                     "title": "Holzkörper Längsrisse",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -243,7 +270,7 @@
                     "title": "gerissener V-Zwiesel",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -252,7 +279,7 @@
                     "title": "Höhle",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -261,7 +288,7 @@
                     "title": "spitznasige Längsrippe",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -270,7 +297,7 @@
                     "title": "Verdickung",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -279,20 +306,23 @@
                     "title": "tote Rinde",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
                 },
                 "wound_rot": {
                     "title": "Wunde mit Fäule",
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "hollow": {
                             "title": "mit Hohlklang",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -302,7 +332,10 @@
                 },
                 "capping": {
                     "title": "Kappung",
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "required": [
                         "height"
                     ],
@@ -313,7 +346,7 @@
                             "type": "number",
                             "minimum": 0,
                             "maximum": 100,
-                            "examples":[
+                            "examples": [
                                 0,
                                 100
                             ]
@@ -322,7 +355,7 @@
                             "title": "Totholzstumpf",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -334,7 +367,7 @@
                     "title": "Anmerkung",
                     "type": "string",
                     "maxLength": 500,
-                    "examples":[
+                    "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
                     ]
                 }
@@ -353,7 +386,7 @@
                     "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -363,17 +396,16 @@
                     "description": "(sicherheitsrelevant)",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
                 },
-
                 "body_longitudinal_cracks": {
                     "title": "Holzkörper Längsrisse",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -382,7 +414,7 @@
                     "title": "gerissener V-Zwiesel",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -391,7 +423,7 @@
                     "title": "Höhle",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -400,7 +432,7 @@
                     "title": "spitznasige Längsrippe",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -409,7 +441,7 @@
                     "title": "Verdickung",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -418,7 +450,7 @@
                     "title": "tote Rinde",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -431,7 +463,7 @@
                             "title": "mit Hohlklang",
                             "type": "boolean",
                             "default": false,
-                            "examples":[
+                            "examples": [
                                 false,
                                 true
                             ]
@@ -439,12 +471,11 @@
                     },
                     "additionalItems": false
                 },
-
                 "loose_hanging_branch": {
                     "title": "lose hängender Ast",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -453,7 +484,7 @@
                     "title": "Anbruch",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -462,7 +493,7 @@
                     "title": "Anmerkung",
                     "type": "string",
                     "maxLength": 500,
-                    "examples":[
+                    "examples": [
                         "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
                     ]
                 }
@@ -474,17 +505,19 @@
             "additionalProperties": false,
             "properties": {
                 "further_visual_inspection": {
+                    "title": "Weitere Sichtkontrolle",
                     "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
                 },
                 "further_visual_inspection_comment": {
                     "title": "Eingehende Untersuchung",
+                    "type": "boolean",
                     "default": false,
-                    "examples":[
+                    "examples": [
                         false,
                         true
                     ]
@@ -497,7 +530,7 @@
                         "dringend",
                         "sehr dringend"
                     ],
-                    "examples":[
+                    "examples": [
                         "nicht dringend",
                         "dringend",
                         "sehr dringend"
@@ -517,7 +550,7 @@
                         "stärker geschädigt",
                         "nachhaltig geschädigt"
                     ],
-                    "examples":[
+                    "examples": [
                         "gesund/leicht geschädigt",
                         "stärker geschädigt",
                         "nachhaltig geschädigt"
@@ -532,7 +565,7 @@
                         "alle 2 Jahre",
                         "alle 3 Jahre"
                     ],
-                    "examples":[
+                    "examples": [
                         "halbjährlich",
                         "jährlich",
                         "alle 2 Jahre",
