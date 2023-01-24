@@ -8,6 +8,7 @@
     "required":[
         "uri"
     ],
+    "additionalProperties": false,
     "properties":{
         "uri": {
             "title": "Image",
