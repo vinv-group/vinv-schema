@@ -65,38 +65,38 @@
                         "Reifephase",
                         "Alterungsphase"
                     ]
+                },
+                "exemption": {
+                    "title": "Freistellung",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "vitality": {
+                    "title": "Vitalitätsstufe",
+                    "type": "string",
+                    "default": "vital",
+                    "enum": [
+                        "vital",
+                        "leicht geschwächt",
+                        "geschwächt",
+                        "stark geschwächt"
+                    ],
+                    "examples": [
+                        "vital",
+                        "leicht geschwächt",
+                        "geschwächt",
+                        "stark geschwächt"
+                    ]
                 }
             }
         },
         "tree": {
             "title": "Baum Daten",
             "$ref": "https://schema.vinv.io/vinv-individual-tree/0.0.1.json"
-        },
-        "exemption": {
-            "title": "Freistellung",
-            "type": "boolean",
-            "default": false,
-            "examples": [
-                false,
-                true
-            ]
-        },
-        "vitality": {
-            "title": "Vitalitätsstufe",
-            "type": "string",
-            "default": "vital",
-            "enum": [
-                "vital",
-                "leicht geschwächt",
-                "geschwächt",
-                "stark geschwächt"
-            ],
-            "examples": [
-                "vital",
-                "leicht geschwächt",
-                "geschwächt",
-                "stark geschwächt"
-            ]
         },
         "root": {
             "title": "Wurzel",

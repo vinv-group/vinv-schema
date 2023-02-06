@@ -1,0 +1,378 @@
+{
+  "$id": "https://schema.vinv.io/vinv-individual-tree/0.0.1.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Individual Tree",
+  "description": "Tree definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "species",
+    "dbh"
+  ],
+  "properties": {
+    "species": {
+      "title": "Tree species",
+      "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{3}$",
+      "examples": [
+        "JM2"
+      ],
+      "$vinv": {
+        "id": "https://schema.vinv.io/species/0.0.1.json",
+        "enum": "https://schema.vinv.io/species/0.0.1.json"
+      }
+    },
+    "dbh": {
+      "title": "Diameter at Breast Height",
+      "description": "Diameter in centimeter",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 100,
+      "multipleOf": 0.1,
+      "examples": [
+        34,
+        56
+      ],
+      "$vinv": {
+        "unit": "Centimeter",
+        "unitSymbol": "cm",
+        "speech": true
+      }
+    },
+    "height": {
+      "title": "Height",
+      "description": "Height in Meter",
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0.5,
+      "maximum": 99,
+      "multipleOf": 0.1,
+      "examples": [
+        14,
+        13.5,
+        15.6
+      ],
+      "$vinv": {
+        "unit": "Meter",
+        "unitSymbol": "m",
+        "speech": true
+      }
+    },
+    "trunk": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "title": "Trunk",
+      "description": "Trunk definition",
+      "required": [
+        "dimensions"
+      ],
+      "properties": {
+        "dimensions": {
+          "title": "Trunk Dimensions",
+          "description": "Diameter per height",
+          "additionalProperties": false,
+          "type": "array",
+          "items": {
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": [
+              "object",
+              "null"
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "required": [
+              "height",
+              "diameter"
+            ],
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1,
+                "examples": [
+                  0.5,
+                  0.1
+                ]
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100,
+                "examples": [
+                  34,
+                  38
+                ]
+              }
+            },
+            "$vinv": {
+              "id": "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+            }
+          }
+        },
+        "image_trunk": {
+          "title": "Image of the trunk",
+          "description": "Image of the trunk",
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "title": "Image",
+              "description": "A universal resource identifier (URI), according to RFC3986.",
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://schema.vinv.io/asset/img/logo.png"
+              ]
+            },
+            "encoder": {
+              "title": "Encoder",
+              "description": "The encoder used to encode the image.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": "image/webp",
+              "enum": [
+                "image/jpeg",
+                "image/webp"
+              ],
+              "examples": [
+                "image/webp",
+                "image/jpeg"
+              ]
+            },
+            "compression": {
+              "title": "Compression",
+              "description": "The compression used to encode the image.",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1,
+              "examples": [
+                0.8
+              ]
+            },
+            "width": {
+              "title": "Width",
+              "description": "Width of the image.",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "$vinv": {
+                "unit": "Pixel",
+                "unitSymbol": "px"
+              }
+            },
+            "height": {
+              "title": "Height",
+              "description": "Height of the image",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "$vinv": {
+                "unit": "Pixel",
+                "unitSymbol": "px"
+              }
+            }
+          },
+          "$vinv": {
+            "id": "https://schema.vinv.io/image/0.0.1.json"
+          }
+        }
+      }
+    },
+    "crown": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "title": "Crown",
+      "description": "Crown definition",
+      "required": [
+        "dimensions"
+      ],
+      "properties": {
+        "dimensions": {
+          "title": "Crown Dimensions",
+          "description": "Diameter per height",
+          "type": "array",
+          "items": {
+            "title": "Diameter at height",
+            "description": "Array including height and diameter at height",
+            "type": [
+              "object",
+              "null"
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "additionalItems": false,
+            "required": [
+              "height",
+              "diameter"
+            ],
+            "properties": {
+              "height": {
+                "type": "number",
+                "title": "Height",
+                "description": "Height of tree in PERCENT where diameter is measured",
+                "minimum": 0.1,
+                "maximum": 1,
+                "examples": [
+                  0.5,
+                  0.1
+                ]
+              },
+              "diameter": {
+                "type": "number",
+                "title": "Diameter",
+                "description": "Diameter in CENTIMETER at measured height",
+                "minimum": 10,
+                "maximum": 100,
+                "examples": [
+                  34,
+                  38
+                ]
+              }
+            },
+            "$vinv": {
+              "id": "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+            }
+          }
+        },
+        "image_crown": {
+          "title": "Image of the trunk",
+          "description": "Image of the trunk",
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "uri"
+          ],
+          "properties": {
+            "uri": {
+              "title": "Image",
+              "description": "A universal resource identifier (URI), according to RFC3986.",
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://schema.vinv.io/asset/img/logo.png"
+              ]
+            },
+            "encoder": {
+              "title": "Encoder",
+              "description": "The encoder used to encode the image.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": "image/webp",
+              "enum": [
+                "image/jpeg",
+                "image/webp"
+              ],
+              "examples": [
+                "image/webp",
+                "image/jpeg"
+              ]
+            },
+            "compression": {
+              "title": "Compression",
+              "description": "The compression used to encode the image.",
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1,
+              "examples": [
+                0.8
+              ]
+            },
+            "width": {
+              "title": "Width",
+              "description": "Width of the image.",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "$vinv": {
+                "unit": "Pixel",
+                "unitSymbol": "px"
+              }
+            },
+            "height": {
+              "title": "Height",
+              "description": "Height of the image",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 25,
+              "maximum": 10000,
+              "examples": [
+                500
+              ],
+              "$vinv": {
+                "unit": "Pixel",
+                "unitSymbol": "px"
+              }
+            }
+          },
+          "$vinv": {
+            "id": "https://schema.vinv.io/image/0.0.1.json"
+          }
+        }
+      }
+    },
+    "birth": {
+      "title": "Birthday",
+      "description": "Birthday of the tree",
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date",
+      "examples": [
+        "2010-09-13"
+      ]
+    }
+  }
+}

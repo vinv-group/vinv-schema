@@ -2,15 +2,9 @@
     "$id": "https://schema.vinv.io/diameter_at_height/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": false,
-    "title": "Diameter at height",
-    "description": "Array including height and diameter at height",
-    "type": [
-        "object",
-        "null"
-    ],
-    "minItems": 2,
-    "maxItems": 2,
-    "additionalItems": false,
+    "title": "Diameter at breast height",
+    "description": "Including height and diameter at breast height",
+    "type": "object",
     "required": [
         "height",
         "diameter"
@@ -18,14 +12,14 @@
     "properties": {
         "height": {
             "title": "Height",
-            "description": "Height of measurment in meter where diameter is measured.",
+            "description": "Height of measurment in meter where diameter is measured (1.3m).",
             "type": "number",
+            "const": 1.3,
             "minimum": 0,
             "maximum": 100,
             "multipleOf": 0.1,
             "examples": [
-                0.5,
-                0.1
+                1.3
             ],
             "vinv": {
                 "vinv:unit": "Meter",
@@ -35,7 +29,7 @@
         },
         "diameter": {
             "title": "Diameter",
-            "description": "Diameter in centimeter at measured height.",
+            "description": "Diameter in centimeter at measured height (1.3m).",
             "type": "integer",
             "minimum": 1,
             "maximum": 1000,
