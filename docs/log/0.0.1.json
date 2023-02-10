@@ -1,4 +1,5 @@
 {
+    
     "$id": "https://schema.vinv.io/log/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
 
@@ -21,6 +22,17 @@
             "title": "Image",
             "description": "Image of the log",
             "$ref": "https://schema.vinv.io/image/0.0.1.json"
+        },
+        "treeNumber": {
+            "title": "Unique number",
+            "description": "Number/ID of the tree",
+            "type": "string",
+            "maxLength": 26,
+            "examples": [
+                "#1",
+                "45",
+                "ASDF435gHDFGhsgj5646"
+            ]
         }
     }
 }

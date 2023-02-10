@@ -1,7 +1,5 @@
 {
   "species": "JM2",
-  "dbh": 56,
-  "height": 15.6,
   "trunk": {
     "dimensions": [],
     "image_trunk": {
@@ -23,5 +21,6 @@
     }
   },
   "birth": "2010-09-13",
+  "treeNumber": "ASDF435gHDFGhsgj5646",
   "$schema": "https://schema.vinv.io/vinv-individual-tree/0.0.1.json"
 }

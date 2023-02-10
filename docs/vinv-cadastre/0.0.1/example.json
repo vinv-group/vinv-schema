@@ -1,0 +1,42 @@
+{
+  "location": {
+    "coordinates": {
+      "longitude": 130.5627874,
+      "latitude": 50.5627874,
+      "altitude": 130
+    },
+    "accuracy": 12,
+    "geogrid": {
+      "h3": "8428309ffffffff",
+      "geohash": "ww8p1r4t8"
+    }
+  },
+  "dbh": 56,
+  "tree": {
+    "species": "JM2",
+    "dbh": 56,
+    "height": 15.6,
+    "trunk": {
+      "dimensions": [],
+      "image_trunk": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
+    },
+    "crown": {
+      "dimensions": [],
+      "image_crown": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
+    },
+    "birth": "2010-09-13"
+  },
+  "$schema": "https://schema.vinv.io/vinv-cadastre/0.0.1.json"
+}

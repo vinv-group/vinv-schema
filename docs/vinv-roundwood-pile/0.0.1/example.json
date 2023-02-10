@@ -11,7 +11,7 @@
       "geohash": "ww8p1r4t8"
     }
   },
-  "trunks": [
+  "logs": [
     {
       "species": "JM2",
       "dimensions": [
@@ -27,7 +27,14 @@
           "height": 0.1,
           "diameter": 38
         }
-      ]
+      ],
+      "image_log": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
     },
     {
       "species": "JM2",
@@ -44,7 +51,14 @@
           "height": 0.1,
           "diameter": 38
         }
-      ]
+      ],
+      "image_log": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
     },
     {
       "species": "JM2",
@@ -61,7 +75,14 @@
           "height": 0.1,
           "diameter": 38
         }
-      ]
+      ],
+      "image_log": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
     }
   ],
   "image_pile_front": {
@@ -70,5 +91,6 @@
     "compression": 0.8,
     "width": 500,
     "height": 500
-  }
+  },
+  "$schema": "https://schema.vinv.io/vinv-roundwood-pile/0.0.1.json"
 }

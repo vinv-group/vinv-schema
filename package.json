@@ -4,7 +4,7 @@
   "description": "Individual tree schema",
   "type": "module",
   "scripts": {
-    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "version": "auto-changelog -p && git add CHANGELOG.md && cp CHANGELOG.md /Users/b-mac/sites/vinv/documentation/src/",
     
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
@@ -25,13 +25,13 @@
     "combine:roundwoodPile": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
     "document:roundwoodPile": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-roundwood-pile -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-roundwood-pile/0.0.1 -l en_US -n -p vinv:id -e doc.json",
     
-    "build:individualTree": "npm run combine:individualTree && npm run document:individualTree",
-    "combine:individualTree": "node ./processing/combine.js 0.0.1 vinv-individual-tree",
-    "document:individualTree": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-individual-tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-individual-tree/0.0.1 -l en_US -n -p vinv:id -e doc.json",
+    "build:cadastre": "npm run combine:cadastre && npm run document:cadastre",
+    "combine:cadastre": "node ./processing/combine.js 0.0.1 vinv-cadastre",
+    "document:cadastre": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-cadastre -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-cadastre/0.0.1 -l en_US -n -p vinv:id -e doc.json",
     
-    "build:cadastreDe": "npm run combine:cadastreDe && npm run document:cadastreDe",
-    "combine:cadastreDe": "node ./processing/combine.js 0.0.1 cadastre de",
-    "document:cadastreDe": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/cadastre/de -o /Users/b-mac/sites/vinv/documentation/src/specifications/cadastre/de/0.0.1 -l en_US -n -p vinv:id -e doc.json",
+    "build:treeInspectionDe": "npm run combine:treeInspectionDe && npm run document:treeInspectionDe",
+    "combine:treeInspectionDe": "node ./processing/combine.js 0.0.1 vinv-tree-inspection de",
+    "document:treeInspectionDe": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-tree-inspection/de -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-tree-inspection/de/0.0.1 -l en_US -n -p vinv:id -e doc.json",
   
     "build:tree": "npm run combine:tree",
     "combine:tree": "node ./processing/combine.js 0.0.1 tree",

@@ -1,34 +1,30 @@
 {
-    "$id": "https://schema.vinv.io/cadastre/de/0.0.1.json",
+    "$id": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Baumkontrolle",
     "description": "Baumkontrolle nach Vorgaben der Bundesanstalt für Gewässerkunde (bfa)",
     "type": "object",
     "required": [
+        "location",
         "base_data",
         "tree"
     ],
     "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "tree": {
+            "title": "Baum Daten",
+            "$ref": "https://schema.vinv.io/tree/0.0.1.json"
+        },
         "base_data": {
             "title": "Grunddaten",
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "treeNumber",
                 "safety_expectation"
             ],
             "properties": {
-                "treeNumber": {
-                    "title": "Baumnummer",
-                    "description": "Tree number",
-                    "type": "string",
-                    "maxLength": 50,
-                    "examples": [
-                        "1",
-                        "2",
-                        "3"
-                    ]
-                },
                 "safety_expectation": {
                     "title": "Berechtigte Sicherheitserwartung des Verkehrs",
                     "type": "string",
@@ -93,10 +89,6 @@
                     ]
                 }
             }
-        },
-        "tree": {
-            "title": "Baum Daten",
-            "$ref": "https://schema.vinv.io/vinv-individual-tree/0.0.1.json"
         },
         "root": {
             "title": "Wurzel",

@@ -6,23 +6,34 @@
     "type": "object",
     "required": [
         "location",
-        "trunks"
+        "logs"
     ],
     "properties": {
         "location": {
             "$ref": "https://schema.vinv.io/location/0.0.1.json"
         },
         "logs": {
-            "title": "Trunks",
-            "description": "Multiple trunk definition.",
+            "title": "Logs",
+            "description": "Multiple logs definition.",
             "type": "array",
             "minItems": 1,
-            "items": { "ref": "../log/0.0.1.json" }
+            "items": { "$ref": "https://schema.vinv.io/log/0.0.1.json" }
         },
         "image_pile_front": { 
             "title": "Image",
             "description": "Image of the Pile front",
             "$ref": "https://schema.vinv.io/image/0.0.1.json"
+        },
+        "treeNumber": {
+            "title": "Unique number",
+            "description": "Number/ID of the tree",
+            "type": "string",
+            "maxLength": 26,
+            "examples": [
+                "#1",
+                "45",
+                "ASDF435gHDFGhsgj5646"
+            ]
         }
     }
 }

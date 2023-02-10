@@ -6,8 +6,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "species",
-    "dbh"
+    "species"
   ],
   "properties": {
     "species": {
@@ -23,44 +22,6 @@
         "enum": "https://schema.vinv.io/species/0.0.1.json"
       }
     },
-    "dbh": {
-      "title": "Diameter at Breast Height",
-      "description": "Diameter in centimeter",
-      "type": "number",
-      "minimum": 1,
-      "maximum": 100,
-      "multipleOf": 0.1,
-      "examples": [
-        34,
-        56
-      ],
-      "$vinv": {
-        "unit": "Centimeter",
-        "unitSymbol": "cm",
-        "speech": true
-      }
-    },
-    "height": {
-      "title": "Height",
-      "description": "Height in Meter",
-      "type": [
-        "number",
-        "null"
-      ],
-      "minimum": 0.5,
-      "maximum": 99,
-      "multipleOf": 0.1,
-      "examples": [
-        14,
-        13.5,
-        15.6
-      ],
-      "$vinv": {
-        "unit": "Meter",
-        "unitSymbol": "m",
-        "speech": true
-      }
-    },
     "trunk": {
       "type": [
         "object",
@@ -73,11 +34,12 @@
       ],
       "properties": {
         "dimensions": {
-          "title": "Trunk Dimensions",
+          "title": "Dimensions",
           "description": "Diameter per height",
           "additionalProperties": false,
           "type": "array",
           "items": {
+            "additionalProperties": false,
             "title": "Diameter at height",
             "description": "Array including height and diameter at height",
             "type": [
@@ -93,26 +55,39 @@
             ],
             "properties": {
               "height": {
-                "type": "number",
                 "title": "Height",
-                "description": "Height of tree in PERCENT where diameter is measured",
-                "minimum": 0.1,
-                "maximum": 1,
+                "description": "Height of measurment in meter where diameter is measured.",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.1,
                 "examples": [
                   0.5,
                   0.1
-                ]
+                ],
+                "vinv": {
+                  "$vinv": {
+                    "unit": "Meter",
+                    "unitSymbol": "m"
+                  }
+                }
               },
               "diameter": {
-                "type": "number",
                 "title": "Diameter",
-                "description": "Diameter in CENTIMETER at measured height",
-                "minimum": 10,
-                "maximum": 100,
+                "description": "Diameter in centimeter at measured height.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000,
                 "examples": [
                   34,
                   38
-                ]
+                ],
+                "vinv": {
+                  "$vinv": {
+                    "unit": "Centimeter",
+                    "unitSymbol": "cm"
+                  }
+                }
               }
             },
             "$vinv": {
@@ -121,7 +96,7 @@
           }
         },
         "image_trunk": {
-          "title": "Image of the trunk",
+          "title": "Image",
           "description": "Image of the trunk",
           "type": [
             "object",
@@ -224,10 +199,11 @@
       ],
       "properties": {
         "dimensions": {
-          "title": "Crown Dimensions",
+          "title": "Dimensions",
           "description": "Diameter per height",
           "type": "array",
           "items": {
+            "additionalProperties": false,
             "title": "Diameter at height",
             "description": "Array including height and diameter at height",
             "type": [
@@ -243,26 +219,39 @@
             ],
             "properties": {
               "height": {
-                "type": "number",
                 "title": "Height",
-                "description": "Height of tree in PERCENT where diameter is measured",
-                "minimum": 0.1,
-                "maximum": 1,
+                "description": "Height of measurment in meter where diameter is measured.",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.1,
                 "examples": [
                   0.5,
                   0.1
-                ]
+                ],
+                "vinv": {
+                  "$vinv": {
+                    "unit": "Meter",
+                    "unitSymbol": "m"
+                  }
+                }
               },
               "diameter": {
-                "type": "number",
                 "title": "Diameter",
-                "description": "Diameter in CENTIMETER at measured height",
-                "minimum": 10,
-                "maximum": 100,
+                "description": "Diameter in centimeter at measured height.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000,
                 "examples": [
                   34,
                   38
-                ]
+                ],
+                "vinv": {
+                  "$vinv": {
+                    "unit": "Centimeter",
+                    "unitSymbol": "cm"
+                  }
+                }
               }
             },
             "$vinv": {
@@ -372,6 +361,17 @@
       "format": "date",
       "examples": [
         "2010-09-13"
+      ]
+    },
+    "treeNumber": {
+      "title": "Unique number",
+      "description": "Number/ID of the tree",
+      "type": "string",
+      "maxLength": 26,
+      "examples": [
+        "#1",
+        "45",
+        "ASDF435gHDFGhsgj5646"
       ]
     }
   }
