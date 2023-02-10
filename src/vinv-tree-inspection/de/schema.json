@@ -1,0 +1,572 @@
+{
+    "$id": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Baumkontrolle",
+    "description": "Baumkontrolle nach Vorgaben der Bundesanstalt für Gewässerkunde (bfa)",
+    "type": "object",
+    "required": [
+        "location",
+        "base_data",
+        "tree"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "tree": {
+            "title": "Baum Daten",
+            "$ref": "https://schema.vinv.io/tree/0.0.1.json"
+        },
+        "base_data": {
+            "title": "Grunddaten",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "safety_expectation"
+            ],
+            "properties": {
+                "safety_expectation": {
+                    "title": "Berechtigte Sicherheitserwartung des Verkehrs",
+                    "type": "string",
+                    "default": "geringer",
+                    "enum": [
+                        "geringer",
+                        "höher"
+                    ],
+                    "examples": [
+                        "geringer",
+                        "höher"
+                    ]
+                },
+                "conservation_status": {
+                    "title": "Naturschutzstatus",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "development_phase": {
+                    "title": "Vitalitätsstufe",
+                    "type": "string",
+                    "default": "vital",
+                    "enum": [
+                        "Jugendphase",
+                        "Reifephase",
+                        "Alterungsphase"
+                    ],
+                    "examples": [
+                        "Jugendphase",
+                        "Reifephase",
+                        "Alterungsphase"
+                    ]
+                },
+                "exemption": {
+                    "title": "Freistellung",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "vitality": {
+                    "title": "Vitalitätsstufe",
+                    "type": "string",
+                    "default": "vital",
+                    "enum": [
+                        "vital",
+                        "leicht geschwächt",
+                        "geschwächt",
+                        "stark geschwächt"
+                    ],
+                    "examples": [
+                        "vital",
+                        "leicht geschwächt",
+                        "geschwächt",
+                        "stark geschwächt"
+                    ]
+                }
+            }
+        },
+        "root": {
+            "title": "Wurzel",
+            "description": "Root of the tree.",
+            "type": "object",
+            "required": [
+                "raised_root_plate",
+                "floor_cracks"
+            ],
+            "properties": {
+                "raised_root_plate": {
+                    "title": "angehobener Wurzelteller",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "floor_cracks": {
+                    "title": "Bodenrisse",
+                    "description": "konzentrische Bodenrisse quer zur Wurzel (auch Wegedecken, Mauern usw.)",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "main_root_damage": {
+                    "title": "windseitige Hauptwurzelschäden",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "near_trunk_shafts": {
+                    "title": "stammnahe Schachtungen",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "backfill_root": {
+                    "title": "stammnahe Schachtungen",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "stilt_roots": {
+                    "title": "Stelzwurzeln",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "exposed_roots": {
+                    "title": "freigespülte Wurzeln",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "annotation": {
+                    "title": "Anmerkung",
+                    "type": ["string", "null"],
+                    "maxLength": 500,
+                    "examples": [
+                        "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+                    ]
+                }
+            }
+        },
+        "trunk": {
+            "title": "Stammfuß und Stamm ",
+            "description": "trunk foot and trunk",
+            "type": "object",
+            "required": [
+                "misalignment",
+                "juice_leakage"
+            ],
+            "properties": {
+                "misalignment": {
+                    "title": "Schiefstellung",
+                    "description": "akutes Kippen",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "shear_crack": {
+                            "title": "mit Schubriss",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        },
+                        "naked_triangle": {
+                            "title": "mit nacktem Dreieck",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        },
+                        "round_trunk_cross_section": {
+                            "title": "mit rundem Stammquerschnitt",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        },
+                        "straight_trunk_axis": {
+                            "title": "mit gerader Stammachse",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "juice_leakage": {
+                    "title": "Saftaustritt",
+                    "description": "dunkler Saftaustritt am Stammfuß",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "mushroom": {
+                    "title": "Pilzfruchtkörper",
+                    "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "body_longitudinal_cracks": {
+                    "title": "Holzkörper Längsrisse",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "cracked_v-twin": {
+                    "title": "gerissener V-Zwiesel",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "cave": {
+                    "title": "Höhle",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "rib_pointed_nose": {
+                    "title": "spitznasige Längsrippe",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "thickening": {
+                    "title": "Verdickung",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "dead_bark": {
+                    "title": "tote Rinde",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "wound_rot": {
+                    "title": "Wunde mit Fäule",
+                    "description": "Aufgrund einer Verletzung abgestorbenes, ausfaulendes Holz.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "hollow": {
+                            "title": "mit Hohlklang",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        }
+                    },
+                    "additionalItems": false
+                },
+                "capping": {
+                    "title": "Kappung",
+                    "description": "Baumzerstörende Einkürzung der Krone ohne Rücksicht auf die Wuchsform, Notmaßnahme zur Herstellung der Verkehrssicherheit. Geeignete Minderungsmaßnahme zur Entwicklung von Totholz-Lebensraum anstelle einer Fällung. Solange ein Totholzstumpf durch mögliches Umstürzen eine Verkehrsfläche erreichen kann, wird er der Regelkontrolle unterzogen.",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "required": [
+                        "height"
+                    ],
+                    "properties": {
+                        "height": {
+                            "title": "Höhe der Kappung",
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "examples": [
+                                0,
+                                100
+                            ],
+                            "vinv:unit": "Meter"
+                        },
+                        "deadwood_stump": {
+                            "title": "Totholzstumpf",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "annotation": {
+                    "title": "Anmerkung",
+                    "type": ["string", "null"],
+                    "maxLength": 500,
+                    "examples": [
+                        "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+                    ]
+                }
+            }
+        },
+        "crown": {
+            "title": "Stamm",
+            "description": "Stammfuß und Stamm",
+            "type": "object",
+            "required": [
+                "mushroom"
+            ],
+            "properties": {
+                "mushroom": {
+                    "title": "Pilzfruchtkörper",
+                    "description": "Zeitweise sichtbares Vermehrungsorgan eines Pilzes, der möglicherweise lebendes Holz zersetzt.",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "deadwood": {
+                    "title": "Totholz",
+                    "description": "(sicherheitsrelevant)",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "body_longitudinal_cracks": {
+                    "title": "Holzkörper Längsrisse",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "cracked_v-twin": {
+                    "title": "gerissener V-Zwiesel",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "cave": {
+                    "title": "Höhle",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "rib_pointed_nose": {
+                    "title": "spitznasige Längsrippe",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "thickening": {
+                    "title": "Verdickung",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "dead_bark": {
+                    "title": "tote Rinde",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "wound_rot": {
+                    "title": "Wunde mit Fäule",
+                    "type": "object",
+                    "properties": {
+                        "hollow": {
+                            "title": "mit Hohlklang",
+                            "type": "boolean",
+                            "default": false,
+                            "examples": [
+                                false,
+                                true
+                            ]
+                        }
+                    },
+                    "additionalItems": false
+                },
+                "loose_hanging_branch": {
+                    "title": "lose hängender Ast",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "breakdown": {
+                    "title": "Anbruch",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "annotation": {
+                    "title": "Anmerkung",
+                    "type": ["string", "null"],
+                    "maxLength": 500,
+                    "examples": [
+                        "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+                    ]
+                }
+            }
+        },
+        "action_required": {
+            "title": "Handlungsbedarf",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "further_visual_inspection": {
+                    "title": "Weitere Sichtkontrolle",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "further_visual_inspection_comment": {
+                    "title": "Eingehende Untersuchung",
+                    "type": "boolean",
+                    "default": false,
+                    "examples": [
+                        false,
+                        true
+                    ]
+                },
+                "urgency": {
+                    "title": "Dringlichkeit",
+                    "type": "string",
+                    "enum": [
+                        "nicht dringend",
+                        "dringend",
+                        "sehr dringend"
+                    ],
+                    "examples": [
+                        "nicht dringend",
+                        "dringend",
+                        "sehr dringend"
+                    ]
+                }
+            }
+        },
+        "status": {
+            "title": "Zustand",
+            "type": "object",
+            "properties": {
+                "health": {
+                    "title": "Gesundheit",
+                    "type": "string",
+                    "enum": [
+                        "gesund/leicht geschädigt",
+                        "stärker geschädigt",
+                        "nachhaltig geschädigt"
+                    ],
+                    "examples": [
+                        "gesund/leicht geschädigt",
+                        "stärker geschädigt",
+                        "nachhaltig geschädigt"
+                    ]
+                },
+                "control_interval ": {
+                    "title": "Künftiges Kontrollintervall ",
+                    "type": "string",
+                    "enum": [
+                        "halbjährlich",
+                        "jährlich",
+                        "alle 2 Jahre",
+                        "alle 3 Jahre"
+                    ],
+                    "examples": [
+                        "halbjährlich",
+                        "jährlich",
+                        "alle 2 Jahre",
+                        "alle 3 Jahre"
+                    ]
+                }
+            }
+        }
+    }
+}

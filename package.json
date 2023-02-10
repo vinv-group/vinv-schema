@@ -8,6 +8,8 @@
     
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
+
+    "deploy": "node ./processing/deploy.js",
     
     "build:diameter_at_height": "npm run combine:diameter_at_height && npm run document:diameter_at_height",
     "combine:diameter_at_height": "node ./processing/combine.js 0.0.1 diameter_at_height",

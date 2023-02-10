@@ -1,0 +1,71 @@
+{
+    "$id": "https://schema.vinv.io/image/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Image",
+    "description": "A universal resource identifier (URI), according to RFC3986.",
+    "type": ["object", "null"],
+    "vinv:id": "https://schema.vinv.io/image/0.0.1.json",
+    "required":[
+        "uri"
+    ],
+    "properties":{
+        "uri": {
+            "title": "Image",
+            "description": "A universal resource identifier (URI), according to RFC3986.",
+            "type": "string",
+            "format": "uri",
+            "examples":[
+                "https://schema.vinv.io/asset/img/logo.png"
+            ]
+        },
+        "encoder": {
+            "title": "Encoder",
+            "description": "The encoder used to encode the image.",
+            "type": ["string", "null"],
+            "default": "image/webp",
+            "enum": [
+                "image/jpeg",
+                "image/webp"
+            ],
+            "examples":[
+                "image/webp",
+                "image/jpeg"
+            ]
+        },
+        "compression": {
+            "title": "Compression",
+            "description": "The compression used to encode the image.",
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1,
+            "default": 1,
+            "examples":[
+                0.8
+            ]
+        },
+        "width": {
+            "title": "Width",
+            "description": "Width of the image.",
+            "type": ["integer", "null"],
+            "minimum": 25,
+            "maximum": 10000,
+            "examples":[
+                500
+            ],
+            "vinv:unit": "Pixel",
+            "vinv:unitSymbol": "px"
+        },
+        "height": {
+            "title": "Height",
+            "description": "Height of the image",
+            "type": ["integer", "null"],
+            "minimum": 25,
+            "maximum": 10000,
+            "examples":[
+                500
+            ],
+            "vinv:unit": "Pixel",
+            "vinv:unitSymbol": "px"
+        }
+    }
+}

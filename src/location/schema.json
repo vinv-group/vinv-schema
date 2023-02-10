@@ -1,0 +1,59 @@
+{
+    "$id": "https://schema.vinv.io/location/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Location",
+    "description": "",
+    "type": "object",
+    "vinv:id": "https://schema.vinv.io/location/0.0.1.json",
+    "required": [
+        "coordinates",
+        "accuracy"
+    ],
+    "properties": {
+        "coordinates": {
+            "$ref": "https://schema.vinv.io/coordinates/0.0.1.json",
+            "vinv:basics": "https://documentation.vinv.io/coordinates/0.0.1/0.html"
+        },
+        "accuracy": {
+            "title": "Accuracy",
+            "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10000,
+            "multipleOf" : 0.1,
+            "vinv:unit": "Meter",
+            "vinv:unitSymbol": "m",
+            "examples": [
+                3,
+                12
+            ]
+        },
+        "geogrid": {
+            "title": "Geo Grid",
+            "description": "Geographical Aggregation Grid",
+            "type": ["object", "null"],
+            "properties": {
+                "h3": {
+                    "title": "h3-Location",
+                    "description": "Location of the event (h3 https://h3geo.org/)",
+                    "type": ["string", "null"],
+                    "minLength": 15,
+                    "maxLength": 15,
+                    "examples": [
+                        "8428309ffffffff"
+                    ]
+                },
+                "geohash": {
+                    "title": "geohash-Location",
+                    "description": "Location of the event (geohash https://en.wikipedia.org/wiki/Geohash)",
+                    "type": ["string", "null"],
+                    "minLength": 1,
+                    "maxLength": 12,
+                    "examples": [
+                        "ww8p1r4t8"
+                    ]
+                }
+            }
+        }
+    }
+}

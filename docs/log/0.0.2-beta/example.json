@@ -1,0 +1,26 @@
+{
+  "species": "JM2",
+  "dimensions": [
+    {
+      "height": 0.1,
+      "diameter": 38
+    },
+    {
+      "height": 0.1,
+      "diameter": 38
+    },
+    {
+      "height": 0.1,
+      "diameter": 38
+    }
+  ],
+  "image_log": {
+    "uri": "https://schema.vinv.io/asset/img/logo.png",
+    "encoder": "image/jpeg",
+    "compression": 0.8,
+    "width": 500,
+    "height": 500
+  },
+  "treeNumber": "ASDF435gHDFGhsgj5646",
+  "$schema": "https://schema.vinv.io/log/0.0.2-beta.json"
+}

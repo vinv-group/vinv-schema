@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.vinv.io/tree/0.0.2-beta.json",
+  "species": "JM2",
+  "trunk": {
+    "dimensions": [],
+    "image_trunk": {
+      "uri": "https://schema.vinv.io/asset/img/logo.png",
+      "encoder": "image/jpeg",
+      "compression": 0.8,
+      "width": 500,
+      "height": 500
+    }
+  },
+  "crown": {
+    "dimensions": [],
+    "image_crown": {
+      "uri": "https://schema.vinv.io/asset/img/logo.png",
+      "encoder": "image/jpeg",
+      "compression": 0.8,
+      "width": 500,
+      "height": 500
+    }
+  },
+  "birth": "2010-09-13",
+  "treeNumber": "ASDF435gHDFGhsgj5646"
+}

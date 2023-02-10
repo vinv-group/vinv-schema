@@ -1,0 +1,39 @@
+{
+    "$id": "https://schema.vinv.io/vinv-roundwood-pile/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RoundwoodPile",
+    "description": "Roundwood Pile",
+    "type": "object",
+    "required": [
+        "location",
+        "logs"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "logs": {
+            "title": "Logs",
+            "description": "Multiple logs definition.",
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "https://schema.vinv.io/log/0.0.1.json" }
+        },
+        "image_pile_front": { 
+            "title": "Image",
+            "description": "Image of the Pile front",
+            "$ref": "https://schema.vinv.io/image/0.0.1.json"
+        },
+        "treeNumber": {
+            "title": "Unique number",
+            "description": "Number/ID of the tree",
+            "type": "string",
+            "maxLength": 26,
+            "examples": [
+                "#1",
+                "45",
+                "ASDF435gHDFGhsgj5646"
+            ]
+        }
+    }
+}

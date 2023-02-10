@@ -1,0 +1,38 @@
+{
+    "$id": "https://schema.vinv.io/vinv-cadastre/0.0.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Cadastre",
+    "description": "Tree cadastre",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "location",
+        "dbh",
+        "tree"
+    ],
+    "properties": {
+        "location": {
+            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+        },
+        "dbh": {
+            "title": "Diameter at Breast Height",
+            "description": "Diameter in centimeter",
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "multipleOf" : 0.1,
+            "examples": [
+                34,
+                56
+            ],
+            "vinv":{
+                "unit": "Centimeter",
+                "vinv:unitSymbol": "cm",
+                "vinv:speech": true
+            }
+        },
+        "tree": {
+            "$ref": "https://schema.vinv.io/tree/0.0.1.json"
+        }
+    }
+}

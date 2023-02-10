@@ -1,0 +1,5 @@
+{
+  "$schema": "https://schema.vinv.io/diameter_at_height/0.0.2-beta.json",
+  "height": 0.1,
+  "diameter": 38
+}
