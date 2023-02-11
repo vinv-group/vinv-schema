@@ -2,216 +2,240 @@
   "coordinates": {
     "title": "Coordinates",
     "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T18:33:40.695Z",
-        "created": "2022-11-17T18:33:05.328Z",
-        "schema": "https://schema.vinv.io/coordinates/en/0.0.1.json",
-        "example": "https://schema.vinv.io/coordinates/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/coordinates/en/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-11T12:41:00.084Z",
-        "created": "2023-02-11T12:22:29.895Z",
-        "schema": "https://schema.vinv.io/coordinates/en/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/coordinates/en/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/coordinates/en/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T18:33:40.695Z",
+          "created": "2022-11-17T18:33:05.328Z",
+          "schema": "https://schema.vinv.io/coordinates/en/0.0.1.json",
+          "example": "https://schema.vinv.io/coordinates/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/coordinates/en/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-11T12:41:00.084Z",
+          "created": "2023-02-11T12:22:29.895Z",
+          "schema": "https://schema.vinv.io/coordinates/en/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/coordinates/en/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/coordinates/en/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "device-orientation": {
     "title": "Device Orientation",
     "description": "Data indicating changes to their orientation with relation to the pull of gravity.",
-    "en": {
-      "0.0.1-beta": {
-        "version": "0.0.1-beta",
-        "modified": "2023-02-11T14:38:29.406Z",
-        "created": "2023-02-11T14:38:29.402Z",
-        "schema": "https://schema.vinv.io/device-orientation/en/0.0.1-beta.json",
-        "example": "https://schema.vinv.io/device-orientation/en/0.0.1-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/device-orientation/en/0.0.1-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1-beta": {
+          "version": "0.0.1-beta",
+          "modified": "2023-02-11T14:38:29.406Z",
+          "created": "2023-02-11T14:38:29.402Z",
+          "schema": "https://schema.vinv.io/device-orientation/en/0.0.1-beta.json",
+          "example": "https://schema.vinv.io/device-orientation/en/0.0.1-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/device-orientation/en/0.0.1-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "diameter_at_height": {
     "title": "Diameter at height",
     "description": "Array including height and diameter at height",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-12-20T12:04:37.748Z",
-        "created": "2022-12-20T11:59:32.955Z",
-        "schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
-        "example": "https://schema.vinv.io/diameter_at_height/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-10T23:09:49.461Z",
-        "created": "2023-02-10T23:09:49.411Z",
-        "schema": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-12-20T12:04:37.748Z",
+          "created": "2022-12-20T11:59:32.955Z",
+          "schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+          "example": "https://schema.vinv.io/diameter_at_height/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-10T23:09:49.461Z",
+          "created": "2023-02-10T23:09:49.411Z",
+          "schema": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "envelope": {
     "title": "vinv-Envelope",
     "description": "The envelope provides a structure for all vinv data.",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T19:36:37.753Z",
-        "created": "2022-11-17T19:19:58.079Z",
-        "schema": "https://schema.vinv.io/envelope/en/0.0.1.json",
-        "example": "https://schema.vinv.io/envelope/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/envelope/en/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-11T14:43:48.473Z",
-        "created": "2023-02-11T14:43:48.471Z",
-        "schema": "https://schema.vinv.io/envelope/en/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/envelope/en/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/envelope/en/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T19:36:37.753Z",
+          "created": "2022-11-17T19:19:58.079Z",
+          "schema": "https://schema.vinv.io/envelope/en/0.0.1.json",
+          "example": "https://schema.vinv.io/envelope/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/envelope/en/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-11T14:43:48.473Z",
+          "created": "2023-02-11T14:43:48.471Z",
+          "schema": "https://schema.vinv.io/envelope/en/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/envelope/en/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/envelope/en/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "image": {
     "title": "Image",
     "description": "A universal resource identifier (URI), according to RFC3986.",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T18:33:35.830Z",
-        "created": "2022-11-17T18:33:04.220Z",
-        "schema": "https://schema.vinv.io/image/en/0.0.1.json",
-        "example": "https://schema.vinv.io/image/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/image/en/0.0.1/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T18:33:35.830Z",
+          "created": "2022-11-17T18:33:04.220Z",
+          "schema": "https://schema.vinv.io/image/en/0.0.1.json",
+          "example": "https://schema.vinv.io/image/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/image/en/0.0.1/dereferenced.doc.json"
+        }
       }
     }
   },
   "location": {
     "title": "Location",
     "description": "",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T18:33:31.377Z",
-        "created": "2022-11-17T18:33:01.771Z",
-        "schema": "https://schema.vinv.io/location/en/0.0.1.json",
-        "example": "https://schema.vinv.io/location/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/location/en/0.0.1/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T18:33:31.377Z",
+          "created": "2022-11-17T18:33:01.771Z",
+          "schema": "https://schema.vinv.io/location/en/0.0.1.json",
+          "example": "https://schema.vinv.io/location/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/location/en/0.0.1/dereferenced.doc.json"
+        }
       }
     }
   },
   "log": {
     "title": "Log",
     "description": "A part of the trunk or a large branch of a tree that has fallen or been cut off.",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2023-02-06T15:45:34.828Z",
-        "created": "2023-02-06T15:45:34.276Z",
-        "schema": "https://schema.vinv.io/log/en/0.0.1.json",
-        "example": "https://schema.vinv.io/log/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/log/en/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-11T12:04:32.793Z",
-        "created": "2023-02-11T12:04:32.780Z",
-        "schema": "https://schema.vinv.io/log/en/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/log/en/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/log/en/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2023-02-06T15:45:34.828Z",
+          "created": "2023-02-06T15:45:34.276Z",
+          "schema": "https://schema.vinv.io/log/en/0.0.1.json",
+          "example": "https://schema.vinv.io/log/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/log/en/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-11T12:04:32.793Z",
+          "created": "2023-02-11T12:04:32.780Z",
+          "schema": "https://schema.vinv.io/log/en/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/log/en/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/log/en/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "species": {
     "title": "Tree species",
     "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T18:33:25.808Z",
-        "created": "2022-11-17T18:33:13.690Z",
-        "schema": "https://schema.vinv.io/species/en/0.0.1.json",
-        "example": "https://schema.vinv.io/species/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/species/en/0.0.1/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T18:33:25.808Z",
+          "created": "2022-11-17T18:33:13.690Z",
+          "schema": "https://schema.vinv.io/species/en/0.0.1.json",
+          "example": "https://schema.vinv.io/species/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/species/en/0.0.1/dereferenced.doc.json"
+        }
       }
     }
   },
   "tree": {
     "title": "Tree",
     "description": "Tree definition",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2023-02-06T14:44:47.011Z",
-        "created": "2023-02-06T10:52:43.222Z",
-        "schema": "https://schema.vinv.io/tree/en/0.0.1.json",
-        "example": "https://schema.vinv.io/tree/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/tree/en/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-10T23:00:36.015Z",
-        "created": "2023-02-10T23:00:35.997Z",
-        "schema": "https://schema.vinv.io/tree/en/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/tree/en/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/tree/en/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2023-02-06T14:44:47.011Z",
+          "created": "2023-02-06T10:52:43.222Z",
+          "schema": "https://schema.vinv.io/tree/en/0.0.1.json",
+          "example": "https://schema.vinv.io/tree/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/tree/en/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-10T23:00:36.015Z",
+          "created": "2023-02-10T23:00:35.997Z",
+          "schema": "https://schema.vinv.io/tree/en/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/tree/en/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/tree/en/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   },
   "vinv-cadastre": {
     "title": "Cadastre",
     "description": "Tree cadastre",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-11-17T18:31:29.217Z",
-        "created": "2022-11-17T18:29:57.067Z",
-        "schema": "https://schema.vinv.io/vinv-cadastre/en/0.0.1.json",
-        "example": "https://schema.vinv.io/vinv-cadastre/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/vinv-cadastre/en/0.0.1/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-11-17T18:31:29.217Z",
+          "created": "2022-11-17T18:29:57.067Z",
+          "schema": "https://schema.vinv.io/vinv-cadastre/en/0.0.1.json",
+          "example": "https://schema.vinv.io/vinv-cadastre/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/vinv-cadastre/en/0.0.1/dereferenced.doc.json"
+        }
       }
     }
   },
   "vinv-roundwood-pile": {
     "title": "RoundwoodPile",
     "description": "Roundwood Pile",
-    "en": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2022-12-05T20:46:32.065Z",
-        "created": "2022-12-05T20:34:40.459Z",
-        "schema": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1.json",
-        "example": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1/dereferenced.doc.json"
+    "language": {
+      "en": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2022-12-05T20:46:32.065Z",
+          "created": "2022-12-05T20:34:40.459Z",
+          "schema": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1.json",
+          "example": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.1/dereferenced.doc.json"
+        }
       }
     }
   },
   "vinv-tree-inspection": {
     "title": "Baumkontrolle",
     "description": "Baumkontrolle nach Vorgaben der Bundesanstalt für Gewässerkunde (bfa)",
-    "de": {
-      "0.0.1": {
-        "version": "0.0.1",
-        "modified": "2023-01-19T15:45:55.836Z",
-        "created": "2023-01-19T15:45:21.557Z",
-        "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1.json",
-        "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1/example.json",
-        "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1/dereferenced.doc.json"
-      },
-      "0.0.2-beta": {
-        "version": "0.0.2-beta",
-        "modified": "2023-02-11T12:19:55.686Z",
-        "created": "2023-02-11T12:19:55.677Z",
-        "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json",
-        "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/example.json",
-        "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
+    "language": {
+      "de": {
+        "0.0.1": {
+          "version": "0.0.1",
+          "modified": "2023-01-19T15:45:55.836Z",
+          "created": "2023-01-19T15:45:21.557Z",
+          "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1.json",
+          "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1/example.json",
+          "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1/dereferenced.doc.json"
+        },
+        "0.0.2-beta": {
+          "version": "0.0.2-beta",
+          "modified": "2023-02-11T12:19:55.686Z",
+          "created": "2023-02-11T12:19:55.677Z",
+          "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json",
+          "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/example.json",
+          "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
+        }
       }
     }
   }
