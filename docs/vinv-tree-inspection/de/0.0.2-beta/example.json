@@ -1,0 +1,106 @@
+{
+  "location": {
+    "coordinates": {
+      "longitude": 130.5627874,
+      "latitude": 50.5627874,
+      "altitude": 130
+    },
+    "accuracy": 12,
+    "geogrid": {
+      "h3": "8428309ffffffff",
+      "geohash": "ww8p1r4t8"
+    }
+  },
+  "tree": {
+    "species": "JM2",
+    "trunk": {
+      "dimensions": [],
+      "image_trunk": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
+    },
+    "crown": {
+      "dimensions": [],
+      "image_crown": {
+        "uri": "https://schema.vinv.io/asset/img/logo.png",
+        "encoder": "image/jpeg",
+        "compression": 0.8,
+        "width": 500,
+        "height": 500
+      }
+    },
+    "birth": "2010-09-13",
+    "treeNumber": "ASDF435gHDFGhsgj5646"
+  },
+  "base_data": {
+    "safety_expectation": "höher",
+    "conservation_status": true,
+    "development_phase": "Alterungsphase",
+    "exemption": true,
+    "vitality": "stark geschwächt"
+  },
+  "root": {
+    "raised_root_plate": true,
+    "floor_cracks": true,
+    "main_root_damage": true,
+    "near_trunk_shafts": true,
+    "backfill_root": true,
+    "stilt_roots": true,
+    "exposed_roots": true,
+    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+  },
+  "trunk": {
+    "misalignment": {
+      "shear_crack": true,
+      "naked_triangle": true,
+      "round_trunk_cross_section": true,
+      "straight_trunk_axis": true
+    },
+    "juice_leakage": true,
+    "mushroom": true,
+    "body_longitudinal_cracks": true,
+    "cracked_v-twin": true,
+    "cave": true,
+    "rib_pointed_nose": true,
+    "thickening": true,
+    "dead_bark": true,
+    "wound_rot": {
+      "hollow": true
+    },
+    "capping": {
+      "height": 100,
+      "deadwood_stump": true
+    },
+    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+  },
+  "crown": {
+    "mushroom": true,
+    "deadwood": true,
+    "body_longitudinal_cracks": true,
+    "cracked_v-twin": true,
+    "cave": true,
+    "rib_pointed_nose": true,
+    "thickening": true,
+    "dead_bark": true,
+    "wound_rot": {
+      "hollow": true
+    },
+    "loose_hanging_branch": true,
+    "breakdown": true,
+    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+  },
+  "action_required": {
+    "further_visual_inspection": true,
+    "further_visual_inspection_comment": true,
+    "urgency": "sehr dringend"
+  },
+  "status": {
+    "health": "nachhaltig geschädigt",
+    "control_interval ": "alle 3 Jahre"
+  },
+  "$schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json"
+}

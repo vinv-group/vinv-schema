@@ -1,0 +1,6 @@
+{
+  "$schema": "https://schema.vinv.io/envelope/en/0.0.2-beta.json",
+  "data": {
+    "vinv-individual-tree": {}
+  }
+}

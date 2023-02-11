@@ -1,0 +1,7 @@
+{
+  "alpha": 0,
+  "beta": 0,
+  "gamma": 0,
+  "absolute": true,
+  "$schema": "https://schema.vinv.io/device-orientation/en/0.0.1-beta.json"
+}
