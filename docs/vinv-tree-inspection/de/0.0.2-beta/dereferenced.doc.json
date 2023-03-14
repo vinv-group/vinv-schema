@@ -147,17 +147,17 @@
       "properties": {
         "species": {
           "$schema": "http://json-schema.org/draft-07/schema#",
+          "$vinv": {
+            "id": "https://schema.vinv.io/species/en/0.0.2-beta.json",
+            "enum": "https://schema.vinv.io/species/en/0.0.1.json"
+          },
           "title": "Tree species",
           "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
           "type": "string",
           "pattern": "^[a-zA-Z0-9_-]{3}$",
           "examples": [
             "JM2"
-          ],
-          "$vinv": {
-            "id": "https://schema.vinv.io/species/0.0.1.json",
-            "enum": "https://schema.vinv.io/species/0.0.1.json"
-          }
+          ]
         },
         "trunk": {
           "type": [
@@ -192,6 +192,13 @@
                   "diameter"
                 ],
                 "properties": {
+                  "$schema": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                      "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"
+                    ]
+                  },
                   "height": {
                     "title": "Height",
                     "description": "Height of measurment in meter where diameter is measured.",
@@ -229,7 +236,7 @@
                   }
                 },
                 "$vinv": {
-                  "id": "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+                  "id": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"
                 }
               }
             },
@@ -321,7 +328,7 @@
                 }
               },
               "$vinv": {
-                "id": "https://schema.vinv.io/image/0.0.1.json"
+                "id": "https://schema.vinv.io/image/en/0.0.1.json"
               }
             }
           }
@@ -358,6 +365,13 @@
                   "diameter"
                 ],
                 "properties": {
+                  "$schema": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                      "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"
+                    ]
+                  },
                   "height": {
                     "title": "Height",
                     "description": "Height of measurment in meter where diameter is measured.",
@@ -395,7 +409,7 @@
                   }
                 },
                 "$vinv": {
-                  "id": "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+                  "id": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"
                 }
               }
             },
@@ -487,7 +501,7 @@
                 }
               },
               "$vinv": {
-                "id": "https://schema.vinv.io/image/0.0.1.json"
+                "id": "https://schema.vinv.io/image/en/0.0.1.json"
               }
             }
           }
@@ -1052,17 +1066,18 @@
     "status": {
       "title": "Zustand",
       "type": "object",
-      "required": [
-        "health"
-      ],
       "properties": {
         "health": {
           "title": "Gesundheit",
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "enum": [
             "gesund/leicht geschädigt",
             "stärker geschädigt",
-            "nachhaltig geschädigt"
+            "nachhaltig geschädigt",
+            null
           ],
           "examples": [
             "gesund/leicht geschädigt",
@@ -1080,7 +1095,8 @@
             "halbjährlich",
             "jährlich",
             "alle 2 Jahre",
-            "alle 3 Jahre"
+            "alle 3 Jahre",
+            null
           ],
           "examples": [
             "halbjährlich",

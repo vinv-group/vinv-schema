@@ -537,17 +537,15 @@
         "status": {
             "title": "Zustand",
             "type": "object",
-            "required": [
-                "health"
-            ],
             "properties": {
                 "health": {
                     "title": "Gesundheit",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "enum": [
                         "gesund/leicht geschädigt",
                         "stärker geschädigt",
-                        "nachhaltig geschädigt"
+                        "nachhaltig geschädigt",
+                        null
                     ],
                     "examples": [
                         "gesund/leicht geschädigt",
@@ -562,7 +560,8 @@
                         "halbjährlich",
                         "jährlich",
                         "alle 2 Jahre",
-                        "alle 3 Jahre"
+                        "alle 3 Jahre",
+                        null
                     ],
                     "examples": [
                         "halbjährlich",
