@@ -4,7 +4,7 @@
     "title": "Cadastre",
     "description": "Tree cadastre",
     "type": "object",
-    "additionalProperties": false,
+
     "required": [
         "location",
         "dbh",
@@ -12,7 +12,7 @@
     ],
     "properties": {
         "location": {
-            "$ref": "https://schema.vinv.io/location/en/0.0.1.json"
+            "$ref": "https://schema.vinv.io/location/en/0.0.2-beta.json"
         },
         "dbh": {
             "title": "Diameter at Breast Height",
@@ -32,7 +32,7 @@
             }
         },
         "tree": {
-            "$ref": "https://schema.vinv.io/tree/en/0.0.1.json"
+            "$ref": "https://schema.vinv.io/tree/en/0.0.2-beta.json"
         }
     }
 }

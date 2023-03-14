@@ -10,7 +10,7 @@
     ],
     "properties": {
         "species": {
-            "$ref": "https://schema.vinv.io/species/en/0.0.1.json"
+            "$ref": "https://schema.vinv.io/species/en/0.0.2-beta.json"
         },
         "trunk": {
             "type": ["object", "null"],
@@ -25,12 +25,12 @@
                     "description": "Diameter per height",
                     "additionalProperties": false,
                     "type": "array",
-                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"}
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"}
                 },
                 "image_trunk": { 
                     "title": "Image",
                     "description": "Image of the trunk",
-                    "$ref": "https://schema.vinv.io/image/en/0.0.1.json"
+                    "$ref": "https://schema.vinv.io/image/en/0.0.2-beta.json"
                 }
             }
         },
@@ -46,12 +46,12 @@
                     "title": "Dimensions",
                     "description": "Diameter per height",
                     "type": "array",
-                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"}
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"}
                 },
                 "image_crown": { 
                     "title": "Image of the trunk",
                     "description": "Image of the trunk",
-                    "$ref": "https://schema.vinv.io/image/en/0.0.1.json"
+                    "$ref": "https://schema.vinv.io/image/en/0.0.2-beta.json"
                 }
             }
         },

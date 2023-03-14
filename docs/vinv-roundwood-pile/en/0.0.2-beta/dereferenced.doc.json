@@ -1,0 +1,441 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RoundwoodPile",
+  "description": "Roundwood Pile",
+  "type": "object",
+  "required": [
+    "location",
+    "logs"
+  ],
+  "properties": {
+    "location": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Location",
+      "description": "",
+      "type": "object",
+      "required": [
+        "coordinates",
+        "accuracy"
+      ],
+      "properties": {
+        "coordinates": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "Coordinates",
+          "description": "Anchor point of the Object on a map. Array of longitude, latitude and [altitude] coordinate. Reference system: WGS84 Web Mercator with longitude and latitude units of decimal degrees.",
+          "type": "object",
+          "required": [
+            "longitude",
+            "latitude"
+          ],
+          "additionalItems": false,
+          "properties": {
+            "longitude": {
+              "title": "Longitude",
+              "description": "The decimal east/west position of a point. (7 decimal places max)",
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180,
+              "multipleOf": 1e-7,
+              "examples": [
+                -130.5627874,
+                130.5627874
+              ]
+            },
+            "latitude": {
+              "title": "Latitude",
+              "description": "The decimal north/south position of a point. (7 decimal places max)",
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90,
+              "multipleOf": 1e-7,
+              "examples": [
+                -12.4563,
+                50.5627874
+              ]
+            },
+            "altitude": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Altitude",
+              "description": "The altitude of the position in meters above mean sea level. (2 decimal places max)",
+              "minimum": 0,
+              "maximum": 2500,
+              "multipleOf": 0.1,
+              "examples": [
+                0,
+                130
+              ],
+              "$vinv": {
+                "unit": "Meter",
+                "unitSymbol": "m"
+              }
+            }
+          },
+          "$vinv": {
+            "id": "https://schema.vinv.io/coordinates/0.0.1.json"
+          }
+        },
+        "accuracy": {
+          "title": "Accuracy",
+          "description": "The decimal accuracy of coordinates in meter (2 decimal places max).",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000,
+          "multipleOf": 0.1,
+          "examples": [
+            3,
+            12
+          ],
+          "$vinv": {
+            "unit": "Meter",
+            "unitSymbol": "m"
+          }
+        },
+        "geogrid": {
+          "title": "Geo Grid",
+          "description": "Geographical Aggregation Grid",
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "h3": {
+              "title": "h3-Location",
+              "description": "Location of the event (h3 https://h3geo.org/)",
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 15,
+              "maxLength": 15,
+              "examples": [
+                "8428309ffffffff"
+              ]
+            },
+            "geohash": {
+              "title": "geohash-Location",
+              "description": "Location of the event (geohash https://en.wikipedia.org/wiki/Geohash)",
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1,
+              "maxLength": 12,
+              "examples": [
+                "ww8p1r4t8"
+              ]
+            }
+          }
+        }
+      },
+      "$vinv": {
+        "id": "https://schema.vinv.io/location/en/0.0.1.json"
+      }
+    },
+    "logs": {
+      "title": "Logs",
+      "description": "Multiple logs definition.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Log",
+        "description": "A part of the trunk or a large branch of a tree that has fallen or been cut off.",
+        "type": "object",
+        "required": [
+          "species",
+          "dimensions"
+        ],
+        "properties": {
+          "species": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Tree species",
+            "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{3}$",
+            "examples": [
+              "JM2"
+            ],
+            "$vinv": {
+              "id": "https://schema.vinv.io/species/0.0.1.json",
+              "enum": "https://schema.vinv.io/species/0.0.1.json"
+            }
+          },
+          "dimensions": {
+            "title": "Dimensions",
+            "description": "Dimensions of the log",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$schema": "http://json-schema.org/draft-07/schema#",
+              "additionalProperties": false,
+              "title": "Diameter at height",
+              "description": "Array including height and diameter at height",
+              "type": [
+                "object",
+                "null"
+              ],
+              "minItems": 2,
+              "maxItems": 2,
+              "additionalItems": false,
+              "required": [
+                "height",
+                "diameter"
+              ],
+              "properties": {
+                "height": {
+                  "title": "Height",
+                  "description": "Height of measurment in meter where diameter is measured.",
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "multipleOf": 0.1,
+                  "examples": [
+                    0.5,
+                    0.1
+                  ],
+                  "vinv": {
+                    "$vinv": {
+                      "unit": "Meter",
+                      "unitSymbol": "m"
+                    }
+                  }
+                },
+                "diameter": {
+                  "title": "Diameter",
+                  "description": "Diameter in centimeter at measured height.",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000,
+                  "examples": [
+                    34,
+                    38
+                  ],
+                  "vinv": {
+                    "$vinv": {
+                      "unit": "Centimeter",
+                      "unitSymbol": "cm"
+                    }
+                  }
+                }
+              },
+              "$vinv": {
+                "id": "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+              }
+            }
+          },
+          "image_log": {
+            "title": "Image",
+            "description": "Image of the log",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "uri"
+            ],
+            "properties": {
+              "uri": {
+                "title": "Image",
+                "description": "A universal resource identifier (URI), according to RFC3986.",
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://schema.vinv.io/asset/img/logo.png"
+                ]
+              },
+              "encoder": {
+                "title": "Encoder",
+                "description": "The encoder used to encode the image.",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "default": "image/webp",
+                "enum": [
+                  "image/jpeg",
+                  "image/webp"
+                ],
+                "examples": [
+                  "image/webp",
+                  "image/jpeg"
+                ]
+              },
+              "compression": {
+                "title": "Compression",
+                "description": "The compression used to encode the image.",
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
+                "default": 1,
+                "examples": [
+                  0.8
+                ]
+              },
+              "width": {
+                "title": "Width",
+                "description": "Width of the image.",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 25,
+                "maximum": 10000,
+                "examples": [
+                  500
+                ],
+                "$vinv": {
+                  "unit": "Pixel",
+                  "unitSymbol": "px"
+                }
+              },
+              "height": {
+                "title": "Height",
+                "description": "Height of the image",
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 25,
+                "maximum": 10000,
+                "examples": [
+                  500
+                ],
+                "$vinv": {
+                  "unit": "Pixel",
+                  "unitSymbol": "px"
+                }
+              }
+            },
+            "$vinv": {
+              "id": "https://schema.vinv.io/image/0.0.1.json"
+            }
+          },
+          "treeNumber": {
+            "title": "Unique number",
+            "description": "Number/ID of the tree",
+            "type": "string",
+            "maxLength": 26,
+            "examples": [
+              "#1",
+              "45",
+              "ASDF435gHDFGhsgj5646"
+            ]
+          }
+        },
+        "$vinv": {
+          "id": "https://schema.vinv.io/log/en/0.0.2-beta.json"
+        }
+      }
+    },
+    "image_pile_front": {
+      "title": "Image",
+      "description": "Image of the Pile front",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "uri"
+      ],
+      "properties": {
+        "uri": {
+          "title": "Image",
+          "description": "A universal resource identifier (URI), according to RFC3986.",
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://schema.vinv.io/asset/img/logo.png"
+          ]
+        },
+        "encoder": {
+          "title": "Encoder",
+          "description": "The encoder used to encode the image.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": "image/webp",
+          "enum": [
+            "image/jpeg",
+            "image/webp"
+          ],
+          "examples": [
+            "image/webp",
+            "image/jpeg"
+          ]
+        },
+        "compression": {
+          "title": "Compression",
+          "description": "The compression used to encode the image.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1,
+          "examples": [
+            0.8
+          ]
+        },
+        "width": {
+          "title": "Width",
+          "description": "Width of the image.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 25,
+          "maximum": 10000,
+          "examples": [
+            500
+          ],
+          "$vinv": {
+            "unit": "Pixel",
+            "unitSymbol": "px"
+          }
+        },
+        "height": {
+          "title": "Height",
+          "description": "Height of the image",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 25,
+          "maximum": 10000,
+          "examples": [
+            500
+          ],
+          "$vinv": {
+            "unit": "Pixel",
+            "unitSymbol": "px"
+          }
+        }
+      },
+      "$vinv": {
+        "id": "https://schema.vinv.io/image/en/0.0.1.json"
+      }
+    },
+    "treeNumber": {
+      "title": "Unique number",
+      "description": "Number/ID of the tree",
+      "type": "string",
+      "maxLength": 26,
+      "examples": [
+        "#1",
+        "45",
+        "ASDF435gHDFGhsgj5646"
+      ]
+    }
+  },
+  "$id": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.2-beta.json"
+}

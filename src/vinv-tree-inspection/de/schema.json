@@ -1,5 +1,4 @@
 {
-    "$id": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Baumkontrolle",
     "description": "Baumkontrolle nach Vorgaben der Bundesanstalt für Gewässerkunde (bfa)",
@@ -11,11 +10,11 @@
     ],
     "properties": {
         "location": {
-            "$ref": "https://schema.vinv.io/location/en/0.0.1.json"
+            "$ref": "https://schema.vinv.io/location/en/0.0.2-beta.json"
         },
         "tree": {
             "title": "Baum Daten",
-            "$ref": "https://schema.vinv.io/tree/en/0.0.1.json"
+            "$ref": "https://schema.vinv.io/tree/en/0.0.2-beta.json"
         },
         "base_data": {
             "title": "Grunddaten",
@@ -181,10 +180,6 @@
             "title": "Stammfuß und Stamm ",
             "description": "trunk foot and trunk",
             "type": "object",
-            "required": [
-                "misalignment",
-                "juice_leakage"
-            ],
             "properties": {
                 "misalignment": {
                     "title": "Schiefstellung",

@@ -94,13 +94,13 @@
     "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
   },
   "action_required": {
+    "urgency": "sehr dringend",
     "further_visual_inspection": true,
-    "further_visual_inspection_comment": true,
-    "urgency": "sehr dringend"
+    "further_visual_inspection_comment": true
   },
   "status": {
     "health": "nachhaltig geschädigt",
-    "control_interval ": "alle 3 Jahre"
+    "control_interval": "alle 3 Jahre"
   },
   "$schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json"
 }
