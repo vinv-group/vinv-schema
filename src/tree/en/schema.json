@@ -1,5 +1,5 @@
 {
-    "$id": "https://schema.vinv.io/tree/0.0.1.json",
+    "$id": "https://schema.vinv.io/tree/en/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Tree",
     "description": "Tree definition",
@@ -9,15 +9,8 @@
         "species"
     ],
     "properties": {
-        "$schema": {
-            "type": "string",
-            "format": "uri",
-            "examples": [
-                "https://schema.vinv.io/tree/0.0.1.json"
-            ]
-        },
         "species": {
-            "$ref": "https://schema.vinv.io/species/0.0.1.json"
+            "$ref": "https://schema.vinv.io/species/en/0.0.1.json"
         },
         "trunk": {
             "type": ["object", "null"],
@@ -32,12 +25,12 @@
                     "description": "Diameter per height",
                     "additionalProperties": false,
                     "type": "array",
-                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/0.0.1.json"}
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"}
                 },
                 "image_trunk": { 
                     "title": "Image",
                     "description": "Image of the trunk",
-                    "$ref": "https://schema.vinv.io/image/0.0.1.json"
+                    "$ref": "https://schema.vinv.io/image/en/0.0.1.json"
                 }
             }
         },
@@ -53,12 +46,12 @@
                     "title": "Dimensions",
                     "description": "Diameter per height",
                     "type": "array",
-                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/0.0.1.json"}
+                    "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"}
                 },
                 "image_crown": { 
                     "title": "Image of the trunk",
                     "description": "Image of the trunk",
-                    "$ref": "https://schema.vinv.io/image/0.0.1.json"
+                    "$ref": "https://schema.vinv.io/image/en/0.0.1.json"
                 }
             }
         },

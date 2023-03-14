@@ -1,5 +1,5 @@
 {
-    "$id": "https://schema.vinv.io/device-orientation/0.0.1.json",
+    "$id": "https://schema.vinv.io/device-orientation/en/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Device Orientation",
     "description": "Data indicating changes to their orientation with relation to the pull of gravity.",

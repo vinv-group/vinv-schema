@@ -1,5 +1,5 @@
 {
-  "$id": "https://schema.vinv.io/log/0.0.2-beta.json",
+  "$id": "https://schema.vinv.io/log/en/0.0.2-beta.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Log",
   "description": "A part of the trunk or a large branch of a tree that has fallen or been cut off.",

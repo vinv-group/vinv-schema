@@ -1,5 +1,5 @@
 {
-  "$id": "https://schema.vinv.io/diameter_at_height/0.0.2-beta.json",
+  "$id": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "title": "Diameter at height",
@@ -20,7 +20,7 @@
       "type": "string",
       "format": "uri",
       "examples": [
-        "https://schema.vinv.io/diameter_at_height/0.0.1.json"
+        "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"
       ]
     },
     "height": {

@@ -1,7 +1,7 @@
 {
-  "$id": "https://schema.vinv.io/tree/0.0.2-beta.json",
+  "$id": "https://schema.vinv.io/tree/en/0.0.2-beta.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Individual Tree",
+  "title": "Tree",
   "description": "Tree definition",
   "type": "object",
   "additionalProperties": false,
@@ -9,13 +9,6 @@
     "species"
   ],
   "properties": {
-    "$schema": {
-      "type": "string",
-      "format": "uri",
-      "examples": [
-        "https://schema.vinv.io/tree/0.0.1.json"
-      ]
-    },
     "species": {
       "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Tree species",

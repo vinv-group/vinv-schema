@@ -11,18 +11,22 @@
     ],
     "properties": {
         "location": {
-            "$ref": "https://schema.vinv.io/location/0.0.1.json"
+            "$ref": "https://schema.vinv.io/location/en/0.0.1.json"
         },
         "tree": {
             "title": "Baum Daten",
-            "$ref": "https://schema.vinv.io/tree/0.0.1.json"
+            "$ref": "https://schema.vinv.io/tree/en/0.0.1.json"
         },
         "base_data": {
             "title": "Grunddaten",
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "safety_expectation"
+                "safety_expectation",
+                "conservation_status",
+                "development_phase",
+                "exemption",
+                "vitality"
             ],
             "properties": {
                 "safety_expectation": {
@@ -48,9 +52,9 @@
                     ]
                 },
                 "development_phase": {
-                    "title": "Vitalitätsstufe",
+                    "title": "Entwicklungsphase",
                     "type": "string",
-                    "default": "vital",
+                    "default": "Reifephase",
                     "enum": [
                         "Jugendphase",
                         "Reifephase",
@@ -497,7 +501,24 @@
             "title": "Handlungsbedarf",
             "type": "object",
             "additionalProperties": false,
+            "required": [
+                "urgency"
+            ],
             "properties": {
+                "urgency": {
+                    "title": "Dringlichkeit",
+                    "type": "string",
+                    "enum": [
+                        "nicht dringend",
+                        "dringend",
+                        "sehr dringend"
+                    ],
+                    "examples": [
+                        "nicht dringend",
+                        "dringend",
+                        "sehr dringend"
+                    ]
+                },
                 "further_visual_inspection": {
                     "title": "Weitere Sichtkontrolle",
                     "type": "boolean",
@@ -515,26 +536,15 @@
                         false,
                         true
                     ]
-                },
-                "urgency": {
-                    "title": "Dringlichkeit",
-                    "type": "string",
-                    "enum": [
-                        "nicht dringend",
-                        "dringend",
-                        "sehr dringend"
-                    ],
-                    "examples": [
-                        "nicht dringend",
-                        "dringend",
-                        "sehr dringend"
-                    ]
                 }
             }
         },
         "status": {
             "title": "Zustand",
             "type": "object",
+            "required": [
+                "health"
+            ],
             "properties": {
                 "health": {
                     "title": "Gesundheit",
@@ -550,9 +560,9 @@
                         "nachhaltig geschädigt"
                     ]
                 },
-                "control_interval ": {
+                "control_interval": {
                     "title": "Künftiges Kontrollintervall ",
-                    "type": "string",
+                    "type": ["string", "null"],
                     "enum": [
                         "halbjährlich",
                         "jährlich",

@@ -1,0 +1,8 @@
+{
+  "uri": "https://schema.vinv.io/asset/img/logo.png",
+  "encoder": "image/jpeg",
+  "compression": 0.8,
+  "width": 500,
+  "height": 500,
+  "$schema": "https://schema.vinv.io/image/en/0.0.2-beta.json"
+}

@@ -1,18 +1,17 @@
 {
-    "$id": "https://schema.vinv.io/location/0.0.1.json",
+    "$id": "https://schema.vinv.io/location/en/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Location",
     "description": "",
     "type": "object",
-    "vinv:id": "https://schema.vinv.io/location/0.0.1.json",
+    "vinv:id": "https://schema.vinv.io/location/en/0.0.1.json",
     "required": [
         "coordinates",
         "accuracy"
     ],
     "properties": {
         "coordinates": {
-            "$ref": "https://schema.vinv.io/coordinates/0.0.1.json",
-            "vinv:basics": "https://documentation.vinv.io/coordinates/0.0.1/0.html"
+            "$ref": "https://schema.vinv.io/coordinates/en/0.0.1.json"
         },
         "accuracy": {
             "title": "Accuracy",

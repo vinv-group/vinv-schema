@@ -1,0 +1,16 @@
+{
+  "$id": "https://schema.vinv.io/species/en/0.0.2-beta.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$vinv": {
+    "id": "https://schema.vinv.io/species/en/0.0.1.json",
+    "enum": "https://schema.vinv.io/species/en/0.0.1.json"
+  },
+  "title": "Tree species",
+  "description": "Tree Species values taken from https://github.com/b-lack/tree-species",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9_-]{3}$",
+  "examples": [
+    "JM2"
+  ],
+  "vinv:enum": "https://schema.vinv.io/species/en/0.0.1.json"
+}
