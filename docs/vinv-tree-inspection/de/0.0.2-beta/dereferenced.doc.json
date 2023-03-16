@@ -684,16 +684,20 @@
             true
           ]
         },
-        "annotation": {
-          "title": "Anmerkung",
+        "annotations": {
+          "title": "Anmerkungen",
           "type": [
-            "string",
+            "array",
             "null"
           ],
-          "maxLength": 500,
-          "examples": [
-            "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
-          ]
+          "items": {
+            "title": "Anmerkung",
+            "type": "string",
+            "maxLength": 255,
+            "examples": [
+              "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+            ]
+          }
         }
       }
     },
@@ -879,16 +883,20 @@
           },
           "additionalProperties": false
         },
-        "annotation": {
-          "title": "Anmerkung",
+        "annotations": {
+          "title": "Anmerkungen",
           "type": [
-            "string",
+            "array",
             "null"
           ],
-          "maxLength": 500,
-          "examples": [
-            "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
-          ]
+          "items": {
+            "title": "Anmerkung",
+            "type": "string",
+            "maxLength": 255,
+            "examples": [
+              "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+            ]
+          }
         }
       }
     },
@@ -1008,16 +1016,20 @@
             true
           ]
         },
-        "annotation": {
-          "title": "Anmerkung",
+        "annotations": {
+          "title": "Anmerkungen",
           "type": [
-            "string",
+            "array",
             "null"
           ],
-          "maxLength": 500,
-          "examples": [
-            "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
-          ]
+          "items": {
+            "title": "Anmerkung",
+            "type": "string",
+            "maxLength": 255,
+            "examples": [
+              "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+            ]
+          }
         }
       }
     },
@@ -1076,8 +1088,7 @@
           "enum": [
             "gesund/leicht geschädigt",
             "stärker geschädigt",
-            "nachhaltig geschädigt",
-            null
+            "nachhaltig geschädigt"
           ],
           "examples": [
             "gesund/leicht geschädigt",
@@ -1095,8 +1106,7 @@
             "halbjährlich",
             "jährlich",
             "alle 2 Jahre",
-            "alle 3 Jahre",
-            null
+            "alle 3 Jahre"
           ],
           "examples": [
             "halbjährlich",

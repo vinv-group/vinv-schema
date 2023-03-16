@@ -51,7 +51,7 @@
     "backfill_root": true,
     "stilt_roots": true,
     "exposed_roots": true,
-    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+    "annotations": []
   },
   "trunk": {
     "misalignment": {
@@ -75,7 +75,7 @@
       "height": 100,
       "deadwood_stump": true
     },
-    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+    "annotations": []
   },
   "crown": {
     "mushroom": true,
@@ -91,7 +91,7 @@
     },
     "loose_hanging_branch": true,
     "breakdown": true,
-    "annotation": "Unterversorgtes Holzgewebe durch Behinderung oder Unterbrechung des Saftstroms."
+    "annotations": []
   },
   "action_required": {
     "urgency": "sehr dringend",
