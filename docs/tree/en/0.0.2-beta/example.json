@@ -1,7 +1,23 @@
 {
   "species": "JM2",
   "trunk": {
-    "dimensions": [],
+    "dimensions": [
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      },
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      },
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      }
+    ],
     "image_trunk": {
       "uri": "https://schema.vinv.io/asset/img/logo.png",
       "encoder": "image/jpeg",
@@ -11,7 +27,23 @@
     }
   },
   "crown": {
-    "dimensions": [],
+    "dimensions": [
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      },
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      },
+      {
+        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "height": 0.1,
+        "diameter": 38
+      }
+    ],
     "image_crown": {
       "uri": "https://schema.vinv.io/asset/img/logo.png",
       "encoder": "image/jpeg",

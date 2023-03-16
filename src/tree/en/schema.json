@@ -6,14 +6,15 @@
     "type": "object",
     "additionalProperties": false,
     "required": [
-        "species"
+        "species",
+        "trunk"
     ],
     "properties": {
         "species": {
             "$ref": "https://schema.vinv.io/species/en/0.0.2-beta.json"
         },
         "trunk": {
-            "type": ["object", "null"],
+            "type": "object",
             "title": "Trunk",
             "description": "Trunk definition",
             "required": [
@@ -25,6 +26,7 @@
                     "description": "Diameter per height",
                     "additionalProperties": false,
                     "type": "array",
+                    "minItems": 2,
                     "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"}
                 },
                 "image_trunk": { 
@@ -46,6 +48,7 @@
                     "title": "Dimensions",
                     "description": "Diameter per height",
                     "type": "array",
+                    "minItems": 2,
                     "items": {"$ref": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json"}
                 },
                 "image_crown": { 

@@ -6,7 +6,8 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "species"
+    "species",
+    "trunk"
   ],
   "properties": {
     "species": {
@@ -24,10 +25,7 @@
       ]
     },
     "trunk": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "title": "Trunk",
       "description": "Trunk definition",
       "required": [
@@ -39,6 +37,7 @@
           "description": "Diameter per height",
           "additionalProperties": false,
           "type": "array",
+          "minItems": 2,
           "items": {
             "$schema": "http://json-schema.org/draft-07/schema#",
             "additionalProperties": false,
@@ -212,6 +211,7 @@
           "title": "Dimensions",
           "description": "Diameter per height",
           "type": "array",
+          "minItems": 2,
           "items": {
             "$schema": "http://json-schema.org/draft-07/schema#",
             "additionalProperties": false,
