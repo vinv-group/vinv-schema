@@ -142,7 +142,8 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "species"
+        "species",
+        "trunk"
       ],
       "properties": {
         "species": {
@@ -160,10 +161,7 @@
           ]
         },
         "trunk": {
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "title": "Trunk",
           "description": "Trunk definition",
           "required": [
@@ -175,6 +173,7 @@
               "description": "Diameter per height",
               "additionalProperties": false,
               "type": "array",
+              "minItems": 2,
               "items": {
                 "$schema": "http://json-schema.org/draft-07/schema#",
                 "additionalProperties": false,
@@ -201,7 +200,7 @@
                   },
                   "height": {
                     "title": "Height",
-                    "description": "Height of measurment in meter where diameter is measured.",
+                    "description": "Height of measurment in METER where diameter is measured.",
                     "type": "number",
                     "minimum": 0,
                     "maximum": 100,
@@ -210,28 +209,24 @@
                       0.5,
                       0.1
                     ],
-                    "vinv": {
-                      "$vinv": {
-                        "unit": "Meter",
-                        "unitSymbol": "m"
-                      }
+                    "$vinv": {
+                      "unit": "Meter",
+                      "unitSymbol": "m"
                     }
                   },
                   "diameter": {
                     "title": "Diameter",
-                    "description": "Diameter in centimeter at measured height.",
+                    "description": "Diameter in CENTIMETER at measured height.",
                     "type": "integer",
                     "minimum": 1,
-                    "maximum": 1000,
+                    "maximum": 5000,
                     "examples": [
-                      34,
-                      38
+                      304,
+                      308
                     ],
-                    "vinv": {
-                      "$vinv": {
-                        "unit": "Centimeter",
-                        "unitSymbol": "cm"
-                      }
+                    "$vinv": {
+                      "unit": "Centimeter",
+                      "unitSymbol": "cm"
                     }
                   }
                 },
@@ -348,6 +343,7 @@
               "title": "Dimensions",
               "description": "Diameter per height",
               "type": "array",
+              "minItems": 2,
               "items": {
                 "$schema": "http://json-schema.org/draft-07/schema#",
                 "additionalProperties": false,
@@ -374,7 +370,7 @@
                   },
                   "height": {
                     "title": "Height",
-                    "description": "Height of measurment in meter where diameter is measured.",
+                    "description": "Height of measurment in METER where diameter is measured.",
                     "type": "number",
                     "minimum": 0,
                     "maximum": 100,
@@ -383,28 +379,24 @@
                       0.5,
                       0.1
                     ],
-                    "vinv": {
-                      "$vinv": {
-                        "unit": "Meter",
-                        "unitSymbol": "m"
-                      }
+                    "$vinv": {
+                      "unit": "Meter",
+                      "unitSymbol": "m"
                     }
                   },
                   "diameter": {
                     "title": "Diameter",
-                    "description": "Diameter in centimeter at measured height.",
+                    "description": "Diameter in CENTIMETER at measured height.",
                     "type": "integer",
                     "minimum": 1,
-                    "maximum": 1000,
+                    "maximum": 5000,
                     "examples": [
-                      34,
-                      38
+                      304,
+                      308
                     ],
-                    "vinv": {
-                      "$vinv": {
-                        "unit": "Centimeter",
-                        "unitSymbol": "cm"
-                      }
+                    "$vinv": {
+                      "unit": "Centimeter",
+                      "unitSymbol": "cm"
                     }
                   }
                 },

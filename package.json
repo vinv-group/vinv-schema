@@ -5,52 +5,37 @@
   "type": "module",
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md && cp CHANGELOG.md /Users/b-mac/sites/vinv/documentation/src/",
-    
     "test": "echo \"Error: no test specified\" && exit 1",
-    
     "deploy": "node ./processing/deploy.js && npm run releases",
     "releases": "node ./processing/releases.js",
-
-
     "build": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
-    
     "build:diameter_at_height": "npm run combine:diameter_at_height && npm run document:diameter_at_height",
     "combine:diameter_at_height": "node ./processing/combine.js 0.0.1 diameter_at_height",
     "document:diameter_at_height": "jsonschema2md -d ./docs/diameter_at_height/ -o /Users/b-mac/sites/vinv/documentation/src/basics/diameter_at_height/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
-    
     "build:dbh": "npm run combine:dbh && npm run document:dbh",
     "combine:dbh": "node ./processing/combine.js 0.0.1 dbh",
     "document:dbh": "jsonschema2md -d ./docs/dbh/ -o /Users/b-mac/sites/vinv/documentation/src/basics/dbh/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
-    
     "build:sensors": "npm run combine:sensors && npm run document:sensors",
     "combine:sensors": "node ./processing/combine.js 0.0.1 sensors",
     "document:sensors": "jsonschema2md -d ./docs/sensors/ -o /Users/b-mac/sites/vinv/documentation/src/basics/sensors/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
-    
     "build:roundwoodPile": "npm run combine:roundwoodPile && npm run document:roundwoodPile",
     "combine:roundwoodPile": "node ./processing/combine.js 0.0.1 vinv-roundwood-pile",
     "document:roundwoodPile": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-roundwood-pile -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-roundwood-pile/0.0.1 -l en_US -n -p vinv:id -e doc.json",
-    
     "build:cadastre": "npm run combine:cadastre && npm run document:cadastre",
     "combine:cadastre": "node ./processing/combine.js 0.0.1 vinv-cadastre",
     "document:cadastre": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-cadastre -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-cadastre/0.0.1 -l en_US -n -p vinv:id -e doc.json",
-    
     "build:treeInspectionDe": "npm run combine:treeInspectionDe && npm run document:treeInspectionDe",
     "combine:treeInspectionDe": "node ./processing/combine.js 0.0.1 vinv-tree-inspection de",
     "document:treeInspectionDe": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/vinv-tree-inspection/de -o /Users/b-mac/sites/vinv/documentation/src/specifications/vinv-tree-inspection/de/0.0.1 -l en_US -n -p vinv:id -e doc.json",
-  
     "build:tree": "npm run combine:tree",
     "combine:tree": "node ./processing/combine.js 0.0.1 tree",
     "document:tree": "jsonschema2md -d /Users/b-mac/sites/vinv/vinv-schemas/vinv-tree/docs/tree -o /Users/b-mac/sites/vinv/documentation/src/specifications/tree/0.0.1 -l en_US -n -p vinv:id -e doc.json",
-    
     "build:trunk-height": "npm run combine:trunk-height && npm run document:trunk-height",
     "combine:trunk-height": "node ./processing/combine.js 0.0.1 trunk-height",
     "document:trunk-height": "jsonschema2md -d ./docs/trunk-height/ -o /Users/b-mac/sites/vinv/documentation/src/basics/trunk-height/0.0.1 -l en_US -n -p vinv:basics -e doc.json",
-    
     "build:log": "npm run combine:log && npm run document:log",
     "combine:log": "node ./processing/combine.js 0.0.1 log",
     "document:log": "jsonschema2md -d ./docs/log/ -o /Users/b-mac/sites/vinv/documentation/src/basics/log/0.0.1 -l en_US -n -p vinv:basics -e doc.json"
-    
-  
   },
   "repository": {
     "type": "git",

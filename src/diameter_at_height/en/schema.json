@@ -1,13 +1,14 @@
 {
     "$id": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "$vinv": {
+        "id": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+        "idShort": "diameter_at_height"
+    },
     "additionalProperties": false,
     "title": "Diameter at height",
     "description": "Array including height and diameter at height",
-    "type": [
-        "object",
-        "null"
-    ],
+    "type": "object",
     "minItems": 2,
     "maxItems": 2,
     "additionalItems": false,
@@ -16,13 +17,6 @@
         "diameter"
     ],
     "properties": {
-        "$schema": {
-            "type": "string",
-            "format": "uri",
-            "examples": [
-                "https://schema.vinv.io/diameter_at_height/en/0.0.1.json"
-            ]
-        },
         "height": {
             "title": "Height",
             "description": "Height of measurment in METER where diameter is measured.",

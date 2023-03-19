@@ -54,8 +54,8 @@
         },
         "0.0.2-beta": {
           "version": "0.0.2-beta",
-          "modified": "2023-03-16T18:17:45.814Z",
-          "created": "2023-03-16T18:17:45.810Z",
+          "modified": "2023-03-19T21:34:28.629Z",
+          "created": "2023-03-19T21:34:28.625Z",
           "schema": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
           "example": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/example.json",
           "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/dereferenced.doc.json"
@@ -270,8 +270,8 @@
         },
         "0.0.2-beta": {
           "version": "0.0.2-beta",
-          "modified": "2023-03-16T18:18:04.642Z",
-          "created": "2023-03-16T18:18:04.624Z",
+          "modified": "2023-03-19T21:34:41.340Z",
+          "created": "2023-03-19T21:34:41.326Z",
           "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json",
           "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/example.json",
           "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
