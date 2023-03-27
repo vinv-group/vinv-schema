@@ -37,7 +37,7 @@
             "title": "Diameter",
             "description": "Diameter in CENTIMETER at measured height.",
             "type": "integer",
-            "minimum": 1,
+            "minimum": 0,
             "maximum": 5000,
             "examples": [
                 304,

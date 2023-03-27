@@ -1,5 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "$vinv": {
+        "icon": "https://schema.vinv.io/assets/icons/reorder_FILL0_wght400_GRAD0_opsz48.svg"
+    },
     "title": "RoundwoodPile",
     "description": "Roundwood Pile",
     "type": "object",

@@ -21,6 +21,9 @@
           "dereferenced": "https://schema.vinv.io/coordinates/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "id": "https://schema.vinv.io/coordinates/en/0.0.1.json"
     }
   },
   "device-orientation": {
@@ -61,6 +64,10 @@
           "dereferenced": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "id": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
+      "idShort": "diameter_at_height"
     }
   },
   "envelope": {
@@ -181,6 +188,10 @@
           "dereferenced": "https://schema.vinv.io/species/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "id": "https://schema.vinv.io/species/en/0.0.1.json",
+      "enum": "https://schema.vinv.io/species/en/0.0.1.json"
     }
   },
   "tree": {
@@ -229,6 +240,9 @@
           "dereferenced": "https://schema.vinv.io/vinv-cadastre/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "icon": "https://schema.vinv.io/assets/icons/forest_FILL0_wght400_GRAD0_opsz48.svg"
     }
   },
   "vinv-roundwood-pile": {
@@ -253,6 +267,9 @@
           "dereferenced": "https://schema.vinv.io/vinv-roundwood-pile/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "icon": "https://schema.vinv.io/assets/icons/reorder_FILL0_wght400_GRAD0_opsz48.svg"
     }
   },
   "vinv-tree-inspection": {
@@ -277,6 +294,9 @@
           "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "icon": "https://schema.vinv.io/assets/icons/nature_people_FILL0_wght400_GRAD0_opsz48.svg"
     }
   }
 }
