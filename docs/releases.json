@@ -67,7 +67,8 @@
     },
     "$vinv": {
       "id": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
-      "idShort": "diameter_at_height"
+      "idShort": "diameter_at_height",
+      "layout": "2grid"
     }
   },
   "envelope": {
@@ -116,6 +117,9 @@
           "dereferenced": "https://schema.vinv.io/image/en/0.0.2-beta/dereferenced.doc.json"
         }
       }
+    },
+    "$vinv": {
+      "id": "https://schema.vinv.io/image/en/0.0.1.json"
     }
   },
   "location": {
@@ -287,8 +291,8 @@
         },
         "0.0.2-beta": {
           "version": "0.0.2-beta",
-          "modified": "2023-03-19T22:15:33.247Z",
-          "created": "2023-03-19T22:15:33.237Z",
+          "modified": "2023-03-28T22:32:19.713Z",
+          "created": "2023-03-28T22:32:19.704Z",
           "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json",
           "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/example.json",
           "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
