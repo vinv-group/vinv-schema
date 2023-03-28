@@ -3,19 +3,16 @@
   "trunk": {
     "dimensions": [
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       },
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       },
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       }
     ],
     "image_trunk": {
@@ -29,19 +26,16 @@
   "crown": {
     "dimensions": [
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       },
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       },
       {
-        "$schema": "https://schema.vinv.io/diameter_at_height/en/0.0.1.json",
         "height": 0.1,
-        "diameter": 38
+        "diameter": 308
       }
     ],
     "image_crown": {
