@@ -181,7 +181,8 @@
                 "$schema": "http://json-schema.org/draft-07/schema#",
                 "$vinv": {
                   "id": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
-                  "idShort": "diameter_at_height"
+                  "idShort": "diameter_at_height",
+                  "layout": "2grid"
                 },
                 "additionalProperties": false,
                 "title": "Diameter at height",
@@ -201,7 +202,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 100,
-                    "multipleOf": 0.1,
+                    "multipleOf": 0.01,
                     "examples": [
                       0.5,
                       0.1
@@ -215,7 +216,7 @@
                     "title": "Diameter",
                     "description": "Diameter in CENTIMETER at measured height.",
                     "type": "integer",
-                    "minimum": 1,
+                    "minimum": 0,
                     "maximum": 5000,
                     "examples": [
                       304,
@@ -342,7 +343,8 @@
                 "$schema": "http://json-schema.org/draft-07/schema#",
                 "$vinv": {
                   "id": "https://schema.vinv.io/diameter_at_height/en/0.0.2-beta.json",
-                  "idShort": "diameter_at_height"
+                  "idShort": "diameter_at_height",
+                  "layout": "2grid"
                 },
                 "additionalProperties": false,
                 "title": "Diameter at height",
@@ -362,7 +364,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 100,
-                    "multipleOf": 0.1,
+                    "multipleOf": 0.01,
                     "examples": [
                       0.5,
                       0.1
@@ -376,7 +378,7 @@
                     "title": "Diameter",
                     "description": "Diameter in CENTIMETER at measured height.",
                     "type": "integer",
-                    "minimum": 1,
+                    "minimum": 0,
                     "maximum": 5000,
                     "examples": [
                       304,
