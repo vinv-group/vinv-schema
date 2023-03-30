@@ -291,8 +291,8 @@
         },
         "0.0.2-beta": {
           "version": "0.0.2-beta",
-          "modified": "2023-03-30T19:42:49.717Z",
-          "created": "2023-03-30T19:42:49.704Z",
+          "modified": "2023-03-30T19:53:50.622Z",
+          "created": "2023-03-30T19:53:50.610Z",
           "schema": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta.json",
           "example": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/example.json",
           "dereferenced": "https://schema.vinv.io/vinv-tree-inspection/de/0.0.2-beta/dereferenced.doc.json"
