@@ -103,6 +103,10 @@
             "object",
             "null"
           ],
+          "$vinv": {
+            "id": "https://schema.vinv.io/image/en/0.0.2-beta.json",
+            "idShort": "image"
+          },
           "required": [
             "uri"
           ],
@@ -181,9 +185,6 @@
                 "unitSymbol": "px"
               }
             }
-          },
-          "$vinv": {
-            "id": "https://schema.vinv.io/image/en/0.0.1.json"
           }
         }
       }
@@ -269,6 +270,10 @@
             "object",
             "null"
           ],
+          "$vinv": {
+            "id": "https://schema.vinv.io/image/en/0.0.2-beta.json",
+            "idShort": "image"
+          },
           "required": [
             "uri"
           ],
@@ -347,9 +352,6 @@
                 "unitSymbol": "px"
               }
             }
-          },
-          "$vinv": {
-            "id": "https://schema.vinv.io/image/en/0.0.1.json"
           }
         }
       }
