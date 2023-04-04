@@ -175,6 +175,10 @@
               "title": "Dimensions",
               "description": "Diameter per height",
               "additionalProperties": false,
+              "$vinv": {
+                "idShort": "diameter_at_height_array",
+                "layout": "2grid"
+              },
               "type": "array",
               "minItems": 2,
               "items": {
