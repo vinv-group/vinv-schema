@@ -359,6 +359,9 @@
     "birth": {
       "title": "Birthday",
       "description": "Birthday of the tree",
+      "$vinv": {
+        "idShort": "age"
+      },
       "type": [
         "string",
         "null"
