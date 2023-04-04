@@ -4,9 +4,9 @@
     "title": "Image",
     "description": "A universal resource identifier (URI), according to RFC3986.",
     "type": ["object", "null"],
-    "vinv:id": "https://schema.vinv.io/image/en/0.0.1.json",
     "$vinv": {
-        "id": "https://schema.vinv.io/image/en/0.0.1.json"
+        "id": "https://schema.vinv.io/image/en/0.0.1.json",
+        "idShort": "image"
     },
     "required":[
         "uri"
